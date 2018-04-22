@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpsonsTrivia.XNA", "SimpsonsTrivia.XNA\SimpsonsTrivia.XNA\SimpsonsTrivia.XNA.csproj", "{D50752D2-D38D-430B-8900-908F31EC90B3}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "SimpsonsTrivia.XNAContent", "SimpsonsTrivia.XNA\SimpsonsTrivia.XNAContent\SimpsonsTrivia.XNAContent.contentproj", "{DD55B159-52AD-484B-A254-901CCC32D557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpsonsTrivia.XNA.Common", "SimpsonsTrivia.XNA.Common\SimpsonsTrivia.XNA.Common.csproj", "{73715383-8DFB-4B07-A85F-3C392B2D97B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D50752D2-D38D-430B-8900-908F31EC90B3}.Debug|x86.ActiveCfg = Debug|x86
+		{D50752D2-D38D-430B-8900-908F31EC90B3}.Debug|x86.Build.0 = Debug|x86
+		{D50752D2-D38D-430B-8900-908F31EC90B3}.Release|x86.ActiveCfg = Release|x86
+		{D50752D2-D38D-430B-8900-908F31EC90B3}.Release|x86.Build.0 = Release|x86
+		{DD55B159-52AD-484B-A254-901CCC32D557}.Debug|x86.ActiveCfg = Debug|x86
+		{DD55B159-52AD-484B-A254-901CCC32D557}.Release|x86.ActiveCfg = Release|x86
+		{73715383-8DFB-4B07-A85F-3C392B2D97B8}.Debug|x86.ActiveCfg = Debug|x86
+		{73715383-8DFB-4B07-A85F-3C392B2D97B8}.Debug|x86.Build.0 = Debug|x86
+		{73715383-8DFB-4B07-A85F-3C392B2D97B8}.Release|x86.ActiveCfg = Release|x86
+		{73715383-8DFB-4B07-A85F-3C392B2D97B8}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
