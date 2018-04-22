@@ -1,4 +1,7 @@
 *build.force
+*/bin
+*/obj
+
 
 # Prerequisites
 *.d
