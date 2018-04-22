@@ -78,13 +78,13 @@
     <Compile Include="Library\Interfaces\ILogger.cs" />
     <Compile Include="Library\IoC\EngineModule.cs" />
     <Compile Include="Library\IoC\IoCContainer.cs" />
+    <Compile Include="Library\Managers\FileManager.cs" />
     <Compile Include="Logger\Implementation\RealLogger.cs" />
     <Compile Include="Managers\RandomManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Library\Implementation\" />
-    <Folder Include="Library\Managers\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />

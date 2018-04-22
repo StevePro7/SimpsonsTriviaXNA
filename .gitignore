@@ -7,6 +7,7 @@
 *FileListAbsolute*
 *ContentPipeline-*
 *Ninject.xml
+*log4net.xml
 
 # Prerequisites
 *.d
