@@ -6,6 +6,7 @@
 *RuntimeProfile*
 *FileListAbsolute*
 *ContentPipeline-*
+*Ninject.xml
 
 # Prerequisites
 *.d

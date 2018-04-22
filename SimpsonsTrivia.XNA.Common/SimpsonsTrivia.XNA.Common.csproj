@@ -72,11 +72,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnGame.cs" />
+    <Compile Include="Implementation\RealFileProxy.cs" />
     <Compile Include="Library\Interfaces\IFileManager.cs" />
     <Compile Include="Library\Interfaces\IFileProxy.cs" />
     <Compile Include="Library\Interfaces\ILogger.cs" />
     <Compile Include="Library\IoC\EngineModule.cs" />
     <Compile Include="Library\IoC\IoCContainer.cs" />
+    <Compile Include="Logger\Implementation\RealLogger.cs" />
     <Compile Include="Managers\RandomManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
