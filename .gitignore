@@ -1,7 +1,11 @@
 *build.force
 */bin
 */obj
-
+*.VisualState*
+*TestResult*
+*RuntimeProfile*
+*FileListAbsolute*
+*ContentPipeline-*
 
 # Prerequisites
 *.d
