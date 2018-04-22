@@ -64,8 +64,6 @@
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
-    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
-    <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -85,6 +83,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\SimpsonsTrivia.XNA.Common\SimpsonsTrivia.XNA.Common.csproj">
+      <Project>{73715383-8DFB-4B07-A85F-3C392B2D97B8}</Project>
+      <Name>SimpsonsTrivia.XNA.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SimpsonsTrivia.XNAContent\SimpsonsTrivia.XNAContent.contentproj">
       <Name>SimpsonsTrivia.XNAContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>
