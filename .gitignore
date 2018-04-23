@@ -6,8 +6,12 @@
 *RuntimeProfile*
 *FileListAbsolute*
 *ContentPipeline-*
+*Ninject.dll
 *Ninject.xml
+*log4net.dll
 *log4net.xml
+*WindowsGame.common.dll
+*ContentPipeline.xml
 
 # Prerequisites
 *.d
