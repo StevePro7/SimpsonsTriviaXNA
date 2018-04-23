@@ -1,11 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using System.Reflection;
+using NUnit.Framework;
 namespace WindowsGame.SystemTests.TheGame
 {
-	class GameManagerTests
+	[TestFixture]
+	public class GameManagerTests : BaseSystemTests
 	{
+		[Test]
+		public void RegistrationTest()
+		{
+			var manager = MyGame.Manager;
+			var properties = manager.GetType().GetProperties();
+			foreach (PropertyInfo property in properties)
+			{
+				object obj = property.GetValue(manager, null);
+				Assert.That(obj, Is.Not.Null, property.ToString());
+			}
+		}
+
 	}
 }

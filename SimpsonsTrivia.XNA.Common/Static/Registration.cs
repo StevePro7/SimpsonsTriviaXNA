@@ -2,6 +2,8 @@
 using WindowsGame.Common.TheGame;
 using WindowsGame.Common.Library.Interfaces;
 using WindowsGame.Common.Managers;
+using WindowsGame.Common.Implementation;
+using WindowsGame.Common.Library.Managers;
 
 namespace WindowsGame.Common.Static
 {
@@ -13,6 +15,9 @@ namespace WindowsGame.Common.Static
 
 			IoCContainer.Initialize<IQuestionManager, QuestionManager>();
 			IoCContainer.Initialize<IRandomManager, RandomManager>();
+
+			IoCContainer.Initialize<IFileProxy, RealFileProxy>();
+			IoCContainer.Initialize<IFileManager, FileManager>();
 
 #if WINDOWS
 			//IoCContainer.Initialize<IDeviceFactory, WorkDeviceFactory>();

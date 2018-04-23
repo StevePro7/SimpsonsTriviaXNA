@@ -12,13 +12,10 @@ namespace WindowsGame.SystemTests.Library.Managers
 	[TestFixture]
 	public class FileManagerSystemTests : BaseSystemTests
 	{
-		private IFileManager fileManager;
-
 		[SetUp]
 		public void SetUp()
 		{
-			IFileProxy fileProxy = new TestFileProxy();
-			fileManager = new FileManager(fileProxy);
+			FileManager = MyGame.Manager.FileManager;
 		}
 
 		[Test]
@@ -29,8 +26,8 @@ namespace WindowsGame.SystemTests.Library.Managers
 			String file = String.Format("{0}{1}/{2}/{3}/{4}.txt", CONTENT_ROOT, Constants.CONTENT_DIRECTORY, Constants.DATA_DIRECTORY,
 				Constants.LEVELS_DIRECTORY, type);
 
-			var data  = fileManager.LoadTxt(file);
-			Console.WriteLine(data.Count);
+			var data = FileManager.LoadTxt(file);
+			Console.WriteLine("Number Lines: " + data.Count);
 		}
 
 		[Test]
@@ -39,14 +36,14 @@ namespace WindowsGame.SystemTests.Library.Managers
 			String file = String.Format("{0}{1}/{2}/{3}/{4}", CONTENT_ROOT, Constants.CONTENT_DIRECTORY, Constants.DATA_DIRECTORY,
 				Constants.CONFIG_DIRECTORY, Constants.GLOBAL_CONFIG_FILENAME);
 
-			var configData = fileManager.LoadXml<GlobalConfigData>(file);
+			var configData = FileManager.LoadXml<GlobalConfigData>(file);
 			Console.WriteLine("Splash delay:" + configData.SplashDelay);
 		}
 
 		[TearDown]
 		public void TearDown()
 		{
-			fileManager = null;
+			FileManager = null;
 		}
 	}
 }
