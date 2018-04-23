@@ -7,8 +7,13 @@ Install-Package NUnit -Version 3.4.1
 Install-Package log4net -Version 2.0.5
 Install-Package RhinoMocks -Version 3.6.1
 
-
+01.
 https://stackoverflow.com/questions/10113532/how-do-i-fix-the-visual-studio-compile-error-mismatch-between-processor-archit
 <PropertyGroup>
   <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
 </PropertyGroup>
+
+
+02.
+Launch cmd prompt as admin
+mklink /D C:\SimpsonsTrivia.XNA.Content C:\GithubX\StevePro7\SimpsonsTriviaXNA\SimpsonsTrivia.XNA\SimpsonsTrivia.XNA\bin\x86\Debug\

@@ -1,6 +1,6 @@
 *build.force
-*/bin
-*/obj
+*bin*
+*obj*
 *.VisualState*
 *TestResult*
 *RuntimeProfile*
@@ -12,6 +12,7 @@
 *log4net.xml
 *WindowsGame.common.dll
 *ContentPipeline.xml
+*cachefile*
 
 # Prerequisites
 *.d
