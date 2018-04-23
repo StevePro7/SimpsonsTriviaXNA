@@ -1,9 +1,8 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Rhino.Mocks;
 using WindowsGame.Common.Library.Interfaces;
-using WindowsGame.Common.TheGame;
 using WindowsGame.Common.Managers;
+using WindowsGame.Common.TheGame;
 
 namespace WindowsGame.UnitTests
 {

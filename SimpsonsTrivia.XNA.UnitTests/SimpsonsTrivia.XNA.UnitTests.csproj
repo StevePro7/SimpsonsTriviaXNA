@@ -52,7 +52,6 @@
   <ItemGroup>
     <Compile Include="BaseUnitTests.cs" />
     <Compile Include="Managers\QuestionManagerTests.cs" />
-    <Compile Include="Managers\RandomManagerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

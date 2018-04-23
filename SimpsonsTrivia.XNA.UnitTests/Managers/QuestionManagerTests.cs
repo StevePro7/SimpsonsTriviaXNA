@@ -1,7 +1,7 @@
 ﻿using System;
+using NUnit.Framework;
 using WindowsGame.Common.Managers;
 using WindowsGame.Common.Objects;
-using NUnit.Framework;
 
 namespace WindowsGame.UnitTests.Managers
 {

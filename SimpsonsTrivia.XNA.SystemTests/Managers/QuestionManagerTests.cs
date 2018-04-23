@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
 using WindowsGame.Common.Managers;
 using WindowsGame.Common.Objects;
-using NUnit.Framework;
 using WindowsGame.Common.Static;
 
 namespace WindowsGame.SystemTests.Managers
@@ -10,12 +9,10 @@ namespace WindowsGame.SystemTests.Managers
 	[TestFixture]
 	public class QuestionManagerTests : BaseSystemTests
 	{
-		private IQuestionManager questionManager;
-
 		[SetUp]
 		public void SetUp()
 		{
-			questionManager = new QuestionManager();
+			QuestionManager = MyGame.Manager.QuestionManager;
 		}
 
 		[Test]
@@ -23,7 +20,7 @@ namespace WindowsGame.SystemTests.Managers
 		{
 			DifficultyType type = DifficultyType.Easy;
 
-			IList<Question> questionList = questionManager.LoadQuestionList(type);
+			IList<Question> questionList = QuestionManager.LoadQuestionList(type);
 
 			Assert.That(3, Is.EqualTo(questionList.Count));
 		}
@@ -31,7 +28,7 @@ namespace WindowsGame.SystemTests.Managers
 		[TearDown]
 		public void TearDown()
 		{
-			questionManager = null;
+			QuestionManager = null;
 		}
 
 	}

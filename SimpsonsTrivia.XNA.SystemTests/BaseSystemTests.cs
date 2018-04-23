@@ -1,11 +1,11 @@
 ﻿using System;
+using NUnit.Framework;
 using WindowsGame.Common.Library.Interfaces;
 using WindowsGame.Common.Library.IoC;
 using WindowsGame.Common.Managers;
 using WindowsGame.Common.Static;
 using WindowsGame.Common.TheGame;
 using WindowsGame.SystemTests.Implementation;
-using NUnit.Framework;
 
 namespace WindowsGame.SystemTests
 {

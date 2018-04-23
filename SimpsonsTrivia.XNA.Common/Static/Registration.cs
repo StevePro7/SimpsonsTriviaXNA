@@ -1,9 +1,9 @@
-﻿using WindowsGame.Common.Library.IoC;
-using WindowsGame.Common.TheGame;
+﻿using WindowsGame.Common.Implementation;
 using WindowsGame.Common.Library.Interfaces;
-using WindowsGame.Common.Managers;
-using WindowsGame.Common.Implementation;
+using WindowsGame.Common.Library.IoC;
 using WindowsGame.Common.Library.Managers;
+using WindowsGame.Common.Managers;
+using WindowsGame.Common.TheGame;
 
 namespace WindowsGame.Common.Static
 {

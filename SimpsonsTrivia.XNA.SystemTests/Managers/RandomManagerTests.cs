@@ -1,28 +1,37 @@
-﻿using WindowsGame.Common.Managers;
+﻿using System;
 using NUnit.Framework;
+using WindowsGame.Common.Managers;
 
 namespace WindowsGame.SystemTests.Managers
 {
 	[TestFixture]
-	public class RandomManagerTests
+	public class RandomManagerTests : BaseSystemTests
 	{
-		private IRandomManager randomManager;
-
 		[SetUp]
 		public void SetUp()
 		{
-			randomManager = new RandomManager();
+			RandomManager = MyGame.Manager.RandomManager;
+			RandomManager.Initialize();
 		}
 
 		[Test]
-		public void LoadContentDataTest()
+		public void GenerateOneTest()
 		{
+			Int32 number = RandomManager.Generate(10);
+			Console.WriteLine("Generate: " + number);
+		}
+
+		[Test]
+		public void GeneratTwoTest()
+		{
+			Int32 number = RandomManager.Generate(1, 10);
+			Console.WriteLine("Generate: " + number);
 		}
 
 		[TearDown]
 		public void TearDown()
 		{
-			randomManager = null;
+			RandomManager = null;
 		}
 
 	}
