@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace WindowsGame.UnitTests.Managers
 {
 	[TestFixture]
-	public class RandomManagerTests
+	public class RandomManagerTests : BaseUnitTests
 	{
 		private IRandomManager randomManager;
 

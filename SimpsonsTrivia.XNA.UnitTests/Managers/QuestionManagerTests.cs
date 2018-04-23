@@ -1,10 +1,11 @@
 ﻿using System;
-using NUnit.Framework;
 using WindowsGame.Common.Managers;
 using WindowsGame.Common.Objects;
+using NUnit.Framework;
 
 namespace WindowsGame.UnitTests.Managers
 {
+	[TestFixture]
 	public class QuestionManagerTests : BaseUnitTests
 	{
 		private IQuestionManager questionManager;
@@ -31,6 +32,6 @@ namespace WindowsGame.UnitTests.Managers
 		{
 			questionManager = null;
 		}
-	}
 
+	}
 }

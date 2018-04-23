@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using NUnit.Framework;
+using Rhino.Mocks;
 
 namespace WindowsGame.UnitTests
 {
-	class BaseUnitTests
+	public abstract class BaseUnitTests
 	{
 	}
 }

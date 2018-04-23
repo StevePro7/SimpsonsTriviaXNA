@@ -11,5 +11,7 @@ namespace WindowsGame.Common.Static
 		public const String LEVELS_DIRECTORY = "Levels";
 
 		public const String GLOBAL_CONFIG_FILENAME = "GlobalConfig.xml";
+
+		public const Byte NUMBER_LINES = 3;
 	}
 }
