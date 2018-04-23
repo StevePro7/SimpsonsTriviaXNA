@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Ninject.Modules;
 
-namespace WindowsGame.Library.IoC
+namespace WindowsGame.Common.Library.IoC
 {
 	public class EngineModule : NinjectModule
 	{

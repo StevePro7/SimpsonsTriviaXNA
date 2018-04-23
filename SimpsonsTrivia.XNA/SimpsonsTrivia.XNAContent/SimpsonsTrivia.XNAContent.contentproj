@@ -43,7 +43,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Levels\Easy.txt">
+    <None Include="Data\Levels\Easy.txt">
       <Name>Easy</Name>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

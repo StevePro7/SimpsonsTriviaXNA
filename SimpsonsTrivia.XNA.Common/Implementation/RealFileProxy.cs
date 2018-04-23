@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
 using Microsoft.Xna.Framework;
-using WindowsGame.Library.Interfaces;
+using WindowsGame.Common.Library.Interfaces;
 
-namespace WindowsGame.Implementation
+namespace WindowsGame.Common.Implementation
 {
 	public class RealFileProxy : IFileProxy
 	{

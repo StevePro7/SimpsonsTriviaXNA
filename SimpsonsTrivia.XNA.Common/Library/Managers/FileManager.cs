@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Linq;
 using System.Xml.Serialization;
-using WindowsGame.Library.Interfaces;
+using WindowsGame.Common.Library.Interfaces;
 
-namespace WindowsGame.Library.Managers
+namespace WindowsGame.Common.Library.Managers
 {
 	public class FileManager : IFileManager
 	{

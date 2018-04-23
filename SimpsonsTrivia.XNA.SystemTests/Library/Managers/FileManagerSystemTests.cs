@@ -1,9 +1,9 @@
 ﻿using System;
-using WindowsGame.Data;
-using WindowsGame.Implementation;
-using WindowsGame.Library.Interfaces;
-using WindowsGame.Library.Managers;
-using WindowsGame.Static;
+using WindowsGame.Common.Data;
+using WindowsGame.Common.Implementation;
+using WindowsGame.Common.Library.Interfaces;
+using WindowsGame.Common.Library.Managers;
+using WindowsGame.Common.Static;
 using WindowsGame.SystemTests.Implementation;
 using NUnit.Framework;
 
@@ -24,19 +24,20 @@ namespace WindowsGame.SystemTests.Library.Managers
 		[Test]
 		public void LoadTxtTest()
 		{
-			String file = String.Format("{0}{1}/{2}/{3}/{4}{5}/{6}{7}.txt", CONTENT_ROOT, Constants.CONTENT_DIRECTORY,
-				Constants.DATA_DIRECTORY, Constants.LEVELS_DIRECTORY, Constants.WORLD_FILENAME, world, Constants.ROUND_FILENAME,
-				round);
+			DifficultyType type = DifficultyType.Easy;
 
-			//var levelData = FileManager.LoadTxt(file);
-			//Console.WriteLine("LevelData:" + levelData.Count);
+			String file = String.Format("{0}{1}/{2}/{3}/{4}.txt", CONTENT_ROOT, Constants.CONTENT_DIRECTORY, Constants.DATA_DIRECTORY,
+				Constants.LEVELS_DIRECTORY, type);
+
+			var data  = fileManager.LoadTxt(file);
+			Console.WriteLine(data.Count);
 		}
 
 		[Test]
 		public void LoadXmlTest()
 		{
 			String file = String.Format("{0}{1}/{2}/{3}/{4}", CONTENT_ROOT, Constants.CONTENT_DIRECTORY, Constants.DATA_DIRECTORY,
-			    Constants.CONFIG_DIRECTORY, Constants.GLOBAL_CONFIG_FILENAME);
+				Constants.CONFIG_DIRECTORY, Constants.GLOBAL_CONFIG_FILENAME);
 
 			var configData = fileManager.LoadXml<GlobalConfigData>(file);
 			Console.WriteLine("Splash delay:" + configData.SplashDelay);

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WindowsGame.Library.Interfaces
+namespace WindowsGame.Common.Library.Interfaces
 {
 	public interface ILogger
 	{

@@ -1,6 +1,6 @@
-﻿using WindowsGame.Library.Interfaces;
+﻿using WindowsGame.Common.Library.Interfaces;
 
-namespace WindowsGame.Library.Implementation
+namespace WindowsGame.Common.Library.Implementation
 {
 	public class TestLogger : ILogger
 	{

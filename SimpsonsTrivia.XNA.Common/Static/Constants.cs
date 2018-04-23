@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WindowsGame.Static
+namespace WindowsGame.Common.Static
 {
 	public static class Constants
 	{
@@ -8,6 +8,7 @@ namespace WindowsGame.Static
 
 		public const String DATA_DIRECTORY = "Data";
 		public const String CONFIG_DIRECTORY = "Config";
+		public const String LEVELS_DIRECTORY = "Levels";
 
 		public const String GLOBAL_CONFIG_FILENAME = "GlobalConfig.xml";
 	}

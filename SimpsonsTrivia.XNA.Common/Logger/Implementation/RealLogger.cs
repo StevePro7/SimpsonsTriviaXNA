@@ -1,7 +1,7 @@
 ﻿#if WINDOWS
 using log4net;
 using log4net.Config;
-using WindowsGame.Library.Interfaces;
+using WindowsGame.Common.Library.Interfaces;
 
 namespace WindowsGame.Logger.Implementation
 {
