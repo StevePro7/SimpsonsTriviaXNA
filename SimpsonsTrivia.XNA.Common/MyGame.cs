@@ -1,17 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
+﻿using Microsoft.Xna.Framework;
+using WindowsGame.Common.TheGame;
 
 namespace WindowsGame
 {
 	public static class MyGame
 	{
+		public static void Construct(IGameManager manager)
+		{
+			Manager = manager;
+		}
+
+		public static void Initialize()
+		{
+		}
+
+		public static void LoadContent()
+		{
+		}
+
+		public static void LoadContentAsync()
+		{
+		}
+
+		public static void UnloadContent()
+		{
+		}
+
+		public static void Update(GameTime gameTime)
+		{
+		}
+
+		public static void Draw()
+		{
+		}
+
+		public static void OnActivated()
+		{
+		}
+		public static void OnDeactivated()
+		{
+		}
+
+		public static IGameManager Manager { get; private set; }
 	}
 }

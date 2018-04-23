@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WindowsGame.Managers
+namespace WindowsGame.Common.Managers
 {
 	public interface IRandomManager
 	{

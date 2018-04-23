@@ -8,12 +8,10 @@ namespace WindowsGame.UnitTests.Managers
 	[TestFixture]
 	public class QuestionManagerTests : BaseUnitTests
 	{
-		private IQuestionManager questionManager;
-
 		[SetUp]
-		public void SetUp()
+		public new void SetUp()
 		{
-			questionManager = new QuestionManager();
+			QuestionManager = new QuestionManager();
 		}
 
 		[Test]
@@ -22,7 +20,7 @@ namespace WindowsGame.UnitTests.Managers
 			String text = "3;WHICH OF THE FOLLOWING|CHARACTERS IS A NON-SMOKER?;KRUSTY;NELSON;GRAMPA SIMPSON;MRS. KRABAPPLE;page01;02-GeneralSimpsonsTrivia.csv";
 			//DifficultyType type = DifficultyType.Easy;
 
-			Question question = questionManager.LoadQuestion(text);
+			Question question = QuestionManager.LoadQuestion(text);
 
 			Assert.That(question, Is.Null);
 		}
@@ -30,7 +28,7 @@ namespace WindowsGame.UnitTests.Managers
 		[TearDown]
 		public void TearDown()
 		{
-			questionManager = null;
+			QuestionManager = null;
 		}
 
 	}

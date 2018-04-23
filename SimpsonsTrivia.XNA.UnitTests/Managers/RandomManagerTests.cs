@@ -1,4 +1,4 @@
-﻿using WindowsGame.Managers;
+﻿using WindowsGame.Common.Managers;
 using NUnit.Framework;
 
 namespace WindowsGame.UnitTests.Managers
@@ -6,12 +6,10 @@ namespace WindowsGame.UnitTests.Managers
 	[TestFixture]
 	public class RandomManagerTests : BaseUnitTests
 	{
-		private IRandomManager randomManager;
-
 		[SetUp]
-		public void SetUp()
+		public new void SetUp()
 		{
-			randomManager = new RandomManager();
+			RandomManager = new RandomManager();
 		}
 
 		[Test]
@@ -22,7 +20,7 @@ namespace WindowsGame.UnitTests.Managers
 		[TearDown]
 		public void TearDown()
 		{
-			randomManager = null;
+			RandomManager = null;
 		}
 
 	}

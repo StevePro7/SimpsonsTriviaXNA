@@ -1,4 +1,4 @@
-﻿using WindowsGame.Managers;
+﻿using WindowsGame.Common.Managers;
 using NUnit.Framework;
 
 namespace WindowsGame.SystemTests.Managers
