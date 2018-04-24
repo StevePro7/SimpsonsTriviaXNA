@@ -11,10 +11,20 @@ namespace WindowsGame.SystemTests
 {
 	public abstract class BaseSystemTests
 	{
-		protected IFileManager FileManager;
+		protected IButtonManager ButtonManager;
+		protected IConfigManager ConfigManager;
+		protected IContentManager ContentManager;
+		protected IImageManager ImageManager;
+		protected IInputManager InputManager;
 		protected IQuestionManager QuestionManager;
 		protected IRandomManager RandomManager;
 		protected IResolutionManager ResolutionManager;
+		protected IScoreManager ScoreManager;
+		protected IScreenManager ScreenManager;
+		protected ISoundManager SoundManager;
+		protected ITextManager TextManager;
+		protected IThreadManager ThreadManager;
+		protected IFileManager FileManager;
 		protected ILogger Logger;
 
 		// mklink /D C:\CandyKid.XNA.Content  C:\CandyKid.XNA\bin\x86\Debug\

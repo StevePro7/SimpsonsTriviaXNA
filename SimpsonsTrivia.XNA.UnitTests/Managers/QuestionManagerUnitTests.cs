@@ -17,11 +17,14 @@ namespace WindowsGame.UnitTests.Managers
 		[Test]
 		public void LoadQuestionDataTest()
 		{
+			// Arrange.
 			String line = "3;WHICH OF THE FOLLOWING|CHARACTERS IS A NON-SMOKER?;KRUSTY;NELSON;GRAMPA SIMPSON;MRS. KRABAPPLE;page01;02-GeneralSimpsonsTrivia.csv";
 
+			// Act.
 			Question question = QuestionManager.LoadQuestion(line);
 
-			Assert.That(question, Is.Null);
+			// Assert.
+			Assert.That(question, Is.Not.Null);
 		}
 
 		[TearDown]
