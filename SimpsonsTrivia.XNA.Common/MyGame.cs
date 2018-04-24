@@ -12,6 +12,7 @@ namespace WindowsGame
 
 		public static void Initialize()
 		{
+			Manager.Logger.Initialize();
 		}
 
 		public static void LoadContent()
