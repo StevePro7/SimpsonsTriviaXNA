@@ -34,6 +34,9 @@ namespace WindowsGame.Common.Managers
 			// Fonts.
 			String fonts = String.Format("{0}/{1}/", contentRoot, Constants.FONTS_DIRECTORY);
 			Assets.EmulogicFont = Engine.Content.Load<SpriteFont>(fonts + "Emulogic");
+
+			// Textures.
+			Assets.SpritesheetTexture = LoadTexture("Spritesheet");
 		}
 
 		private SoundEffectInstance LoadSoundEffectInstance(String assetName)

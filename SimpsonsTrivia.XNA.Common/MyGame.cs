@@ -17,6 +17,7 @@ namespace WindowsGame
 		{
 			Manager.Logger.Initialize();
 			Manager.ConfigManager.Initialize();
+			Manager.ConfigManager.LoadContent();
 
 			Manager.ContentManager.Initialize();
 			Manager.ContentManager.LoadContentSplash();
@@ -41,18 +42,33 @@ namespace WindowsGame
 
 		public static void LoadContentAsync()
 		{
+			Manager.ConfigManager.LoadContent();
+			Manager.ContentManager.LoadContent();
+			Manager.ImageManager.LoadContent();
+
+			Manager.ScoreManager.LoadContent();
+			Manager.TextManager.LoadContent();
+			Manager.ScreenManager.LoadContent();
+
+			GC.Collect();
 		}
 
 		public static void UnloadContent()
 		{
+			Engine.Game.Content.Unload();
 		}
 
 		public static void Update(GameTime gameTime)
 		{
+			Manager.InputManager.Update(gameTime);
+
+
+			Manager.ScreenManager.Update(gameTime);
 		}
 
 		public static void Draw()
 		{
+			Manager.ScreenManager.Draw();
 		}
 
 		public static void OnActivated()

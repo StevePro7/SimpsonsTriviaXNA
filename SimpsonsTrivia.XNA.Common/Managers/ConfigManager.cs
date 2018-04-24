@@ -27,7 +27,6 @@ namespace WindowsGame.Common.Managers
 		public void LoadContent()
 		{
 			LoadGlobalConfigData();
-
 			BaseData.LoadContent();
 		}
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using WindowsGame.Common.Interfaces;
 using WindowsGame.Common.Static;
+using WindowsGame.Common.Library;
 
 namespace WindowsGame.Common.Screens
 {
@@ -21,6 +22,7 @@ namespace WindowsGame.Common.Screens
 
 		public override void Draw()
 		{
+			MyGame.Manager.ImageManager.DrawTitle();
 		}
 
 	}

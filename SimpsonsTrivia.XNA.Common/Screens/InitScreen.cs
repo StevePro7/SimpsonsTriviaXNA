@@ -13,14 +13,17 @@ namespace WindowsGame.Common.Screens
 	public class InitScreen : BaseScreen, IScreen
 	{
 		private ScreenType nextScreen;
+		private UInt16 splashDelay;
 		private Boolean join;
 
 		public override void Initialize()
 		{
 			Single wide = (Constants.ScreenWide - Assets.SplashTexture.Width) / 2.0f;
 			Single high = (Constants.ScreenHigh - Assets.SplashTexture.Height) / 2.0f;
-
 			BannerPosition = new Vector2(wide, high);
+
+			nextScreen = GetNextScreen();
+			splashDelay = MyGame.Manager.ConfigManager.GlobalConfigData.SplashDelay;
 			join = false;
 		}
 
@@ -41,8 +44,7 @@ namespace WindowsGame.Common.Screens
 				return ScreenType.Init;
 			}
 
-			nextScreen = GetNextScreen();
-			if (Timer > BaseData.SplashDelay)
+			if (Timer > splashDelay)
 			{
 				return nextScreen;
 			}
