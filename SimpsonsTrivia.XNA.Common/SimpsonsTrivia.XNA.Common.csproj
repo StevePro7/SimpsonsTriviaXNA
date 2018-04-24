@@ -74,6 +74,7 @@
     <Compile Include="AnGame.cs" />
     <Compile Include="Data\GlobalConfigData.cs" />
     <Compile Include="Managers\QuestionManager.cs" />
+    <Compile Include="Managers\ResolutionManager.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="Implementation\RealFileProxy.cs" />
     <Compile Include="Library\Engine.cs" />

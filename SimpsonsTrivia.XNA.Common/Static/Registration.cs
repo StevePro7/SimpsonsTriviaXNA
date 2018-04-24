@@ -15,6 +15,7 @@ namespace WindowsGame.Common.Static
 
 			IoCContainer.Initialize<IQuestionManager, QuestionManager>();
 			IoCContainer.Initialize<IRandomManager, RandomManager>();
+			IoCContainer.Initialize<IResolutionManager, ResolutionManager>();
 
 			IoCContainer.Initialize<IFileProxy, RealFileProxy>();
 			IoCContainer.Initialize<IFileManager, FileManager>();

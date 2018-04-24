@@ -11,6 +11,7 @@ namespace WindowsGame.UnitTests
 		protected IFileManager FileManager;
 		protected IQuestionManager QuestionManager;
 		protected IRandomManager RandomManager;
+		protected IResolutionManager ResolutionManager;
 		protected ILogger Logger;
 
 #pragma warning disable 618
@@ -21,6 +22,7 @@ namespace WindowsGame.UnitTests
 			FileManager = MockRepository.GenerateStub<IFileManager>();
 			QuestionManager = MockRepository.GenerateStub<IQuestionManager>();
 			RandomManager = MockRepository.GenerateStub<IRandomManager>();
+			ResolutionManager = MockRepository.GenerateStub<IResolutionManager>();
 			Logger = MockRepository.GenerateStub<ILogger>();
 		}
 
@@ -31,6 +33,7 @@ namespace WindowsGame.UnitTests
 				FileManager,
 				QuestionManager,
 				RandomManager,
+				ResolutionManager,
 				Logger
 			);
 
@@ -45,6 +48,7 @@ namespace WindowsGame.UnitTests
 			FileManager = null;
 			QuestionManager = null;
 			RandomManager = null;
+			ResolutionManager = null;
 			Logger = null;
 		}
 

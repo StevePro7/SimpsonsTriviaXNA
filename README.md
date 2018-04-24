@@ -17,3 +17,16 @@ https://stackoverflow.com/questions/10113532/how-do-i-fix-the-visual-studio-comp
 02.
 Launch cmd prompt as admin
 mklink /D C:\SimpsonsTrivia.XNA.Content C:\GithubX\StevePro7\SimpsonsTriviaXNA\SimpsonsTrivia.XNA\SimpsonsTrivia.XNA\bin\x86\Debug\
+
+
+03.
+Add Manager class - need to update
+SimpsonsTrivia.XNA.Common
+Registration.cs
+GameManager.cs
+
+SimpsonsTrivia.XNA.SystemTests
+BaseSystemTests.cs
+
+SimpsonsTrivia.XNA.UnitTests
+BaseUnitTests.cs

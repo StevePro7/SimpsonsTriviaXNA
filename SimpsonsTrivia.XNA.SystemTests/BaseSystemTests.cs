@@ -14,6 +14,7 @@ namespace WindowsGame.SystemTests
 		protected IFileManager FileManager;
 		protected IQuestionManager QuestionManager;
 		protected IRandomManager RandomManager;
+		protected IResolutionManager ResolutionManager;
 		protected ILogger Logger;
 
 		// mklink /D C:\CandyKid.XNA.Content  C:\CandyKid.XNA\bin\x86\Debug\
