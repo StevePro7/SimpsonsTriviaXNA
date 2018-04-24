@@ -1,9 +1,10 @@
 ﻿namespace WindowsGame.Common.Static
 {
-	public enum PlatformType
+	public enum ScreenType
 	{
-		Desk = 0,
-		Port = 1
+		Splash,
+		Init,
+		Title,
 	}
 
 	public enum DifficultyType

@@ -18,5 +18,7 @@ namespace WindowsGame.Common.Data
 		}
 
 		public static String BaseRoot { get; private set; }
+
+		public static UInt16 SplashDelay { get; private set; }
 	}
 }

@@ -20,6 +20,10 @@ namespace WindowsGame.Common.Static
 
 		public const Byte NUMBER_LINES = 3;
 
+		// Global data.
+		public const Boolean IsFixedTimeStep = true;
+		public const UInt32 FramesPerSecond = 100;
+
 #if WINDOWS && DEBUG
 		public const Boolean IsFullScreen = false;
 		public const Boolean IsMouseVisible = true;
