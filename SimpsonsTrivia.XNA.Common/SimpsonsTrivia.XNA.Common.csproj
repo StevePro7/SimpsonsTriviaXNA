@@ -74,6 +74,15 @@
     <Compile Include="AnGame.cs" />
     <Compile Include="Data\BaseData.cs" />
     <Compile Include="Data\GlobalConfigData.cs" />
+    <Compile Include="Inputs\BaseInputFactory.cs" />
+    <Compile Include="Inputs\FoneInputFactory.cs" />
+    <Compile Include="Inputs\Types\JoystickInput.cs" />
+    <Compile Include="Inputs\Types\KeyboardInput.cs" />
+    <Compile Include="Inputs\Types\MouseScreenInput.cs" />
+    <Compile Include="Inputs\Types\TouchScreenInput.cs" />
+    <Compile Include="Inputs\WorkInputFactory.cs" />
+    <Compile Include="Inputs\XboxInputFactory.cs" />
+    <Compile Include="Interfaces\IInputFactory.cs" />
     <Compile Include="Interfaces\IScreen.cs" />
     <Compile Include="Managers\BaseManager.cs" />
     <Compile Include="Managers\ButtonManager.cs" />
