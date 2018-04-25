@@ -16,11 +16,9 @@ namespace WindowsGame.Common.Data
 		public static void LoadContent()
 		{
 			// Global generic data.
-			var globalData = MyGame.Manager.ConfigManager.GlobalConfigData;
+			//var globalData = MyGame.Manager.ConfigManager.GlobalConfigData;
 		}
 
 		public static String BaseRoot { get; private set; }
-
-		public static UInt16 SplashDelay { get; private set; }
 	}
 }

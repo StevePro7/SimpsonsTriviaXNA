@@ -42,7 +42,7 @@ namespace WindowsGame
 
 		public static void LoadContentAsync()
 		{
-			Manager.ConfigManager.LoadContent();
+			//Manager.ConfigManager.LoadContent();
 			Manager.ContentManager.LoadContent();
 			Manager.ImageManager.LoadContent();
 

@@ -22,9 +22,11 @@ namespace WindowsGame.Common.Screens
 
 		public override void Draw()
 		{
+			MyGame.Manager.ImageManager.DrawHeader();
+
 			//MyGame.Manager.ImageManager.DrawTitle();
-			byte index = MyGame.Manager.ConfigManager.GlobalConfigData.ActorIndex;
-			MyGame.Manager.ImageManager.DrawActor(index);
+			//byte index = MyGame.Manager.ConfigManager.GlobalConfigData.ActorIndex;
+			//MyGame.Manager.ImageManager.DrawActor(index);
 		}
 
 	}

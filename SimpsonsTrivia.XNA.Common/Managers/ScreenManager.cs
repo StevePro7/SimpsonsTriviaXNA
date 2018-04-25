@@ -66,7 +66,6 @@ namespace WindowsGame.Common.Managers
 
 		private Color GetColor()
 		{
-			//return ScreenType.Splash == currScreen ? Color.Black : Color.White;
 			return currScreen > ScreenType.Init ? Color.White : Color.Black;
 		}
 

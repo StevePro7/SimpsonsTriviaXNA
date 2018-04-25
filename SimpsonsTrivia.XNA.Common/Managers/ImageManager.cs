@@ -11,24 +11,30 @@ namespace WindowsGame.Common.Managers
 		void LoadContent();
 		void DrawTitle();
 		void DrawActor(Byte index);
+		void DrawHeader();
 	}
 
 	public class ImageManager : IImageManager
 	{
-		private Rectangle titleRect;
+		private Rectangle titleRect, headerRect;
+		private Vector2 titleVect, headerVect;
+
 		private Rectangle[] actorRects;
-		
-		private Vector2 titleVect;
 		private Vector2 actorVect;
+
 		private Single rotation;
 
 		private const UInt16 imageWide = 240;
 		private const UInt16 imageHigh = 320;
+		private const UInt16 spriteSize = 80;
 
 		public void LoadContent()
 		{
 			titleRect = new Rectangle(0, 0, 2 * imageWide, 2 * imageHigh);
-			titleVect = new Vector2(480, 0);
+			titleVect = new Vector2(imageWide * 2, 0);
+
+			headerRect = new Rectangle(4 * imageHigh - spriteSize, 0, spriteSize, 2 * imageHigh);
+			headerVect = new Vector2(spriteSize, 0); 
 
 			actorRects = PopulateActorRects();
 			actorVect = new Vector2(Constants.GameOffsetX + Constants.ScreenWide - imageWide, Constants.ScreenHigh - imageHigh);
@@ -37,12 +43,19 @@ namespace WindowsGame.Common.Managers
 
 		public void DrawTitle()
 		{
+			//Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, Vector2.Zero, new Rectangle(0, 0, 480, 640), Color.White, rotation, new Vector2(640, 0), 1.0f, SpriteEffects.None, 1.0f);
 			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, Vector2.Zero, titleRect, Color.White, rotation, titleVect, 1.0f, SpriteEffects.None, 1.0f);
 		}
 
 		public void DrawActor(Byte index)
 		{
 			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, actorVect, actorRects[index], Color.White);
+		}
+
+		public void DrawHeader()
+		{
+			//Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, Vector2.Zero, new Rectangle(1200, 0, 80, 640), Color.White, rotation, new Vector2(80, 0), 1.0f, SpriteEffects.None, 1.0f);
+			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, Vector2.Zero, headerRect, Color.White, rotation, headerVect, 1.0f, SpriteEffects.None, 1.0f);
 		}
 
 		private Rectangle[] PopulateActorRects()
