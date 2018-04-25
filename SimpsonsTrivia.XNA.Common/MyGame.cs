@@ -62,6 +62,17 @@ namespace WindowsGame
 		{
 			Manager.InputManager.Update(gameTime);
 
+#if WINDOWS
+			if (MyGame.Manager.ConfigManager.GlobalConfigData.QuitsToExit)
+			{
+				Boolean escape = Manager.InputManager.Escape();
+				if (escape)
+				{
+					Engine.Game.Exit();
+					return;
+				}
+			}
+#endif
 
 			Manager.ScreenManager.Update(gameTime);
 		}

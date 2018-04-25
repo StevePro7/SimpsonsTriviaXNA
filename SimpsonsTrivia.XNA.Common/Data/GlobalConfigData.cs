@@ -8,5 +8,6 @@ namespace WindowsGame.Common.Data
 		public ScreenType ScreenType;
 		public UInt16 SplashDelay;
 		public Byte ActorIndex;
+		public Boolean QuitsToExit;
 	}
 }
