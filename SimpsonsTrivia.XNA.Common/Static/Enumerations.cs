@@ -21,4 +21,25 @@
 		Wrong,
 		Cheat
 	}
+
+	public enum ActorType
+	{
+		Bart1,
+		Bart2,
+		Comic,
+		Drhibbert,
+		Drnick,
+		Flanders,
+		Grampa1,
+		Homer1,
+		Homer2,
+		Homer3,
+		Lisa1,
+		Lisa2,
+		Maggie,
+		Marge0,
+		Skinner,
+		Troy
+	}
+
 }

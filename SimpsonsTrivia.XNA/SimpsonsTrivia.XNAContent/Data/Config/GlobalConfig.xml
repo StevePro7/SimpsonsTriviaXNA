@@ -2,4 +2,5 @@
 <GlobalConfigData>
 	<ScreenType>Title</ScreenType>
 	<SplashDelay>0000</SplashDelay>
+	<ActorIndex>0</ActorIndex>
 </GlobalConfigData>

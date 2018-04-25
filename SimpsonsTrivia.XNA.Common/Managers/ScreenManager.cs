@@ -21,12 +21,14 @@ namespace WindowsGame.Common.Managers
 		private IDictionary<ScreenType, IScreen> screens;
 		private ScreenType currScreen = ScreenType.Splash;
 		private ScreenType nextScreen = ScreenType.Splash;
+		private Color color;
 
 		public void Initialize()
 		{
 			screens = GetScreens();
 			screens[ScreenType.Splash].Initialize();
 			screens[ScreenType.Init].Initialize();
+			color = Color.Black;
 		}
 
 		public void LoadContent()
@@ -48,6 +50,7 @@ namespace WindowsGame.Common.Managers
 			{
 				currScreen = nextScreen;
 				screens[currScreen].LoadContent();
+				color = GetColor();
 			}
 
 			nextScreen = screens[currScreen].Update(gameTime);
@@ -55,10 +58,16 @@ namespace WindowsGame.Common.Managers
 
 		public void Draw()
 		{
-			MyGame.Manager.ResolutionManager.BeginDraw();
+			MyGame.Manager.ResolutionManager.BeginDraw(color);
 			Engine.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, MyGame.Manager.ResolutionManager.TransformationMatrix);
 			screens[currScreen].Draw();
 			Engine.SpriteBatch.End();
+		}
+
+		private Color GetColor()
+		{
+			//return ScreenType.Splash == currScreen ? Color.Black : Color.White;
+			return currScreen > ScreenType.Init ? Color.White : Color.Black;
 		}
 
 		private static Dictionary<ScreenType, IScreen> GetScreens()

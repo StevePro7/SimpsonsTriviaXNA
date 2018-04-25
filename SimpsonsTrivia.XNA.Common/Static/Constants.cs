@@ -19,6 +19,7 @@ namespace WindowsGame.Common.Static
 		public const String PLATFORM_CONFIG_FILENAME = "PlatformConfig{0}.xml";
 
 		public const Byte NUMBER_LINES = 3;
+		public const Byte NUMBER_CHARACTERS = 16;
 
 		// Global data.
 		public const Boolean IsFixedTimeStep = true;

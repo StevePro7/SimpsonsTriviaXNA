@@ -11,7 +11,7 @@ namespace WindowsGame.Common.Managers
 	{
 		void Initialize();
 		void LoadContent(Boolean isFullScreen, UInt16 screenWide, UInt16 screenHigh, Boolean useExposed, UInt16 exposeWide, UInt16 exposeHigh);
-		void BeginDraw();
+		void BeginDraw(Color color);
 		void ApplyFullScreen(Boolean fullScreen);
 
 		Matrix TransformationMatrix { get; }
@@ -66,13 +66,13 @@ namespace WindowsGame.Common.Managers
 			VeiwPortVector2 = new Vector2(showViewport.X, showViewport.Y);
 		}
 
-		public void BeginDraw()
+		public void BeginDraw(Color color)
 		{
 			// Start by reseting viewport to (0,0,1,1)
 			_Device.GraphicsDevice.Viewport = fullViewport;
 
 			// Clear to Black
-			_Device.GraphicsDevice.Clear(Color.Black);
+			_Device.GraphicsDevice.Clear(color);
 
 			// Calculate Proper Viewport according to Aspect Ratio
 			_Device.GraphicsDevice.Viewport = showViewport;
@@ -80,7 +80,7 @@ namespace WindowsGame.Common.Managers
 			// and clear that
 			// This way we are gonna have black bars if aspect ratio requires it and
 			// the clear color on the rest
-			_Device.GraphicsDevice.Clear(Color.Black);
+			_Device.GraphicsDevice.Clear(color);
 		}
 
 		public void ApplyFullScreen(Boolean fullScreen)
