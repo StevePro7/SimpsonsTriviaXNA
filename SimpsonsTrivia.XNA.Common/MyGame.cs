@@ -4,7 +4,7 @@ using WindowsGame.Common.Library;
 using WindowsGame.Common.Static;
 using System;
 
-namespace WindowsGame
+namespace WindowsGame.Common
 {
 	public static class MyGame
 	{
@@ -35,9 +35,7 @@ namespace WindowsGame
 			Engine.Game.IsFixedTimeStep = Constants.IsFixedTimeStep;
 			Engine.Game.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / Constants.FramesPerSecond);
 			Engine.Game.IsMouseVisible = Constants.IsMouseVisible;
-
-			Boolean isFullScreen = Constants.IsFullScreen;
-			Manager.ResolutionManager.LoadContent(isFullScreen, Constants.ScreenWide, Constants.ScreenHigh, Constants.UseExposed, Constants.ExposeWide, Constants.ExposeHigh);
+			Manager.ResolutionManager.LoadContent(Constants.IsFullScreen, Constants.ScreenWide, Constants.ScreenHigh, Constants.UseExposed, Constants.ExposeWide, Constants.ExposeHigh);
 		}
 
 		public static void LoadContentAsync()
@@ -63,7 +61,7 @@ namespace WindowsGame
 			Manager.InputManager.Update(gameTime);
 
 #if WINDOWS
-			if (MyGame.Manager.ConfigManager.GlobalConfigData.QuitsToExit)
+			if (Manager.ConfigManager.GlobalConfigData.QuitsToExit)
 			{
 				Boolean escape = Manager.InputManager.Escape();
 				if (escape)

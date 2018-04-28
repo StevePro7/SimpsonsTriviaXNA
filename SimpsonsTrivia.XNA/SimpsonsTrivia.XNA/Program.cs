@@ -1,4 +1,6 @@
 
+using WindowsGame.Common;
+
 namespace WindowsGame
 {
 #if WINDOWS || XBOX

@@ -1,10 +1,10 @@
 ﻿using System;
-using Microsoft.Xna.Framework;
 using WindowsGame.Common.Library;
 using WindowsGame.Common.Static;
 using WindowsGame.Common.TheGame;
+using Microsoft.Xna.Framework;
 
-namespace WindowsGame
+namespace WindowsGame.Common
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{

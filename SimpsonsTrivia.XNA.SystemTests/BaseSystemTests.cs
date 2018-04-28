@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using WindowsGame.Common;
 using WindowsGame.Common.Library.Interfaces;
 using WindowsGame.Common.Library.IoC;
 using WindowsGame.Common.Managers;

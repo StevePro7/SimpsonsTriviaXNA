@@ -1,6 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
-using WindowsGame.Common.Managers;
+using WindowsGame.Common;
 
 namespace WindowsGame.SystemTests.Managers
 {

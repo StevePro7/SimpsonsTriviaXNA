@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using NUnit.Framework;
-using WindowsGame.Common.Managers;
+using WindowsGame.Common;
 using WindowsGame.Common.Objects;
 using WindowsGame.Common.Static;
 

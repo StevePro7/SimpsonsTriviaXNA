@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using WindowsGame.Common;
 using NUnit.Framework;
 
 namespace WindowsGame.SystemTests.TheGame

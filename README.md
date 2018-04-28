@@ -17,6 +17,7 @@ https://stackoverflow.com/questions/10113532/how-do-i-fix-the-visual-studio-comp
 02.
 Launch cmd prompt as admin
 mklink /D C:\SimpsonsTrivia.XNA.Content C:\GithubX\StevePro7\SimpsonsTriviaXNA\SimpsonsTrivia.XNA\SimpsonsTrivia.XNA\bin\x86\Debug\
+mklink /D C:\SimpsonsTrivia.XNA.Content E:\Github\StevePro7\SimpsonsTriviaXNA\SimpsonsTrivia.XNA\SimpsonsTrivia.XNA\bin\x86\Debug\
 
 
 03.
