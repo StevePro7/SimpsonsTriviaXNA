@@ -31,3 +31,23 @@ BaseSystemTests.cs
 
 SimpsonsTrivia.XNA.UnitTests
 BaseUnitTests.cs
+
+
+MUSIC
+Bart vs. The Space Mutants
+http://www.smspower.org/Music/BartVsTheSpaceMutants-SMS
+Bart vs. the Space Mutants - 02 - Stage 2 - Mall.vgm
+
+
+Converting WAV to MP3
+Run Audacity and click File > Open.
+Choose the WAV file you want to convert and then click the Open button.
+When the file has loaded into Audacity, click File > Export Audio.
+Click the Save As Type drop-down menu and choose the MP3 Files option.
+
+IMPORTANT
+Had to download and install Lame_v3.99.3_for_Windows.exe 
+https://lame.buanzo.org/#lamewindl
+https://lame.buanzo.org/Lame_v3.99.3_for_Windows.exe
+
+Now could Export Audio WAV to MP3 from before
