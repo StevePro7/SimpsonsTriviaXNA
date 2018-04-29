@@ -63,7 +63,8 @@ D:\stevepro\CandyKid\CandyKid.XNA\trunk\CandyKid.XNA\Common
 Launch CandyKid.PROD.iOS.sln
 ERRORS
 01.
-Minimum 5.2 iOS version not supported
+error MT0073: Xamarin.iOS 11.9.1 does not support a deployment target of 5.2 for iOS (the minimum is 6.0)
+Please select a newer deployment target in your project's Info.plist
 Info.plist
 change 5.2 to 6.0
 OR
