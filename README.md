@@ -51,3 +51,35 @@ https://lame.buanzo.org/#lamewindl
 https://lame.buanzo.org/Lame_v3.99.3_for_Windows.exe
 
 Now could Export Audio WAV to MP3 from before
+
+
+
+iOS prototype
+Visual Studio for Mac
+D:\stevepro\CandyKid\CandyKid.PROD.iOS\trunk
+Had to manually copy the SVN externals from
+D:\stevepro\CandyKid\CandyKid.XNA\trunk\CandyKid.XNA\Common
+
+Launch CandyKid.PROD.iOS.sln
+ERRORS
+01.
+Minimum 5.2 iOS version not supported
+Info.plist
+change 5.2 to 6.0
+OR
+change Deployment Target in IDE [Info.plist]
+Now will build OK
+
+02.
+Can't deploy 32-bit apps to 64-bit only supported
+error MT0117: Can't launch a 32-bit app on a simulator that only supports 64-bit apps (iPhone 6s)
+https://stackoverflow.com/questions/46315504/error-mt0117-cant-launch-a-32-bit-app-on-a-simulator-that-only-supports-64-bit
+Right click on project
+CandyKid.PROD.iOS
+Options
+iOS Build
+Supported architectures
+i386
+change this to
+i386 + x86_64
+Now will deploy to device
