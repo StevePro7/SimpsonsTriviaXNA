@@ -76,6 +76,15 @@ namespace WindowsGame.Common.Managers
 				{ScreenType.Splash, new SplashScreen()},
 				{ScreenType.Init, new InitScreen()},
 				{ScreenType.Title, new TitleScreen()},
+				{ScreenType.Diff, new DiffScreen()},
+				{ScreenType.Long, new LongScreen()},
+				{ScreenType.Ready, new ReadyScreen()},
+				{ScreenType.Level, new LevelScreen()},
+				{ScreenType.Play, new PlayScreen()},
+				{ScreenType.Quiz, new QuizScreen()},
+				{ScreenType.Score, new ScoreScreen()},
+				{ScreenType.Over, new OverScreen()},
+
 			};
 		}
 

@@ -112,7 +112,15 @@
     <Compile Include="Objects\Question.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screens\BaseScreen.cs" />
+    <Compile Include="Screens\DiffScreen.cs" />
     <Compile Include="Screens\InitScreen.cs" />
+    <Compile Include="Screens\LevelScreen.cs" />
+    <Compile Include="Screens\LongScreen.cs" />
+    <Compile Include="Screens\OverScreen.cs" />
+    <Compile Include="Screens\PlayScreen.cs" />
+    <Compile Include="Screens\QuizScreen.cs" />
+    <Compile Include="Screens\ReadyScreen.cs" />
+    <Compile Include="Screens\ScoreScreen.cs" />
     <Compile Include="Screens\SplashScreen.cs" />
     <Compile Include="Screens\TitleScreen.cs" />
     <Compile Include="Static\Assets.cs" />

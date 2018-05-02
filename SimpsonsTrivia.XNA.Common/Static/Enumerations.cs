@@ -5,6 +5,14 @@
 		Splash,
 		Init,
 		Title,
+		Diff,
+		Long,
+		Ready,
+		Level,
+		Play,
+		Quiz,
+		Score,
+		Over
 	}
 
 	public enum DifficultyType
