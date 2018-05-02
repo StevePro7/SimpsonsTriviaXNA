@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using WindowsGame.Common.Interfaces;
+using WindowsGame.Common.Library;
 using WindowsGame.Common.Static;
 
 namespace WindowsGame.Common.Screens
@@ -21,6 +22,9 @@ namespace WindowsGame.Common.Screens
 
 		public override void Draw()
 		{
+			MyGame.Manager.ImageManager.DrawHeader();
+
+			Engine.Game.Window.Title = "Quiz";
 		}
 
 	}
