@@ -25,7 +25,7 @@ namespace WindowsGame.Common.Screens
 			MyGame.Manager.ImageManager.DrawHeader();
 
 			Vector2 pos = new Vector2(100, 100);
-			MyGame.Manager.ImageManager.DrawSprite(pos);
+			MyGame.Manager.ImageManager.DrawSprite(pos, SpriteType.Select);
 
 			Engine.Game.Window.Title = "Play";
 		}

@@ -12,7 +12,7 @@ namespace WindowsGame.Common.Managers
 		void DrawTitle();
 		void DrawHeader();
 		void DrawActor(Byte index);
-		void DrawSprite(Vector2 position);
+		void DrawSprite(Vector2 position, SpriteType type);
 	}
 
 	public class ImageManager : IImageManager
@@ -24,8 +24,6 @@ namespace WindowsGame.Common.Managers
 		private Vector2 actorVect;
 
 		private Rectangle[] spriteRects;
-		private Rectangle selectRect, rightRect, wrongRect;
-		//private Rectangle rightRect, wrongRect;
 		private Single rotation;
 
 		private const UInt16 imageWide = 240;
@@ -43,9 +41,10 @@ namespace WindowsGame.Common.Managers
 			actorRects = PopulateActorRects();
 			actorVect = new Vector2(Constants.GameOffsetX + Constants.ScreenWide - imageWide, Constants.ScreenHigh - imageHigh);
 
-			selectRect = new Rectangle(4 * imageHigh - spriteSize, 2 * imageHigh + 0 * spriteSize, spriteSize, spriteSize);
-			rightRect = new Rectangle(4 * imageHigh - spriteSize, 2 * imageHigh + 1 * spriteSize, spriteSize, spriteSize);
-			wrongRect = new Rectangle(4 * imageHigh - spriteSize, 2 * imageHigh + 2 * spriteSize, spriteSize, spriteSize);
+			spriteRects = PopulateSpriteRects();
+			//selectRect = new Rectangle(4 * imageHigh - spriteSize, 2 * imageHigh + 0 * spriteSize, spriteSize, spriteSize);
+			//rightRect = new Rectangle(4 * imageHigh - spriteSize, 2 * imageHigh + 1 * spriteSize, spriteSize, spriteSize);
+			//wrongRect = new Rectangle(4 * imageHigh - spriteSize, 2 * imageHigh + 2 * spriteSize, spriteSize, spriteSize);
 
 			rotation = MathHelper.ToRadians(270);
 		}
@@ -65,9 +64,10 @@ namespace WindowsGame.Common.Managers
 			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, actorVect, actorRects[index], Color.White);
 		}
 
-		public void DrawSprite(Vector2 position)
+		public void DrawSprite(Vector2 position, SpriteType type)
 		{
-			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, wrongRect, Color.White);
+			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, spriteRects[(Byte)type], Color.White);
+			//Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, wrongRect, Color.White);
 			//Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, selectRect, Color.White);
 			//Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, selectRect, Color.White);
 		}
