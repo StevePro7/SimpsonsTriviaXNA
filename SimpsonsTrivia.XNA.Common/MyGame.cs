@@ -27,6 +27,7 @@ namespace WindowsGame.Common
 
 			Manager.ResolutionManager.Initialize();
 			Manager.ScreenManager.Initialize();
+			Manager.SpriteManager.Initialize();
 			Manager.ThreadManager.Initialize();
 		}
 

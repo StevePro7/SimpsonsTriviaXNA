@@ -12,7 +12,7 @@ namespace WindowsGame.Common.Managers
 		void DrawTitle();
 		void DrawHeader();
 		void DrawActor(Byte index);
-		void DrawSprite(Vector2 position, SpriteType type);
+		void DrawSprite(SpriteType spriteType, Vector2 position);
 	}
 
 	public class ImageManager : IImageManager
@@ -42,10 +42,6 @@ namespace WindowsGame.Common.Managers
 			actorVect = new Vector2(Constants.GameOffsetX + Constants.ScreenWide - imageWide, Constants.ScreenHigh - imageHigh);
 
 			spriteRects = PopulateSpriteRects();
-			//selectRect = new Rectangle(4 * imageHigh - spriteSize, 2 * imageHigh + 0 * spriteSize, spriteSize, spriteSize);
-			//rightRect = new Rectangle(4 * imageHigh - spriteSize, 2 * imageHigh + 1 * spriteSize, spriteSize, spriteSize);
-			//wrongRect = new Rectangle(4 * imageHigh - spriteSize, 2 * imageHigh + 2 * spriteSize, spriteSize, spriteSize);
-
 			rotation = MathHelper.ToRadians(270);
 		}
 
@@ -64,12 +60,9 @@ namespace WindowsGame.Common.Managers
 			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, actorVect, actorRects[index], Color.White);
 		}
 
-		public void DrawSprite(Vector2 position, SpriteType type)
+		public void DrawSprite(SpriteType spriteType, Vector2 position)
 		{
-			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, spriteRects[(Byte)type], Color.White);
-			//Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, wrongRect, Color.White);
-			//Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, selectRect, Color.White);
-			//Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, selectRect, Color.White);
+			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, spriteRects[(Byte)spriteType], Color.White);
 		}
 
 		private Rectangle[] PopulateActorRects()

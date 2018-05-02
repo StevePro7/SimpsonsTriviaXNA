@@ -24,8 +24,10 @@ namespace WindowsGame.Common.Screens
 		{
 			MyGame.Manager.ImageManager.DrawHeader();
 
-			Vector2 pos = new Vector2(100, 100);
-			MyGame.Manager.ImageManager.DrawSprite(pos, SpriteType.Select);
+			MyGame.Manager.SpriteManager.DrawSelect(OptionType.A);
+			MyGame.Manager.SpriteManager.DrawRight(OptionType.B);
+			MyGame.Manager.SpriteManager.DrawWrong(OptionType.C);
+			MyGame.Manager.SpriteManager.DrawSelect(OptionType.D);
 
 			Engine.Game.Window.Title = "Play";
 		}

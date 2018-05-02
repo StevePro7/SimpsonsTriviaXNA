@@ -18,6 +18,7 @@ namespace WindowsGame.Common.Static
 		public const String GLOBAL_CONFIG_FILENAME = "GlobalConfig.xml";
 		public const String PLATFORM_CONFIG_FILENAME = "PlatformConfig{0}.xml";
 
+		public const Byte NUMBER_OPTIONS = 4;
 		public const Byte NUMBER_LINES = 3;
 		public const Byte NUMBER_CHARACTERS = 16;
 		public const Byte NUMBER_SPRITES = 3;

@@ -37,6 +37,14 @@
 		Wrong,
 	}
 
+	public enum OptionType
+	{
+		A,
+		B,
+		C,
+		D
+	}
+
 	public enum ActorType
 	{
 		Bart1,
