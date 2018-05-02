@@ -30,6 +30,13 @@
 		Cheat
 	}
 
+	public enum SpriteType
+	{
+		Select,
+		Right,
+		Wrong,
+	}
+
 	public enum ActorType
 	{
 		Bart1,
