@@ -24,10 +24,8 @@ namespace WindowsGame.Common.Screens
 		{
 			MyGame.Manager.ImageManager.DrawHeader();
 
-			MyGame.Manager.SpriteManager.DrawSelect(OptionType.A);
-			MyGame.Manager.SpriteManager.DrawRight(OptionType.B);
-			MyGame.Manager.SpriteManager.DrawWrong(OptionType.C);
-			MyGame.Manager.SpriteManager.DrawSelect(OptionType.D);
+			byte index = MyGame.Manager.ConfigManager.GlobalConfigData.ActorIndex;
+			MyGame.Manager.ImageManager.DrawActor(index);
 
 			Engine.Game.Window.Title = "Play";
 		}

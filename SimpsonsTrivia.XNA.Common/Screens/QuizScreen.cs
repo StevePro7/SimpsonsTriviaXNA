@@ -24,6 +24,11 @@ namespace WindowsGame.Common.Screens
 		{
 			MyGame.Manager.ImageManager.DrawHeader();
 
+			MyGame.Manager.SpriteManager.DrawSelect(OptionType.A);
+			MyGame.Manager.SpriteManager.DrawRight(OptionType.B);
+			MyGame.Manager.SpriteManager.DrawWrong(OptionType.C);
+			MyGame.Manager.SpriteManager.DrawSelect(OptionType.D);
+
 			Engine.Game.Window.Title = "Quiz";
 		}
 

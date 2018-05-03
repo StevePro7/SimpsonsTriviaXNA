@@ -11,6 +11,8 @@ namespace WindowsGame.Common.Managers
 		void LoadContent();
 		void DrawTitle();
 		void DrawHeader();
+		void DrawCurrActor();
+		void DrawNextActor();
 		void DrawActor(Byte index);
 		void DrawSprite(SpriteType spriteType, Vector2 position);
 	}
@@ -30,6 +32,8 @@ namespace WindowsGame.Common.Managers
 		private const UInt16 imageHigh = 320;
 		private const UInt16 spriteSize = 80;
 
+		private Byte currActor, nextActor;
+
 		public void LoadContent()
 		{
 			titleRect = new Rectangle(0, 0, 2 * imageWide, 2 * imageHigh);
@@ -43,6 +47,9 @@ namespace WindowsGame.Common.Managers
 
 			spriteRects = PopulateSpriteRects();
 			rotation = MathHelper.ToRadians(270);
+
+			currActor = Constants.NUMBER_CHARACTERS;
+			nextActor = 0;
 		}
 
 		public void DrawTitle()
@@ -55,6 +62,14 @@ namespace WindowsGame.Common.Managers
 			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, Vector2.Zero, headerRect, Color.White, rotation, headerVect, 1.0f, SpriteEffects.None, 1.0f);
 		}
 
+		public void DrawCurrActor()
+		{
+			DrawActor(currActor);
+		}
+		public void DrawNextActor()
+		{
+			DrawActor(nextActor);
+		}
 		public void DrawActor(Byte index)
 		{
 			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, actorVect, actorRects[index], Color.White);
@@ -83,11 +98,8 @@ namespace WindowsGame.Common.Managers
 		{
 			spriteRects = new Rectangle[Constants.NUMBER_SPRITES];
 			spriteRects[(Byte)SpriteType.Select] = GetSpriteRect(4 * imageHigh - spriteSize, 2 * imageHigh + 0 * spriteSize);
-
-			spriteRects[(Byte)SpriteType.Select] = GetSpriteRect(4 * imageHigh - spriteSize, 2 * imageHigh + 0 * spriteSize);
 			spriteRects[(Byte)SpriteType.Right] = GetSpriteRect(4 * imageHigh - spriteSize, 2 * imageHigh + 1 * spriteSize);
 			spriteRects[(Byte)SpriteType.Wrong] = GetSpriteRect(4 * imageHigh - spriteSize, 2 * imageHigh + 2 * spriteSize);
-
 			return spriteRects;
 		}
 		private Rectangle GetSpriteRect(UInt16 x, UInt16 y)
