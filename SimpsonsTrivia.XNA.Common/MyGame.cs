@@ -44,6 +44,9 @@ namespace WindowsGame.Common
 
 		public static void LoadContentAsync()
 		{
+			Manager.TextManager.Initialize();
+			Manager.TextManager.InitializeBuild();
+
 			//Manager.ConfigManager.LoadContent();
 			Manager.ContentManager.LoadContent();
 			Manager.ImageManager.LoadContent();

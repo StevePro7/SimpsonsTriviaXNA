@@ -9,6 +9,7 @@ namespace WindowsGame.Common.Screens
 	{
 		public override void Initialize()
 		{
+			LoadTextData();
 		}
 
 		public override void LoadContent()
@@ -23,6 +24,7 @@ namespace WindowsGame.Common.Screens
 		public override void Draw()
 		{
 			MyGame.Manager.ImageManager.DrawTitle();
+			MyGame.Manager.TextManager.Draw(TextDataList);
 			//MyGame.Manager.ImageManager.DrawHeader();
 
 			//MyGame.Manager.ImageManager.DrawTitle();
