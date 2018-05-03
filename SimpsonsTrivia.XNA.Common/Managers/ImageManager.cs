@@ -85,7 +85,11 @@ namespace WindowsGame.Common.Managers
 
 		public void DrawCurrActor()
 		{
-			DrawActor(currActor);
+			// TODO revert
+			//DrawActor(currActor);
+
+			byte index = MyGame.Manager.ConfigManager.GlobalConfigData.ActorIndex;
+			MyGame.Manager.ImageManager.DrawActor(index);
 		}
 		public void DrawNextActor()
 		{
