@@ -52,6 +52,7 @@
     <Compile Include="Library\Managers\FileManagerSystemTests.cs" />
     <Compile Include="Managers\QuestionManagerSystemTests.cs" />
     <Compile Include="Managers\RandomManagerSystemTests.cs" />
+    <Compile Include="Managers\TextManagerSystemTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TheGame\GameManagerTests.cs" />
   </ItemGroup>

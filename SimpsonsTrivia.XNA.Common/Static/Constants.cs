@@ -43,6 +43,7 @@ namespace WindowsGame.Common.Static
 		public const UInt16 ExposeWide = 640;
 		public const UInt16 ExposeHigh = 480;
 
+		public const Byte TextsSize = 20;
 		public const Byte GameOffsetX = 0;
 		public const SByte FontOffsetX = -1;
 		public const SByte FontOffsetY = -4;
@@ -57,6 +58,7 @@ namespace WindowsGame.Common.Static
 		public const UInt16 ExposeWide = 800;
 		public const UInt16 ExposeHigh = 480;
 
+		public const Byte TextsSize = 20;
 		public const Byte GameOffsetX = 80;
 		public const SByte FontOffsetX = -1;
 		public const SByte FontOffsetY = -4;
