@@ -23,6 +23,7 @@ namespace WindowsGame.Common.Screens
 		public override void Draw()
 		{
 			MyGame.Manager.ImageManager.DrawHeader();
+			MyGame.Manager.ImageManager.DrawCurrActor();
 
 			MyGame.Manager.SpriteManager.DrawSelect(OptionType.A);
 			MyGame.Manager.SpriteManager.DrawRight(OptionType.B);

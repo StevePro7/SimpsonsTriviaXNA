@@ -16,12 +16,15 @@ namespace WindowsGame.Common
 		public static void Initialize()
 		{
 			Manager.Logger.Initialize();
+			Manager.RandomManager.Initialize();
+
 			Manager.ConfigManager.Initialize();
 			Manager.ConfigManager.LoadContent();
 
 			Manager.ContentManager.Initialize();
 			Manager.ContentManager.LoadContentSplash();
 
+			Manager.ImageManager.Initialize();
 			Manager.InputManager.Initialize();
 			Manager.ScoreManager.Initialize();
 

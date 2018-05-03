@@ -23,6 +23,7 @@ namespace WindowsGame.Common.Screens
 		public override void Draw()
 		{
 			MyGame.Manager.ImageManager.DrawHeader();
+			MyGame.Manager.ImageManager.DrawCurrActor();
 
 			Engine.Game.Window.Title = "Over";
 		}

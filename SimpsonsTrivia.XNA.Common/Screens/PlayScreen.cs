@@ -13,6 +13,7 @@ namespace WindowsGame.Common.Screens
 
 		public override void LoadContent()
 		{
+			MyGame.Manager.ImageManager.GenerateNextActor();
 		}
 
 		public ScreenType Update(GameTime gameTime)
@@ -23,9 +24,10 @@ namespace WindowsGame.Common.Screens
 		public override void Draw()
 		{
 			MyGame.Manager.ImageManager.DrawHeader();
+			MyGame.Manager.ImageManager.DrawNextActor();
 
-			byte index = MyGame.Manager.ConfigManager.GlobalConfigData.ActorIndex;
-			MyGame.Manager.ImageManager.DrawActor(index);
+			//byte index = MyGame.Manager.ConfigManager.GlobalConfigData.ActorIndex;
+			//MyGame.Manager.ImageManager.DrawActor(index);
 
 			Engine.Game.Window.Title = "Play";
 		}

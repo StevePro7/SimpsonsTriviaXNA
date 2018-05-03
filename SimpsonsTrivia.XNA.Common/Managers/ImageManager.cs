@@ -8,7 +8,9 @@ namespace WindowsGame.Common.Managers
 {
 	public interface IImageManager
 	{
+		void Initialize();
 		void LoadContent();
+		void GenerateNextActor();
 		void DrawTitle();
 		void DrawHeader();
 		void DrawCurrActor();
@@ -34,6 +36,14 @@ namespace WindowsGame.Common.Managers
 
 		private Byte currActor, nextActor;
 
+		public void Initialize()
+		{
+			currActor = Constants.NUMBER_CHARACTERS;
+			nextActor = 0;
+
+			GenerateNextActor();
+		}
+
 		public void LoadContent()
 		{
 			titleRect = new Rectangle(0, 0, 2 * imageWide, 2 * imageHigh);
@@ -47,9 +57,20 @@ namespace WindowsGame.Common.Managers
 
 			spriteRects = PopulateSpriteRects();
 			rotation = MathHelper.ToRadians(270);
+		}
 
-			currActor = Constants.NUMBER_CHARACTERS;
-			nextActor = 0;
+		public void GenerateNextActor()
+		{
+			while (true)
+			{
+				nextActor = (Byte)MyGame.Manager.RandomManager.Generate(Constants.NUMBER_CHARACTERS);
+				if (currActor != nextActor)
+				{
+					break;
+				}
+			}
+
+			currActor = nextActor;
 		}
 
 		public void DrawTitle()
