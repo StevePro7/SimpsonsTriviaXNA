@@ -23,6 +23,11 @@ namespace WindowsGame.Common.Screens
 
 		public override void Draw()
 		{
+			MyGame.Manager.ImageManager.DrawHeader();
+
+			byte index = MyGame.Manager.ConfigManager.GlobalConfigData.ActorIndex;
+			MyGame.Manager.ImageManager.DrawActor(index);
+
 			MyGame.Manager.TextManager.Draw(TextDataList);
 			Engine.Game.Window.Title = "Level";
 		}

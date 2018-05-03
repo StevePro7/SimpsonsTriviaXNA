@@ -9,6 +9,7 @@ namespace WindowsGame.Common.Screens
 	{
 		public override void Initialize()
 		{
+			LoadTextData();
 		}
 
 		public override void LoadContent()
@@ -29,6 +30,7 @@ namespace WindowsGame.Common.Screens
 			//byte index = MyGame.Manager.ConfigManager.GlobalConfigData.ActorIndex;
 			//MyGame.Manager.ImageManager.DrawActor(index);
 
+			MyGame.Manager.TextManager.Draw(TextDataList);
 			Engine.Game.Window.Title = "Play";
 		}
 

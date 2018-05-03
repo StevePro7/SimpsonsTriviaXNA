@@ -9,6 +9,7 @@ namespace WindowsGame.Common.Screens
 	{
 		public override void Initialize()
 		{
+			LoadTextData();
 		}
 
 		public override void LoadContent()
@@ -30,6 +31,7 @@ namespace WindowsGame.Common.Screens
 			MyGame.Manager.SpriteManager.DrawWrong(OptionType.C);
 			MyGame.Manager.SpriteManager.DrawSelect(OptionType.D);
 
+			MyGame.Manager.TextManager.Draw(TextDataList);
 			Engine.Game.Window.Title = "Quiz";
 		}
 

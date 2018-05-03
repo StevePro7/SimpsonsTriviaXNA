@@ -9,6 +9,7 @@ namespace WindowsGame.Common.Screens
 	{
 		public override void Initialize()
 		{
+			LoadTextData();
 		}
 
 		public override void LoadContent()
@@ -25,6 +26,7 @@ namespace WindowsGame.Common.Screens
 			MyGame.Manager.ImageManager.DrawHeader();
 			MyGame.Manager.ImageManager.DrawCurrActor();
 
+			MyGame.Manager.TextManager.Draw(TextDataList);
 			Engine.Game.Window.Title = "Over";
 		}
 
