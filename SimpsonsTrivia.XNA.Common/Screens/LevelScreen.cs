@@ -30,9 +30,13 @@ namespace WindowsGame.Common.Screens
 
 			MyGame.Manager.TextManager.Draw(TextDataList);
 
-			//MyGame.Manager.SpriteManager.DrawRight(OptionType.D);
+			//MyGame.Manager.SpriteManager.DrawWrong(OptionType.D);
 			//MyGame.Manager.SpriteManager.DrawWrong(OptionType.A);
-			MyGame.Manager.SpriteManager.DrawSelect(OptionType.D);
+
+			MyGame.Manager.SpriteManager.DrawWrong(OptionType.A);
+			MyGame.Manager.SpriteManager.DrawWrong(OptionType.B);
+			MyGame.Manager.SpriteManager.DrawWrong(OptionType.C);
+			MyGame.Manager.SpriteManager.DrawWrong(OptionType.D);
 
 			Engine.Game.Window.Title = "Level";
 		}
