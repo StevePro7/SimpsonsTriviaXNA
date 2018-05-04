@@ -16,7 +16,9 @@ namespace WindowsGame.Common.Managers
 	public class SpriteManager : ISpriteManager
 	{
 		private Vector2[] positions;
-		private const UInt16 spriteTile = 20;		// TODO - believe this is wrong
+		private const Byte spriteTile = 20;
+		private const Byte offsetSelect = 10;
+		private const Byte offsetAnswerY = 18;
 
 		public void Initialize()
 		{
@@ -48,17 +50,20 @@ namespace WindowsGame.Common.Managers
 		private Vector2[] GetPositions()
 		{
 			positions = new Vector2[Constants.NUMBER_OPTIONS];
-			positions[(Byte)OptionType.A] = GetPosition(4, 9);
-			positions[(Byte)OptionType.B] = GetPosition(4, 13);
-			positions[(Byte)OptionType.C] = GetPosition(4, 17);
-			positions[(Byte)OptionType.D] = GetPosition(4, 21);
+			positions[(Byte)OptionType.A] = GetPosition(0, 7);
+			positions[(Byte)OptionType.B] = GetPosition(0, 11);
+			positions[(Byte)OptionType.C] = GetPosition(0, 15);
+			positions[(Byte)OptionType.D] = GetPosition(0, 19);
 			return positions;
 		}
 
 		private Vector2 GetPosition(Byte x, Byte y)
 		{
-			// TODO - perfect the actual tile size!
-			return new Vector2(x * spriteTile, y * spriteTile);
+			// SELECT
+			return new Vector2(x * spriteTile + offsetSelect, y * spriteTile + offsetSelect);
+
+			// RIGHT / WRONG
+			//return new Vector2(x * spriteTile, y * spriteTile + offsetAnswerY);
 		}
 
 	}
