@@ -34,7 +34,7 @@
 	{
 		Select,
 		Right,
-		Wrong,
+		Wrong
 	}
 
 	public enum OptionType

@@ -28,15 +28,18 @@ namespace WindowsGame.Common.Screens
 			byte index = MyGame.Manager.ConfigManager.GlobalConfigData.ActorIndex;
 			MyGame.Manager.ImageManager.DrawActor(index);
 
-			MyGame.Manager.TextManager.Draw(TextDataList);
+			// TODO - fix with offset
+			Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "A.", new Vector2(2 * 20, 9 * 20), Color.Black);
+			Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "A.", new Vector2(2 * 20, 13 * 20), Color.Black);
+			Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "A.", new Vector2(2 * 20, 17 * 20), Color.Black);
+			Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "A.", new Vector2(2 * 20, 21 * 20), Color.Black);
 
-			//MyGame.Manager.SpriteManager.DrawWrong(OptionType.D);
-			//MyGame.Manager.SpriteManager.DrawWrong(OptionType.A);
-
-			MyGame.Manager.SpriteManager.DrawWrong(OptionType.A);
+			MyGame.Manager.SpriteManager.DrawSelect(OptionType.A);
 			MyGame.Manager.SpriteManager.DrawWrong(OptionType.B);
 			MyGame.Manager.SpriteManager.DrawWrong(OptionType.C);
-			MyGame.Manager.SpriteManager.DrawWrong(OptionType.D);
+			MyGame.Manager.SpriteManager.DrawRight(OptionType.D);
+
+			MyGame.Manager.TextManager.Draw(TextDataList);
 
 			Engine.Game.Window.Title = "Level";
 		}

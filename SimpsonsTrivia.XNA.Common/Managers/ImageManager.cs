@@ -85,10 +85,7 @@ namespace WindowsGame.Common.Managers
 
 		public void DrawCurrActor()
 		{
-			// TODO revert
-			//DrawActor(currActor);
-
-			byte index = MyGame.Manager.ConfigManager.GlobalConfigData.ActorIndex;
+			Byte index = MyGame.Manager.ConfigManager.GlobalConfigData.ActorIndex;
 			MyGame.Manager.ImageManager.DrawActor(index);
 		}
 		public void DrawNextActor()
@@ -148,6 +145,6 @@ namespace WindowsGame.Common.Managers
 		// headerVect = new Vector2(80, 0);
 		// selectRect = new Rectangle(1200, 640, 80, 80);
 		// rightRect = new Rectangle(1200, 720, 80, 80);
-		// wrongRect = new Rectangle(1200, 8000, 80, 80);
+		// wrongRect = new Rectangle(1200, 800, 80, 80);
 	}
 }
