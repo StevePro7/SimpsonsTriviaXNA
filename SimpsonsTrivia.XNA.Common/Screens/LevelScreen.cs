@@ -29,10 +29,10 @@ namespace WindowsGame.Common.Screens
 			MyGame.Manager.ImageManager.DrawActor(index);
 
 			// TODO - fix with offset
-			Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "A.", new Vector2(2 * 20, 9 * 20), Color.Black);
-			Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "A.", new Vector2(2 * 20, 13 * 20), Color.Black);
-			Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "A.", new Vector2(2 * 20, 17 * 20), Color.Black);
-			Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "A.", new Vector2(2 * 20, 21 * 20), Color.Black);
+			//Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "A.", new Vector2(2 * 20, 9 * 20), Color.Black);
+			//Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "A.", new Vector2(2 * 20, 13 * 20), Color.Black);
+			//Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "A.", new Vector2(2 * 20, 17 * 20), Color.Black);
+			//Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "A.", new Vector2(2 * 20, 21 * 20), Color.Black);
 
 			MyGame.Manager.SpriteManager.DrawSelect(OptionType.A);
 			MyGame.Manager.SpriteManager.DrawWrong(OptionType.B);
