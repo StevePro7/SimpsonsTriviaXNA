@@ -36,8 +36,9 @@ namespace WindowsGame.Common.Screens
 
 			MyGame.Manager.SpriteManager.DrawSelect(OptionType.A);
 			//MyGame.Manager.SpriteManager.DrawWrong(OptionType.B);
-			MyGame.Manager.SpriteManager.DrawBackArrow();
-			MyGame.Manager.SpriteManager.DrawPlayArrow();
+			//MyGame.Manager.SpriteManager.DrawBackArrow();
+			//MyGame.Manager.SpriteManager.DrawPlayArrow();
+			MyGame.Manager.SpriteManager.DrawVolumeOff();
 			//MyGame.Manager.SpriteManager.DrawWrong(OptionType.C);
 			//MyGame.Manager.SpriteManager.DrawRight(OptionType.D);
 

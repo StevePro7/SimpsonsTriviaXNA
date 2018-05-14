@@ -30,6 +30,9 @@ namespace WindowsGame.Common.Screens
 			//MyGame.Manager.ImageManager.DrawTitle();
 			//byte index = MyGame.Manager.ConfigManager.GlobalConfigData.ActorIndex;
 			//MyGame.Manager.ImageManager.DrawActor(index);
+
+			MyGame.Manager.SpriteManager.DrawVolumeOn();
+			//MyGame.Manager.SpriteManager.DrawVolumeOff();
 		}
 
 	}

@@ -13,13 +13,15 @@ namespace WindowsGame.Common.Managers
 		void DrawWrong(OptionType optionType);
 		void DrawBackArrow();
 		void DrawPlayArrow();
+		void DrawVolumeOn();
+		void DrawVolumeOff();
 	}
 
 	public class SpriteManager : ISpriteManager
 	{
 		private Vector2[] positionsSelect;
 		private Vector2[] positionsAnswer;
-		private Vector2 leftArrowPos, rightArrowPos;
+		private Vector2 leftArrowPos, rightArrowPos, volumePos;
 		private const Byte spriteTile = 20;
 		private const Byte offsetSelect = 10;
 		private const Byte offsetAnswerY = 18;
@@ -30,7 +32,8 @@ namespace WindowsGame.Common.Managers
 			positionsSelect = GetPositionsSelect();
 			positionsAnswer = GetPositionsAnswer();
 			leftArrowPos = new Vector2(0, Constants.ScreenHigh - Constants.SpriteSize + offsetArrowY);
-			rightArrowPos = new Vector2(Constants.ScreenWide - Constants.SpriteSize, Constants.ScreenHigh - Constants.SpriteSize + offsetArrowY);
+			rightArrowPos = new Vector2(Constants.GameOffsetX + Constants.ScreenWide - Constants.SpriteSize, Constants.ScreenHigh - Constants.SpriteSize + offsetArrowY);
+			volumePos = new Vector2(Constants.ScreenWide - Constants.SpriteSize, 0);
 		}
 
 
@@ -60,6 +63,16 @@ namespace WindowsGame.Common.Managers
 		public void DrawPlayArrow()
 		{
 			DrawSprite(SpriteType.RightArrow, rightArrowPos);
+		}
+
+		public void DrawVolumeOn()
+		{
+			DrawSprite(SpriteType.VolumeOn, volumePos);
+		}
+
+		public void DrawVolumeOff()
+		{
+			DrawSprite(SpriteType.VolumeOff, volumePos);
 		}
 
 		private static void DrawSprite(SpriteType spriteType, Vector2 position)

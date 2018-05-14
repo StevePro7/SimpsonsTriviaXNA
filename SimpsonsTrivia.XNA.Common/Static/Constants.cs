@@ -21,7 +21,7 @@ namespace WindowsGame.Common.Static
 		public const Byte NUMBER_OPTIONS = 4;
 		public const Byte NUMBER_LINES = 3;
 		public const Byte NUMBER_CHARACTERS = 16;
-		public const Byte NUMBER_SPRITES = 5;
+		public const Byte NUMBER_SPRITES = 7;
 
 		// Global data.
 		public const Boolean IsFixedTimeStep = true;
