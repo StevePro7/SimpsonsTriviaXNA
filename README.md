@@ -90,3 +90,17 @@ IMAGES
 This is where I am updating the sprite sheet
 E:\Steven\Personal\Simpsons\NewContent
 E:\Steven\Personal\Simpsons\_Simpsons\Image
+
+
+SOUND FX
+Load up test SMS project
+Build SFX to output.sms
+Unplug speaker cable from audio jack
+Speakers Realtek High Definition Audio
+Plug black cable from microphone to headphones
+Start recorder
+Play output.sms
+Stop recorder
+
+Convert WMA to WAV file online
+https://www.zamzar.com/convert/wma-to-wav
