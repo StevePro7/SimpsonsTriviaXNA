@@ -26,6 +26,11 @@ namespace WindowsGame.Common.Screens
 			MyGame.Manager.ImageManager.DrawHeader();
 			MyGame.Manager.ImageManager.DrawCurrActor();
 
+			//MyGame.Manager.ImageManager.DrawHeader();
+			//MyGame.Manager.ImageManager.DrawTitle();
+			//byte index = MyGame.Manager.ConfigManager.GlobalConfigData.ActorIndex;
+			//MyGame.Manager.ImageManager.DrawActor(index);
+
 			MyGame.Manager.TextManager.Draw(TextDataList);
 			Engine.Game.Window.Title = "Over";
 		}

@@ -21,12 +21,17 @@ namespace WindowsGame.Common.Static
 		public const Byte NUMBER_OPTIONS = 4;
 		public const Byte NUMBER_LINES = 3;
 		public const Byte NUMBER_CHARACTERS = 16;
-		public const Byte NUMBER_SPRITES = 7;
+		public const Byte NUMBER_SPRITES = 8;
 
 		// Global data.
 		public const Boolean IsFixedTimeStep = true;
 		public const UInt32 FramesPerSecond = 100;
+
+		// Global sizes.
 		public const UInt16 SpriteSize = 80;
+		public const Byte TextsSize = 20;
+		public const SByte FontOffsetX = -1;
+		public const SByte FontOffsetY = -4;
 
 #if WINDOWS && DEBUG
 		public const Boolean IsFullScreen = false;
@@ -44,10 +49,8 @@ namespace WindowsGame.Common.Static
 		public const UInt16 ExposeWide = 640;
 		public const UInt16 ExposeHigh = 480;
 
-		public const Byte TextsSize = 20;
 		public const Byte GameOffsetX = 0;
-		public const SByte FontOffsetX = -1;
-		public const SByte FontOffsetY = -4;
+
 #endif
 #if !WINDOWS
 		public const Boolean IsFullScreen = true;
@@ -59,10 +62,7 @@ namespace WindowsGame.Common.Static
 		public const UInt16 ExposeWide = 800;
 		public const UInt16 ExposeHigh = 480;
 
-		public const Byte TextsSize = 20;
 		public const Byte GameOffsetX = 80;
-		public const SByte FontOffsetX = -1;
-		public const SByte FontOffsetY = -4;
 #endif
 	}
 }

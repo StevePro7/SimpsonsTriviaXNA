@@ -121,13 +121,6 @@ namespace WindowsGame.Common.Managers
 			const UInt16 x = 4 * imageHigh - spriteSize;
 			const UInt16 y = 2 * imageHigh;
 			spriteRects = new Rectangle[Constants.NUMBER_SPRITES];
-			//spriteRects[(Byte)SpriteType.Select] = GetSpriteRect(x, y + 0 * spriteSize);
-			//spriteRects[(Byte)SpriteType.Right] = GetSpriteRect(x, y + 1 * spriteSize);
-			//spriteRects[(Byte)SpriteType.Wrong] = GetSpriteRect(x, y + 2 * spriteSize);
-			//spriteRects[(Byte)SpriteType.LeftArrow] = GetSpriteRect(x, y + 3 * spriteSize);
-			//spriteRects[(Byte)SpriteType.RightArrow] = GetSpriteRect(x, y + 4 * spriteSize);
-			//spriteRects[(Byte)SpriteType.VolumeOn] = GetSpriteRect(x, y + 5 * spriteSize);
-			//spriteRects[(Byte)SpriteType.VolumeOff] = GetSpriteRect(x, y + 6 * spriteSize);
 			spriteRects[(Byte)SpriteType.Select] = GetSpriteRect(x, y, 0);
 			spriteRects[(Byte)SpriteType.Right] = GetSpriteRect(x, y, 1);
 			spriteRects[(Byte)SpriteType.Wrong] = GetSpriteRect(x, y, 2);
@@ -135,6 +128,7 @@ namespace WindowsGame.Common.Managers
 			spriteRects[(Byte)SpriteType.RightArrow] = GetSpriteRect(x, y, 4);
 			spriteRects[(Byte)SpriteType.VolumeOn] = GetSpriteRect(x, y, 5);
 			spriteRects[(Byte)SpriteType.VolumeOff] = GetSpriteRect(x, y, 6);
+			spriteRects[(Byte)SpriteType.White] = GetSpriteRect(x, y, 7);
 			return spriteRects;
 		}
 		private static Rectangle GetSpriteRect(UInt16 x, UInt16 y, Byte index)

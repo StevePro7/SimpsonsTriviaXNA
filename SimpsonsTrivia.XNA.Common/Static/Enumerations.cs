@@ -38,7 +38,8 @@
 		LeftArrow,
 		RightArrow,
 		VolumeOn,
-		VolumeOff
+		VolumeOff,
+		White
 	}
 
 	public enum OptionType
