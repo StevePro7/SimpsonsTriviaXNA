@@ -35,9 +35,11 @@ namespace WindowsGame.Common.Screens
 			//Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "A.", new Vector2(2 * 20, 21 * 20), Color.Black);
 
 			MyGame.Manager.SpriteManager.DrawSelect(OptionType.A);
-			MyGame.Manager.SpriteManager.DrawWrong(OptionType.B);
-			MyGame.Manager.SpriteManager.DrawWrong(OptionType.C);
-			MyGame.Manager.SpriteManager.DrawRight(OptionType.D);
+			//MyGame.Manager.SpriteManager.DrawWrong(OptionType.B);
+			MyGame.Manager.SpriteManager.DrawBackArrow();
+			MyGame.Manager.SpriteManager.DrawPlayArrow();
+			//MyGame.Manager.SpriteManager.DrawWrong(OptionType.C);
+			//MyGame.Manager.SpriteManager.DrawRight(OptionType.D);
 
 			MyGame.Manager.TextManager.Draw(TextDataList);
 

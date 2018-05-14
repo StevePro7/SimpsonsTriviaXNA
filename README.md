@@ -84,3 +84,9 @@ i386
 change this to
 i386 + x86_64
 Now will deploy to device
+
+
+IMAGES
+This is where I am updating the sprite sheet
+E:\Steven\Personal\Simpsons\NewContent
+E:\Steven\Personal\Simpsons\_Simpsons\Image

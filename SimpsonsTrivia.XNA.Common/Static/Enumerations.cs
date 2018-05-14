@@ -34,7 +34,11 @@
 	{
 		Select,
 		Right,
-		Wrong
+		Wrong,
+		LeftArrow,
+		RightArrow,
+		VolumeOn,
+		VolumeOff
 	}
 
 	public enum OptionType

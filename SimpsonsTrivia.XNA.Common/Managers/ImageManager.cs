@@ -17,6 +17,7 @@ namespace WindowsGame.Common.Managers
 		void DrawNextActor();
 		void DrawActor(Byte index);
 		void DrawSprite(SpriteType spriteType, Vector2 position);
+		//void DrawSprite(SpriteType spriteType, Vector2 position, Single rotation, Vector2 origin);
 	}
 
 	public class ImageManager : IImageManager
@@ -28,11 +29,11 @@ namespace WindowsGame.Common.Managers
 		private Vector2 actorVect;
 
 		private Rectangle[] spriteRects;
-		private Single rotation;
+		private Single imageRotate;
 
 		private const UInt16 imageWide = 240;
 		private const UInt16 imageHigh = 320;
-		private const UInt16 spriteSize = 80;
+		private const UInt16 spriteSize = Constants.SpriteSize;
 
 		private Byte currActor, nextActor;
 
@@ -56,7 +57,7 @@ namespace WindowsGame.Common.Managers
 			actorVect = new Vector2(Constants.GameOffsetX + Constants.ScreenWide - imageWide, Constants.ScreenHigh - imageHigh);
 
 			spriteRects = PopulateSpriteRects();
-			rotation = MathHelper.ToRadians(270);
+			imageRotate = MathHelper.ToRadians(270);
 		}
 
 		public void GenerateNextActor()
@@ -75,12 +76,12 @@ namespace WindowsGame.Common.Managers
 
 		public void DrawTitle()
 		{
-			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, Vector2.Zero, titleRect, Color.White, rotation, titleVect, 1.0f, SpriteEffects.None, 1.0f);
+			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, Vector2.Zero, titleRect, Color.White, imageRotate, titleVect, 1.0f, SpriteEffects.None, 1.0f);
 		}
 
 		public void DrawHeader()
 		{
-			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, Vector2.Zero, headerRect, Color.White, rotation, headerVect, 1.0f, SpriteEffects.None, 1.0f);
+			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, Vector2.Zero, headerRect, Color.White, imageRotate, headerVect, 1.0f, SpriteEffects.None, 1.0f);
 		}
 
 		public void DrawCurrActor()
@@ -102,6 +103,11 @@ namespace WindowsGame.Common.Managers
 			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, spriteRects[(Byte)spriteType], Color.White);
 		}
 
+		//public void DrawSprite(SpriteType spriteType, Vector2 position, Single rotation, Vector2 origin)
+		//{
+		//    Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, spriteRects[(Byte)spriteType], Color.White, rotation, origin, 1.0f, SpriteEffects.None, 1.0f);
+		//}
+
 		private Rectangle[] PopulateActorRects()
 		{
 			actorRects = new Rectangle[Constants.NUMBER_CHARACTERS];
@@ -111,29 +117,32 @@ namespace WindowsGame.Common.Managers
 			actorRects[12] = GetActorRect(4, 0); actorRects[13] = GetActorRect(4, 1); actorRects[14] = GetActorRect(4, 2); actorRects[15] = GetActorRect(4, 3);
 			return actorRects;
 		}
-		private Rectangle GetActorRect(Byte x, Byte y)
+		private static Rectangle GetActorRect(Byte x, Byte y)
 		{
 			return new Rectangle(x * imageWide, y * imageHigh, imageWide, imageHigh);
 		}
 
 		private Rectangle[] PopulateSpriteRects()
 		{
+			const UInt16 x = 4 * imageHigh - spriteSize;
+			const UInt16 y = 2 * imageHigh;
 			spriteRects = new Rectangle[Constants.NUMBER_SPRITES];
-			spriteRects[(Byte)SpriteType.Select] = GetSpriteRect(4 * imageHigh - spriteSize, 2 * imageHigh + 0 * spriteSize);
-			spriteRects[(Byte)SpriteType.Right] = GetSpriteRect(4 * imageHigh - spriteSize, 2 * imageHigh + 1 * spriteSize);
-			spriteRects[(Byte)SpriteType.Wrong] = GetSpriteRect(4 * imageHigh - spriteSize, 2 * imageHigh + 2 * spriteSize);
+			spriteRects[(Byte)SpriteType.Select] = GetSpriteRect(x, y + 0 * spriteSize);
+			spriteRects[(Byte)SpriteType.Right] = GetSpriteRect(x, y + 1 * spriteSize);
+			spriteRects[(Byte)SpriteType.Wrong] = GetSpriteRect(x, y + 2 * spriteSize);
+			spriteRects[(Byte)SpriteType.LeftArrow] = GetSpriteRect(x, y + 3 * spriteSize);
+			spriteRects[(Byte)SpriteType.RightArrow] = GetSpriteRect(x, y + 4 * spriteSize);
 			return spriteRects;
 		}
-		private Rectangle GetSpriteRect(UInt16 x, UInt16 y)
+		private static Rectangle GetSpriteRect(UInt16 x, UInt16 y)
 		{
-			return new Rectangle(x, y, spriteSize, spriteSize);
+			return GetRectangle(x, y, spriteSize);
 		}
-
-		private Rectangle GetRectangle(UInt16 x, UInt16 y, UInt16 size)
+		private static Rectangle GetRectangle(UInt16 x, UInt16 y, UInt16 size)
 		{
 			return GetRectangle(x, y, size, size);
 		}
-		private Rectangle GetRectangle(UInt16 x, UInt16 y, UInt16 wide, UInt16 high)
+		private static Rectangle GetRectangle(UInt16 x, UInt16 y, UInt16 wide, UInt16 high)
 		{
 			return new Rectangle(x, y, wide, high);
 		}

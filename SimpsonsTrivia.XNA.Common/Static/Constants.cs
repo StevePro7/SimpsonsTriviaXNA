@@ -21,11 +21,12 @@ namespace WindowsGame.Common.Static
 		public const Byte NUMBER_OPTIONS = 4;
 		public const Byte NUMBER_LINES = 3;
 		public const Byte NUMBER_CHARACTERS = 16;
-		public const Byte NUMBER_SPRITES = 3;
+		public const Byte NUMBER_SPRITES = 5;
 
 		// Global data.
 		public const Boolean IsFixedTimeStep = true;
 		public const UInt32 FramesPerSecond = 100;
+		public const UInt16 SpriteSize = 80;
 
 #if WINDOWS && DEBUG
 		public const Boolean IsFullScreen = false;
