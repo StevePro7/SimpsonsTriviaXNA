@@ -132,3 +132,34 @@ SimpsonsTrivia.AND
 Had to downgrade to v3.4 as there is a Null Reference bug in v3.5
 this is for playing sound effects via SoundEffectInstance
 http://community.monogame.net/t/soundeffectinstance-not-working-on-android/1003
+
+
+MonoGame Windows build
+https://gamedev.stackexchange.com/questions/86696/loading-song-in-monogame-windows
+
+DATA
+*.txt
+*.xml
+Build Action				None
+Copy to Output Directory	Copy if newer
+
+FONT
+*.xnb
+Build Action				Content
+Copy to Output Directory	Copy if newer
+
+MUSIC	*.mp3
+*.wma
+*.xnb
+Build Action				Content
+Copy to Output Directory	Copy if newer
+
+SOUND	*.wav
+*.xnb
+Build Action				Content
+Copy to Output Directory	Copy if newer
+
+TEXTURE
+*.xnb
+Build Action				Content
+Copy to Output Directory	Copy if newer
