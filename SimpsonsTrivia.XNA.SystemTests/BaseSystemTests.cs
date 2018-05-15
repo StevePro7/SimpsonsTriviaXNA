@@ -28,7 +28,7 @@ namespace WindowsGame.SystemTests
 		protected IFileManager FileManager;
 		protected ILogger Logger;
 
-		// mklink /D C:\CandyKid.XNA.Content  C:\CandyKid.XNA\bin\x86\Debug\
+		// mklink /D C:\SimpsonsTrivia.XNA.Content  C:\SimpsonsTrivia.XNA\bin\x86\Debug\
 		protected const String CONTENT_ROOT = @"C:\SimpsonsTrivia.XNA.Content\";
 
 #pragma warning disable 618
