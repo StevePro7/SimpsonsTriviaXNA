@@ -104,3 +104,31 @@ Stop recorder
 
 Convert WMA to WAV file online
 https://www.zamzar.com/convert/wma-to-wav
+
+
+Sound Manager TODO fade out the volume
+e.g. Ready Screen
+
+sample code here
+https://stackoverflow.com/questions/7513746/mediaplayer-volume-control
+
+
+SVN
+15/05/2018
+SimpsonsTrivia.IOS
+
+Sound effects
+Build Windows content and get 3x XNB files from bin\Debug\Content
+Cheat.xnb
+
+copy to SimpsonsTrivia.IOS Content folder
+Properties
+Content
+Copy if newer
+This should work 
+
+
+SimpsonsTrivia.AND
+Had to downgrade to v3.4 as there is a Null Reference bug in v3.5
+this is for playing sound effects via SoundEffectInstance
+http://community.monogame.net/t/soundeffectinstance-not-working-on-android/1003

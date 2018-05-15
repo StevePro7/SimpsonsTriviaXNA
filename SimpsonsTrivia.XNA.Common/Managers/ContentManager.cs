@@ -67,7 +67,7 @@ namespace WindowsGame.Common.Managers
 			return Engine.Content.Load<T>(assetName);
 		}
 
-		// Helper variables for hardcoded names.
+		// Helper variables for hard coded names.
 		private const String FONT_NAME = "Emulogic";
 		private const String SPLASH_NAME = "Splash";
 		private const String SPRITE_NAME = "Spritesheet";
