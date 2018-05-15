@@ -4,5 +4,6 @@
 	<SplashDelay>0000</SplashDelay>
 	<TitleDelay>800</TitleDelay>
 	<ActorIndex>3</ActorIndex>
+	<PlaySound>true</PlaySound>
 	<QuitsToExit>true</QuitsToExit>
 </GlobalConfigData>

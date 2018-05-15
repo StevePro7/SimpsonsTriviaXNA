@@ -20,6 +20,12 @@ namespace WindowsGame.Common.Screens
 			LoadTextData();
 		}
 
+		public override void LoadContent()
+		{
+			base.LoadContent();
+			MyGame.Manager.SoundManager.PlayTitleMusic();
+		}
+
 		public ScreenType Update(GameTime gameTime)
 		{
 			UpdateTimer(gameTime);

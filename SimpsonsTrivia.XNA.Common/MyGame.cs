@@ -30,6 +30,7 @@ namespace WindowsGame.Common
 
 			Manager.ResolutionManager.Initialize();
 			Manager.ScreenManager.Initialize();
+			Manager.SoundManager.Initialize();
 			Manager.SpriteManager.Initialize();
 			Manager.ThreadManager.Initialize();
 		}

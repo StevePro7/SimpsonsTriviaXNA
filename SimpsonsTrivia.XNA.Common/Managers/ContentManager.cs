@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using WindowsGame.Common.Library;
 using WindowsGame.Common.Static;
 
@@ -26,17 +28,29 @@ namespace WindowsGame.Common.Managers
 
 		public void LoadContentSplash()
 		{
-			Assets.SplashTexture = LoadTexture("Splash");
+			Assets.SplashTexture = LoadTexture(SPLASH_NAME);
 		}
 
 		public void LoadContent()
 		{
 			// Fonts.
 			String fonts = String.Format("{0}/{1}/", contentRoot, Constants.FONTS_DIRECTORY);
-			Assets.EmulogicFont = Engine.Content.Load<SpriteFont>(fonts + "Emulogic");
+			Assets.EmulogicFont = Engine.Content.Load<SpriteFont>(fonts + FONT_NAME);
 
 			// Textures.
-			Assets.SpritesheetTexture = LoadTexture("Spritesheet");
+			Assets.SpritesheetTexture = LoadTexture(SPRITE_NAME);
+
+			// Songs.
+			Assets.TitleMusicSong = Engine.Content.Load<Song>(soundRoot + TITLE_MUSIC_NAME);
+			Assets.GameOverSong = Engine.Content.Load<Song>(soundRoot + GAME_OVER_NAME);
+
+			// Sound effects.
+			Assets.SoundEffectDictionary = new Dictionary<SoundEffectType, SoundEffectInstance>();
+			for (SoundEffectType key = SoundEffectType.Right; key <= SoundEffectType.Cheat; ++key)
+			{
+				SoundEffectInstance value = LoadSoundEffectInstance(key.ToString());
+				Assets.SoundEffectDictionary.Add(key, value);
+			}
 		}
 
 		private SoundEffectInstance LoadSoundEffectInstance(String assetName)
@@ -53,5 +67,11 @@ namespace WindowsGame.Common.Managers
 			return Engine.Content.Load<T>(assetName);
 		}
 
+		// Helper variables for hardcoded names.
+		private const String FONT_NAME = "Emulogic";
+		private const String SPLASH_NAME = "Splash";
+		private const String SPRITE_NAME = "Spritesheet";
+		private const String TITLE_MUSIC_NAME = "TitleMusic";
+		private const String GAME_OVER_NAME = "GameOver";
 	}
 }
