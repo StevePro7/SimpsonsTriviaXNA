@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <GlobalConfigData>
 	<ScreenType>Title</ScreenType>
-	<SplashDelay>0000</SplashDelay>
+	<SplashDelay>3000</SplashDelay>
 	<TitleDelay>800</TitleDelay>
-	<ActorIndex>3</ActorIndex>
-	<PlaySound>true</PlaySound>
+	<ActorIndex>0</ActorIndex>
+	<FlashTitle>true</FlashTitle>
+	<PlaySound>false</PlaySound>
+	<CheatMode>true</CheatMode>
 	<QuitsToExit>true</QuitsToExit>
 </GlobalConfigData>

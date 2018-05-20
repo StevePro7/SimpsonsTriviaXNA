@@ -9,7 +9,9 @@ namespace WindowsGame.Common.Data
 		public UInt16 SplashDelay;
 		public UInt16 TitleDelay;
 		public Byte ActorIndex;
+		public Boolean FlashTitle;
 		public Boolean PlaySound;
+		public Boolean CheatMode;
 		public Boolean QuitsToExit;
 	}
 }

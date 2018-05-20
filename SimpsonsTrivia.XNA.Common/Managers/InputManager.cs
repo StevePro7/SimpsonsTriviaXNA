@@ -10,15 +10,10 @@ namespace WindowsGame.Common.Managers
 		void Update(GameTime gameTime);
 
 		Boolean Escape();
-		Boolean Pause();
-		Boolean Next();
-		Boolean Board();
-		Boolean Sides();
-		Boolean Released();
-		Boolean Space();
-
-		void SetMotors(Single leftMotor, Single rightMotor);
-		void ResetMotors();
+		Boolean Advance();
+		Boolean LeftArrow();
+		Boolean RghtArrow();
+		Boolean VolumeIcon();
 	}
 
 	public class InputManager : IInputManager
@@ -44,39 +39,59 @@ namespace WindowsGame.Common.Managers
 		{
 			return inputFactory.Escape();
 		}
-		public Boolean Pause()
+
+		public Boolean Advance()
 		{
-			return inputFactory.Pause();
-		}
-		public Boolean Next()
-		{
-			return inputFactory.Next();
-		}
-		public Boolean Board()
-		{
-			return inputFactory.Board();
-		}
-		public Boolean Sides()
-		{
-			return inputFactory.Sides();
-		}
-		public Boolean Released()
-		{
-			return inputFactory.Released();
-		}
-		public Boolean Space()
-		{
-			return inputFactory.Space();
+			return inputFactory.Advance();
 		}
 
-		public void SetMotors(Single leftMotor, Single rightMotor)
+		public Boolean LeftArrow()
 		{
-			inputFactory.SetMotors(leftMotor, rightMotor);
+			return inputFactory.LeftArrow();
 		}
-		public void ResetMotors()
+		public Boolean RghtArrow()
 		{
-			inputFactory.ResetMotors();
+			return inputFactory.RghtArrow();
 		}
+
+		public Boolean VolumeIcon()
+		{
+			return inputFactory.VolumeIcon();
+		}
+
+		//public Boolean Pause()
+		//{
+		//	return inputFactory.Pause();
+		//}
+		//public Boolean Next()
+		//{
+		//	return inputFactory.Next();
+		//}
+		//public Boolean Board()
+		//{
+		//	return inputFactory.Board();
+		//}
+		//public Boolean Sides()
+		//{
+		//	return inputFactory.Sides();
+		//}
+		//public Boolean Released()
+		//{
+		//	return inputFactory.Released();
+		//}
+		//public Boolean Space()
+		//{
+		//	return inputFactory.Space();
+		//}
+
+		//public void SetMotors(Single leftMotor, Single rightMotor)
+		//{
+		//	inputFactory.SetMotors(leftMotor, rightMotor);
+		//}
+		//public void ResetMotors()
+		//{
+		//	inputFactory.ResetMotors();
+		//}
 
 	}
 }

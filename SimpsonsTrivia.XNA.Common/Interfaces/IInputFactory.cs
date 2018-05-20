@@ -9,14 +9,9 @@ namespace WindowsGame.Common.Interfaces
 		void Update(GameTime gameTime);
 
 		Boolean Escape();
-		Boolean Pause();
-		Boolean Next();
-		Boolean Board();
-		Boolean Sides();
-		Boolean Released();
-		Boolean Space();
-
-		void SetMotors(Single leftMotor, Single rightMotor);
-		void ResetMotors();
+		Boolean Advance();
+		Boolean LeftArrow();
+		Boolean RghtArrow();
+		Boolean VolumeIcon();
 	}
 }

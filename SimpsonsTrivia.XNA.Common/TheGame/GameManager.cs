@@ -7,8 +7,10 @@ namespace WindowsGame.Common.TheGame
 	public interface IGameManager
 	{
 		IButtonManager ButtonManager { get; }
+		ICollisionManager CollisionManager { get; }
 		IConfigManager ConfigManager { get; }
 		IContentManager ContentManager { get; }
+		IDeviceManager DeviceManager { get; }
 		IImageManager ImageManager { get; }
 		IInputManager InputManager { get; }
 		IQuestionManager QuestionManager { get; }
@@ -29,8 +31,10 @@ namespace WindowsGame.Common.TheGame
 		public GameManager
 		(
 			IButtonManager buttonManager,
+			ICollisionManager collisionManager,
 			IConfigManager configManager,
 			IContentManager contentManager,
+			IDeviceManager deviceManager,
 			IImageManager imageManager,
 			IInputManager inputManager,
 			IQuestionManager questionManager,
@@ -47,8 +51,10 @@ namespace WindowsGame.Common.TheGame
 		)
 		{
 			ButtonManager = buttonManager;
+			CollisionManager = collisionManager;
 			ConfigManager = configManager;
 			ContentManager = contentManager;
+			DeviceManager = deviceManager;
 			ImageManager = imageManager;
 			InputManager = inputManager;
 			QuestionManager = questionManager;
@@ -65,8 +71,10 @@ namespace WindowsGame.Common.TheGame
 		}
 
 		public IButtonManager ButtonManager { get; private set; }
+		public ICollisionManager CollisionManager { get; private set; }
 		public IConfigManager ConfigManager { get; private set; }
 		public IContentManager ContentManager { get; private set; }
+		public IDeviceManager DeviceManager { get; private set; }
 		public IImageManager ImageManager { get; private set; }
 		public IInputManager InputManager { get; private set; }
 		public IQuestionManager QuestionManager { get; private set; }

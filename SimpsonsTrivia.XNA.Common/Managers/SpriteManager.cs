@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using WindowsGame.Common.Static;
+using WindowsGame.Common.Data;
 
 namespace WindowsGame.Common.Managers
 {
@@ -8,11 +9,12 @@ namespace WindowsGame.Common.Managers
 	{
 		void Initialize();
 
+		void DrawSelectAll();
 		void DrawSelect(OptionType optionType);
 		void DrawRight(OptionType optionType);
 		void DrawWrong(OptionType optionType);
-		void DrawBackArrow();
-		void DrawPlayArrow();
+		void DrawLeftArrow();
+		void DrawRghtArrow();
 		void DrawVolumeOn();
 		void DrawVolumeOff();
 		void DrawWhite(Vector2 position);
@@ -22,23 +24,34 @@ namespace WindowsGame.Common.Managers
 	{
 		private Vector2[] positionsSelect;
 		private Vector2[] positionsAnswer;
-		private Vector2 leftArrowPos, rightArrowPos, volumePos;
+		private Vector2 leftArrowPos, rghtArrowPos, volumePos;
 		private const Byte spriteTile = 20;
 		private const Byte offsetSelect = 10;
 		private const Byte offsetAnswerY = 18;
-		private const Byte offsetArrowY = 16;
 
 		public void Initialize()
 		{
 			positionsSelect = GetPositionsSelect();
 			positionsAnswer = GetPositionsAnswer();
-			leftArrowPos = new Vector2(0, Constants.ScreenHigh - Constants.SpriteSize + offsetArrowY);
-			rightArrowPos = new Vector2(Constants.GameOffsetX + Constants.ScreenWide - Constants.SpriteSize,
-				Constants.ScreenHigh - Constants.SpriteSize + offsetArrowY);
-			volumePos = new Vector2(Constants.ScreenWide - Constants.SpriteSize, 0);
+
+			//UInt16 arrowHigh = Constants.ScreenHigh - Constants.SpriteSize + Constants.OffsetArrowY;
+			//leftArrowPos = new Vector2(0, arrowHigh);
+			//rightArrowPos = new Vector2(Constants.ScreenWide - Constants.SpriteSize, arrowHigh);
+
+			leftArrowPos = BaseData.GetLeftArrowPos();
+			rghtArrowPos = BaseData.GetRghtArrowPos();
+
+			//volumePos = new Vector2(Constants.ScreenWide - Constants.SpriteSize - Constants.GameOffsetX, -Constants.TextsSize / 2.0f);
+			volumePos = BaseData.GetVolumePos();
 		}
 
-
+		public void DrawSelectAll()
+		{
+			DrawSelect(OptionType.A);
+			DrawSelect(OptionType.B);
+			DrawSelect(OptionType.C);
+			DrawSelect(OptionType.D);
+		}
 		public void DrawSelect(OptionType optionType)
 		{
 			Vector2 position = positionsSelect[(Byte) optionType];
@@ -57,14 +70,14 @@ namespace WindowsGame.Common.Managers
 			DrawSprite(SpriteType.Wrong, position);
 		}
 
-		public void DrawBackArrow()
+		public void DrawLeftArrow()
 		{
 			DrawSprite(SpriteType.LeftArrow, leftArrowPos);
 		}
 
-		public void DrawPlayArrow()
+		public void DrawRghtArrow()
 		{
-			DrawSprite(SpriteType.RightArrow, rightArrowPos);
+			DrawSprite(SpriteType.RightArrow, rghtArrowPos);
 		}
 
 		public void DrawVolumeOn()
@@ -82,7 +95,7 @@ namespace WindowsGame.Common.Managers
 			DrawSprite(SpriteType.White, position);
 		}
 
-	private static void DrawSprite(SpriteType spriteType, Vector2 position)
+		private static void DrawSprite(SpriteType spriteType, Vector2 position)
 		{
 			MyGame.Manager.ImageManager.DrawSprite(spriteType, position);
 		}
@@ -102,7 +115,7 @@ namespace WindowsGame.Common.Managers
 		}
 		private static Vector2 GetPositionSelect(Byte x, Byte y)
 		{
-			return new Vector2(x * spriteTile + offsetSelect, y * spriteTile + offsetSelect);
+			return new Vector2(Constants.GameOffsetX + x * spriteTile + offsetSelect, y * spriteTile + offsetSelect);
 		}
 
 		private Vector2[] GetPositionsAnswer()
@@ -116,7 +129,7 @@ namespace WindowsGame.Common.Managers
 		}
 		private static Vector2 GetPositionAnswer(Byte x, Byte y)
 		{
-			return new Vector2(x * spriteTile, y * spriteTile + offsetAnswerY);
+			return new Vector2(Constants.GameOffsetX + x * spriteTile, y * spriteTile + offsetAnswerY);
 		}
 
 	}

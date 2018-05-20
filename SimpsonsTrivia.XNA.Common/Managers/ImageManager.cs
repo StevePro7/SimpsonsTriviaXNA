@@ -21,6 +21,8 @@ namespace WindowsGame.Common.Managers
 
 	public class ImageManager : IImageManager
 	{
+		private Vector2 zeroPosn, headPosn;
+
 		private Rectangle titleRect, headerRect;
 		private Vector2 titleVect, headerVect;
 
@@ -46,6 +48,9 @@ namespace WindowsGame.Common.Managers
 
 		public void LoadContent()
 		{
+			zeroPosn = new Vector2(Constants.GameOffsetX, 0);
+			headPosn = new Vector2(Constants.GameOffsetX, Constants.TextsSize / 2.0f);
+
 			titleRect = new Rectangle(0, 0, 2 * imageWide, 2 * imageHigh);
 			titleVect = new Vector2(imageWide * 2, 0);
 
@@ -53,7 +58,7 @@ namespace WindowsGame.Common.Managers
 			headerVect = new Vector2(spriteSize, 0); 
 
 			actorRects = PopulateActorRects();
-			actorVect = new Vector2(Constants.GameOffsetX + Constants.ScreenWide - imageWide, Constants.ScreenHigh - imageHigh);
+			actorVect = new Vector2(Constants.ScreenWide - imageWide - Constants.GameOffsetX, Constants.ScreenHigh - imageHigh);
 
 			spriteRects = PopulateSpriteRects();
 			imageRotate = MathHelper.ToRadians(270);
@@ -75,22 +80,24 @@ namespace WindowsGame.Common.Managers
 
 		public void DrawTitle()
 		{
-			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, Vector2.Zero, titleRect, Color.White, imageRotate, titleVect, 1.0f, SpriteEffects.None, 1.0f);
+			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, zeroPosn, titleRect, Color.White, imageRotate, titleVect, 1.0f, SpriteEffects.None, 1.0f);
 		}
 
 		public void DrawHeader()
 		{
-			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, Vector2.Zero, headerRect, Color.White, imageRotate, headerVect, 1.0f, SpriteEffects.None, 1.0f);
+			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, headPosn, headerRect, Color.White, imageRotate, headerVect, 1.0f, SpriteEffects.None, 1.0f);
 		}
 
 		public void DrawCurrActor()
 		{
-			Byte index = MyGame.Manager.ConfigManager.GlobalConfigData.ActorIndex;
-			MyGame.Manager.ImageManager.DrawActor(index);
+			//Byte index = MyGame.Manager.ConfigManager.GlobalConfigData.ActorIndex;
+			//MyGame.Manager.ImageManager.DrawActor(index);
+			DrawActor(currActor);
 		}
 		public void DrawNextActor()
 		{
-			DrawActor(nextActor);
+			GenerateNextActor();
+			DrawActor(currActor);
 		}
 		public void DrawActor(Byte index)
 		{
@@ -99,6 +106,8 @@ namespace WindowsGame.Common.Managers
 
 		public void DrawSprite(SpriteType spriteType, Vector2 position)
 		{
+			// TODO revert color white!
+			//Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, spriteRects[(Byte)spriteType], Color.CornflowerBlue);
 			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, spriteRects[(Byte)spriteType], Color.White);
 		}
 

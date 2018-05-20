@@ -10,6 +10,7 @@ namespace WindowsGame.Common.Screens
 		protected UInt16 Timer { get; set; }
 		protected Vector2 BannerPosition { get; set; }
 		protected IList<TextData> TextDataList { get; private set; }
+		protected IList<Vector2> TextPositions { get; set; }
 
 		public virtual void Initialize()
 		{
@@ -38,7 +39,8 @@ namespace WindowsGame.Common.Screens
 			String name = String.Format("{0}{1}", GetType().Name, suffix);
 			LoadTextData(name);
 		}
-		protected void LoadTextData(String screen)
+
+		private void LoadTextData(String screen)
 		{
 			TextDataList = MyGame.Manager.TextManager.LoadTextData(screen);
 		}

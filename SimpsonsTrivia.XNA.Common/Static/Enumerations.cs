@@ -17,6 +17,7 @@
 
 	public enum DifficultyType
 	{
+		None,
 		Easy,
 		Norm,
 		Hard,
@@ -27,7 +28,8 @@
 	{
 		Right,
 		Wrong,
-		Cheat
+		Cheat,
+		Early
 	}
 
 	public enum SpriteType
@@ -44,6 +46,7 @@
 
 	public enum OptionType
 	{
+		None,
 		A,
 		B,
 		C,

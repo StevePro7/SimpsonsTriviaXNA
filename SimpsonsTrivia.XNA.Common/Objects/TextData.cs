@@ -8,8 +8,8 @@ namespace WindowsGame.Common.Objects
 	{
 		public Vector2 Position { get; private set; }
 		public String Text { get; private set; }
-		public IList<String> List { get; private set; }
 		public Color Color { get; private set; }
+		private IList<String> List { get; set; }
 
 		public TextData(Vector2 position, String text)
 			: this(position, text, Color.Black)
@@ -20,19 +20,21 @@ namespace WindowsGame.Common.Objects
 		{
 		}
 
-		public TextData(Vector2 position, String text, Color color)
+		private TextData(Vector2 position, String text, Color color)
 			: this()
 		{
 			Position = position;
 			Color = color;
 			Text = text;
 		}
-		public TextData(Vector2 position, IList<String> list, Color color)
+
+		private TextData(Vector2 position, IList<String> list, Color color)
 			: this()
 		{
 			Position = position;
 			Color = color;
 			List = list;
 		}
+
 	}
 }

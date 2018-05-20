@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using System;
 using WindowsGame.Common.Interfaces;
 using WindowsGame.Common.Library;
 using WindowsGame.Common.Static;
@@ -18,6 +19,18 @@ namespace WindowsGame.Common.Screens
 
 		public ScreenType Update(GameTime gameTime)
 		{
+			Boolean left = MyGame.Manager.InputManager.LeftArrow();
+			if (left)
+			{
+				MyGame.Manager.SoundManager.PlayWrongSoundEffect();
+			}
+
+			Boolean rght = MyGame.Manager.InputManager.RghtArrow();
+			if (rght)
+			{
+				MyGame.Manager.SoundManager.PlayEarlySoundEffect();
+			}
+
 			return ScreenType.Quiz;
 		}
 
@@ -30,6 +43,9 @@ namespace WindowsGame.Common.Screens
 			MyGame.Manager.SpriteManager.DrawRight(OptionType.B);
 			MyGame.Manager.SpriteManager.DrawWrong(OptionType.C);
 			MyGame.Manager.SpriteManager.DrawSelect(OptionType.D);
+
+			MyGame.Manager.DeviceManager.DrawBackButton();
+			MyGame.Manager.DeviceManager.DrawPlayButton();
 
 			MyGame.Manager.TextManager.Draw(TextDataList);
 			Engine.Game.Window.Title = "Quiz";

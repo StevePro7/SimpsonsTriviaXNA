@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using NUnit.Framework;
 using WindowsGame.Common;
-using WindowsGame.Common.Objects;
 using WindowsGame.Common.Static;
 
 namespace WindowsGame.SystemTests.Managers
@@ -21,13 +19,13 @@ namespace WindowsGame.SystemTests.Managers
 		public void LoadQuestionListTest()
 		{
 			// Arrange.
-			DifficultyType type = DifficultyType.Easy;
+			const DifficultyType type = DifficultyType.Easy;
 
 			// Act.
-			IList<Question> questionList = QuestionManager.LoadQuestionList(type);
+			QuestionManager.LoadQuestionList(type);
 
 			// Assert.
-			Console.WriteLine("Number Questions: " + questionList.Count);
+			Console.WriteLine("Number Questions: " + QuestionManager.QuestionList.Count);
 		}
 
 		[TearDown]

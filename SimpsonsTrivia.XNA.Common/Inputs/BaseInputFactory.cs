@@ -1,14 +1,11 @@
-﻿using System;
-using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework.Input;
+using System;
 using WindowsGame.Common.Inputs.Types;
 
 namespace WindowsGame.Common.Inputs
 {
 	public abstract class BaseInputFactory
 	{
-		protected UInt16 ArrowsLeft, ArrowsRight, PopupLeft, PopupRight, PauseLeft, PauseRight;
-		protected UInt16 Distance, MenuUp, MenuDown, MenuTop, MenuBottom;
-
 		protected virtual Boolean HoldUp() { return false; }
 		protected virtual Boolean HoldDown() { return false; }
 		protected virtual Boolean HoldLeft() { return false; }
@@ -28,10 +25,6 @@ namespace WindowsGame.Common.Inputs
 		{
 		}
 
-		public virtual Boolean Sides()
-		{
-			return false;
-		}
 		protected Boolean JoyHold(Buttons button)
 		{
 			return JoystickInput.JoyHold(button);
@@ -40,19 +33,23 @@ namespace WindowsGame.Common.Inputs
 		{
 			return JoystickInput.JoyMove(button);
 		}
+		protected Boolean JoyBack()
+		{
+			return JoystickInput.JoyHold(Buttons.Back);
+		}
 		protected Boolean JoyEscape()
 		{
 			return JoystickInput.JoyHold(Buttons.B) || JoystickInput.JoyHold(Buttons.Back);
 		}
 
-		public virtual void SetMotors(Single leftMotor, Single rightMotor)
-		{
-			JoystickInput.SetMotors(leftMotor, rightMotor);
-		}
-		public virtual void ResetMotors()
-		{
-			JoystickInput.ResetMotors();
-		}
+		//public virtual void SetMotors(Single leftMotor, Single rightMotor)
+		//{
+		//	JoystickInput.SetMotors(leftMotor, rightMotor);
+		//}
+		//public virtual void ResetMotors()
+		//{
+		//	JoystickInput.ResetMotors();
+		//}
 
 		protected Boolean JoyMoveUp()
 		{

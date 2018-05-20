@@ -16,7 +16,7 @@ namespace WindowsGame.Common.Managers
 
 		Matrix TransformationMatrix { get; }
 		Matrix InvertTransformationMatrix { get; }
-		Vector2 VeiwPortVector2 { get; }
+		Vector2 ViewPortVector2 { get; }
 	}
 
 	public class ResolutionManager : IResolutionManager
@@ -63,7 +63,7 @@ namespace WindowsGame.Common.Managers
 
 			TransformationMatrix = Matrix.CreateScale((float)showViewport.Width / _VWidth, (float)showViewport.Width / _VWidth, 1f);
 			InvertTransformationMatrix = Matrix.Invert(TransformationMatrix);
-			VeiwPortVector2 = new Vector2(showViewport.X, showViewport.Y);
+			ViewPortVector2 = new Vector2(showViewport.X, showViewport.Y);
 		}
 
 		public void BeginDraw(Color color)
@@ -91,7 +91,7 @@ namespace WindowsGame.Common.Managers
 
 		public Matrix TransformationMatrix { get; private set; }
 		public Matrix InvertTransformationMatrix { get; private set; }
-		public Vector2 VeiwPortVector2 { get; private set; }
+		public Vector2 ViewPortVector2 { get; private set; }
 
 		private void ApplyResolutionSettings()
 		{

@@ -24,8 +24,10 @@ namespace WindowsGame.Common
 			Manager.ContentManager.Initialize();
 			Manager.ContentManager.LoadContentSplash();
 
+			Manager.DeviceManager.Initialize();
 			Manager.ImageManager.Initialize();
 			Manager.InputManager.Initialize();
+			Manager.QuestionManager.Initialize();
 			Manager.ScoreManager.Initialize();
 
 			Manager.ResolutionManager.Initialize();
@@ -46,14 +48,16 @@ namespace WindowsGame.Common
 		public static void LoadContentAsync()
 		{
 			Manager.TextManager.Initialize();
-			Manager.TextManager.InitializeBuild();
+			//Manager.TextManager.InitializeBuild();	// TODO remove
 
-			//Manager.ConfigManager.LoadContent();
+			//Manager.ConfigManager.LoadContent();		// TODO remove	
+			Manager.CollisionManager.LoadContent();
 			Manager.ContentManager.LoadContent();
 			Manager.ImageManager.LoadContent();
 
+			Manager.QuestionManager.LoadContent();
 			Manager.ScoreManager.LoadContent();
-			Manager.TextManager.LoadContent();
+			//Manager.TextManager.LoadContent();		// TODO remove
 			Manager.ScreenManager.LoadContent();
 
 			GC.Collect();

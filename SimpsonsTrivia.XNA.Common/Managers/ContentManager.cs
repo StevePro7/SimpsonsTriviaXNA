@@ -46,7 +46,7 @@ namespace WindowsGame.Common.Managers
 
 			// Sound effects.
 			Assets.SoundEffectDictionary = new Dictionary<SoundEffectType, SoundEffectInstance>();
-			for (SoundEffectType key = SoundEffectType.Right; key <= SoundEffectType.Cheat; ++key)
+			for (SoundEffectType key = SoundEffectType.Right; key <= SoundEffectType.Early; ++key)
 			{
 				SoundEffectInstance value = LoadSoundEffectInstance(key.ToString());
 				Assets.SoundEffectDictionary.Add(key, value);
@@ -69,7 +69,8 @@ namespace WindowsGame.Common.Managers
 
 		// Helper variables for hard coded names.
 		private const String FONT_NAME = "Emulogic";
-		private const String SPLASH_NAME = "Splash";
+		private const String SPLASH_NAME = "StevePro";
+		//private const String SPLASH_NAME = "Splash";		// TODO change
 		private const String SPRITE_NAME = "Spritesheet";
 		private const String TITLE_MUSIC_NAME = "TitleMusic";
 		private const String GAME_OVER_NAME = "GameOver";

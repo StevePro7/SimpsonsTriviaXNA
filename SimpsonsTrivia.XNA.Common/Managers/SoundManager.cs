@@ -19,6 +19,10 @@ namespace WindowsGame.Common.Managers
 		void PlayRightSoundEffect();
 		void PlayWrongSoundEffect();
 		void PlayCheatSoundEffect();
+		void PlayEarlySoundEffect();
+
+		void AlternateSound();
+		void DrawVolumeIcon();
 	}
 
 	public class SoundManager : ISoundManager
@@ -68,28 +72,49 @@ namespace WindowsGame.Common.Managers
 		{
 			PlaySoundEffect(SoundEffectType.Right);
 		}
-
 		public void PlayWrongSoundEffect()
 		{
 			PlaySoundEffect(SoundEffectType.Wrong);
 		}
-
 		public void PlayCheatSoundEffect()
 		{
 			PlaySoundEffect(SoundEffectType.Cheat);
 		}
+		public void PlayEarlySoundEffect()
+		{
+			PlaySoundEffect(SoundEffectType.Early);
+		}
+
+		public void AlternateSound()
+		{
+			playSound = !playSound;
+			SetVolume();
+		}
+
+		public void DrawVolumeIcon()
+		{
+			if (playSound)
+			{
+				MyGame.Manager.SpriteManager.DrawVolumeOn();
+			}
+			else
+			{
+				MyGame.Manager.SpriteManager.DrawVolumeOff();
+			}
+		}
 
 		private void PlaySong(Song song, Boolean isRepeating)
 		{
-			if (!playSound)
-			{
-				return;
-			}
+			//if (!playSound)
+			//{
+			//	return;
+			//}
 
 			if (MediaState.Playing == MediaPlayerX.State)
 			{
 				return;
 			}
+			SetVolume();
 
 			MediaPlayerX.Play(song);
 			MediaPlayerX.IsRepeating = isRepeating;
@@ -104,5 +129,10 @@ namespace WindowsGame.Common.Managers
 			SoundEffectInstance value = Assets.SoundEffectDictionary[key];
 			value.Play();
 		}
+		private void SetVolume()
+		{
+			MediaPlayerX.Volume = playSound ? 100 : 0;
+		}
+
 	}
 }

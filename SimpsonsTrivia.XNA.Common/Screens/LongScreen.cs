@@ -23,9 +23,9 @@ namespace WindowsGame.Common.Screens
 
 		public override void Draw()
 		{
-			MyGame.Manager.ImageManager.DrawTitle();
-			MyGame.Manager.TextManager.Draw(TextDataList);
-			Engine.Game.Window.Title = "Long";
+			//MyGame.Manager.ImageManager.DrawTitle();
+			//MyGame.Manager.TextManager.Draw(TextDataList);
+			//Engine.Game.Window.Title = "Long";
 		}
 
 	}

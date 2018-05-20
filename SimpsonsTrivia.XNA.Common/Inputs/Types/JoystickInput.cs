@@ -12,8 +12,8 @@ namespace WindowsGame.Common.Inputs.Types
 		Boolean JoyHold(Buttons button);
 		Boolean JoyMove(Buttons button);
 
-		void SetMotors(Single leftMotor, Single rightMotor);
-		void ResetMotors();
+		//void SetMotors(Single leftMotor, Single rightMotor);
+		//void ResetMotors();
 	}
 
 	public class JoystickInput : IJoystickInput
@@ -49,19 +49,19 @@ namespace WindowsGame.Common.Inputs.Types
 			return currGamePadState.IsButtonDown(button);
 		}
 
-		public void SetMotors(Single leftMotor, Single rightMotor)
-		{
-			if (!currGamePadState.IsConnected)
-			{
-				return;
-			}
+		//public void SetMotors(Single leftMotor, Single rightMotor)
+		//{
+		//	if (!currGamePadState.IsConnected)
+		//	{
+		//		return;
+		//	}
 
-			GamePad.SetVibration(PlayerIndex.One, leftMotor, rightMotor);
-		}
+		//	GamePad.SetVibration(PlayerIndex.One, leftMotor, rightMotor);
+		//}
 
-		public void ResetMotors()
-		{
-			SetMotors(0, 0);
-		}
+		//public void ResetMotors()
+		//{
+		//	SetMotors(0, 0);
+		//}
 	}
 }

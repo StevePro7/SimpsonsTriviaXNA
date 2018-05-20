@@ -45,7 +45,15 @@ namespace WindowsGame.Common.Screens
 				return nextScreen;
 			}
 
-			Boolean next = MyGame.Manager.InputManager.Next();
+			Boolean rght = MyGame.Manager.InputManager.RghtArrow();
+			if (rght)
+			{
+				//MyGame.Manager.SoundManager.PlayRightSoundEffect();
+				return nextScreen;
+			}
+			// TODO implement!
+			Boolean next = false;
+			//Boolean next = MyGame.Manager.InputManager.Next();
 			return next ? nextScreen : ScreenType.Init;
 		}
 

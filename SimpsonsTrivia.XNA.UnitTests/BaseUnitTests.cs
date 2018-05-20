@@ -10,8 +10,10 @@ namespace WindowsGame.UnitTests
 	public abstract class BaseUnitTests
 	{
 		protected IButtonManager ButtonManager;
+		protected ICollisionManager CollisionManager;
 		protected IConfigManager ConfigManager;
 		protected IContentManager ContentManager;
+		protected IDeviceManager DeviceManager;
 		protected IImageManager ImageManager;
 		protected IInputManager InputManager;
 		protected IQuestionManager QuestionManager;
@@ -32,8 +34,10 @@ namespace WindowsGame.UnitTests
 		public void TestFixtureSetUp()
 		{
 			ButtonManager = MockRepository.GenerateStub<IButtonManager>();
+			CollisionManager = MockRepository.GenerateStub<ICollisionManager>();
 			ConfigManager = MockRepository.GenerateStub<IConfigManager>();
 			ContentManager = MockRepository.GenerateStub<IContentManager>();
+			DeviceManager = MockRepository.GenerateStub<IDeviceManager>();
 			ImageManager = MockRepository.GenerateStub<IImageManager>();
 			InputManager = MockRepository.GenerateStub<IInputManager>();
 			QuestionManager = MockRepository.GenerateStub<IQuestionManager>();
@@ -54,8 +58,10 @@ namespace WindowsGame.UnitTests
 			IGameManager manager = new GameManager
 			(
 				ButtonManager,
+				CollisionManager,
 				ConfigManager,
 				ContentManager,
+				DeviceManager,
 				ImageManager,
 				InputManager,
 				QuestionManager,
@@ -80,8 +86,10 @@ namespace WindowsGame.UnitTests
 		public void TestFixtureTearDown()
 		{
 			ButtonManager = null;
+			CollisionManager = null;
 			ConfigManager = null;
 			ContentManager = null;
+			DeviceManager = null;
 			ImageManager = null;
 			InputManager = null;
 			QuestionManager = null;

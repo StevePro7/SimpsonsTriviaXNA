@@ -1,4 +1,5 @@
-﻿using WindowsGame.Common.Implementation;
+﻿using WindowsGame.Common.Devices;
+using WindowsGame.Common.Implementation;
 using WindowsGame.Common.Inputs;
 using WindowsGame.Common.Inputs.Types;
 using WindowsGame.Common.Interfaces;
@@ -17,8 +18,10 @@ namespace WindowsGame.Common.Static
 			IoCContainer.Initialize<IGameManager, GameManager>();
 
 			IoCContainer.Initialize<IButtonManager, ButtonManager>();
+			IoCContainer.Initialize<ICollisionManager, CollisionManager>();
 			IoCContainer.Initialize<IConfigManager, ConfigManager>();
 			IoCContainer.Initialize<IContentManager, ContentManager>();
+			IoCContainer.Initialize<IDeviceManager, DeviceManager>();
 			IoCContainer.Initialize<IImageManager, ImageManager>();
 			IoCContainer.Initialize<IInputManager, InputManager>();
 			IoCContainer.Initialize<IQuestionManager, QuestionManager>();
@@ -39,14 +42,18 @@ namespace WindowsGame.Common.Static
 			IoCContainer.Initialize<IFileProxy, RealFileProxy>();
 			IoCContainer.Initialize<IFileManager, FileManager>();
 
-#if WINDOWS
-			//IoCContainer.Initialize<IDeviceFactory, WorkDeviceFactory>();
-			IoCContainer.Initialize<IInputFactory, WorkInputFactory>();
+#if (WINDOWS && MOBILE)
+			IoCContainer.Initialize<IDeviceFactory, MobilesDeviceFactory>();
+			IoCContainer.Initialize<IInputFactory, WindowsInputFactory>();
+			IoCContainer.Initialize<ILogger, Logger.Implementation.RealLogger>();
+#elif WINDOWS
+			IoCContainer.Initialize<IDeviceFactory, WindowsDeviceFactory>();
+			IoCContainer.Initialize<IInputFactory, WindowsInputFactory>();
 			IoCContainer.Initialize<ILogger, Logger.Implementation.RealLogger>();
 #endif
 #if !WINDOWS
-			//IoCContainer.Initialize<IDeviceFactory, FoneDeviceFactory>();
-			IoCContainer.Initialize<IInputFactory, FoneInputFactory>();
+			IoCContainer.Initialize<IDeviceFactory, MobilesDeviceFactory>();
+			IoCContainer.Initialize<IInputFactory, MobilesInputFactory>();
 			IoCContainer.Initialize<ILogger, Library.Implementation.TestLogger>();
 #endif
 		}

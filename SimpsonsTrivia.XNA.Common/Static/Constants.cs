@@ -4,6 +4,7 @@ namespace WindowsGame.Common.Static
 {
 	public static class Constants
 	{
+		public const String BUILD_VERSION = "V1.02";
 		public const String CONTENT_DIRECTORY = "Content";
 
 		public const String DATA_DIRECTORY = "Data";
@@ -18,7 +19,7 @@ namespace WindowsGame.Common.Static
 		public const String GLOBAL_CONFIG_FILENAME = "GlobalConfig.xml";
 		public const String PLATFORM_CONFIG_FILENAME = "PlatformConfig{0}.xml";
 
-		public const Byte NUMBER_OPTIONS = 4;
+		public const Byte NUMBER_OPTIONS = 5;
 		public const Byte NUMBER_LINES = 3;
 		public const Byte NUMBER_CHARACTERS = 16;
 		public const Byte NUMBER_SPRITES = 8;
@@ -32,16 +33,30 @@ namespace WindowsGame.Common.Static
 		public const Byte TextsSize = 20;
 		public const SByte FontOffsetX = -1;
 		public const SByte FontOffsetY = -4;
+		public const Byte OffsetArrowY = 16;
 
-#if WINDOWS && DEBUG
+#if WINDOWS && !MOBILE && DEBUG
 		public const Boolean IsFullScreen = false;
 		public const Boolean IsMouseVisible = true;
 #endif
-#if WINDOWS && !DEBUG
+#if WINDOWS && !MOBILE && !DEBUG
 		public const Boolean IsFullScreen = true;
 		public const Boolean IsMouseVisible = true;
 #endif
-#if WINDOWS
+#if WINDOWS && MOBILE
+		public const Boolean IsFullScreen = false;
+		public const Boolean IsMouseVisible = true;
+
+		public const UInt16 ScreenWide = 800;
+		public const UInt16 ScreenHigh = 480;
+
+		public const Boolean UseExposed = true;
+		public const UInt16 ExposeWide = 800;
+		public const UInt16 ExposeHigh = 480;
+
+		public const Byte GameOffsetX = 80;
+#endif
+#if WINDOWS && !MOBILE
 		public const UInt16 ScreenWide = 640;
 		public const UInt16 ScreenHigh = 480;
 
@@ -50,9 +65,8 @@ namespace WindowsGame.Common.Static
 		public const UInt16 ExposeHigh = 480;
 
 		public const Byte GameOffsetX = 0;
-
 #endif
-#if !WINDOWS
+#if !WINDOWS && !MOBILE
 		public const Boolean IsFullScreen = true;
 		public const Boolean IsMouseVisible = false;
 		public const UInt16 ScreenWide = 800;
