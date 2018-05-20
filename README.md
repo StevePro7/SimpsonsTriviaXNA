@@ -163,3 +163,26 @@ TEXTURE
 *.xnb
 Build Action				Content
 Copy to Output Directory	Copy if newer
+
+
+ANDROID strange
+Could not build + run out from VS2015 to Android [Samsung] device - not detected
+Not sure if this had anything to do with the fact that I installed Xamarin Studio simulator updates earlier??
+
+But could build + run out from VS2017 Not sure what changed / happened
+Android device is totally connected to the PC
+Can't seem to archive now...!
+
+Also, Android had another issue when I did manually build out via VS2015
+Game was "installed" twice
+SOLUTION
+https://stackoverflow.com/questions/29735527/why-the-app-is-installed-twice
+
+I had MainLauncher = true in both SplashActivity and GameActivity
+This should be in the SplashActivity only!!
+
+
+Sat, 19th May
+Checked that I had OK to archive Android builds on BFG PC
+This still setup
+Went to check iOS but would have to connect to the iMac so good opportunity to get screen shots here...
