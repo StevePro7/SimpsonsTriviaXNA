@@ -186,3 +186,18 @@ Sat, 19th May
 Checked that I had OK to archive Android builds on BFG PC
 This still setup
 Went to check iOS but would have to connect to the iMac so good opportunity to get screen shots here...
+
+
+Android deploy
+Build SVN and update on secondary PC
+Launch VS2015
+Release mode
+Right click project
+Archive
+Distribute...
+Ad Hoc
+Selete signing identity	steveproxna	password
+Save As
+Copy the APK to mount drive
+Can install from primary PC
+https://www.dropbox.com/sh/lgsgjyahshaogj9/AACpkGp9Ksp27Ze4VIQd82yia?dl=0
