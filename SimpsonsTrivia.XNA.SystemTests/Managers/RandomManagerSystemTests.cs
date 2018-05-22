@@ -17,14 +17,14 @@ namespace WindowsGame.SystemTests.Managers
 		[Test]
 		public void GenerateOneTest()
 		{
-			Int32 number = RandomManager.Generate(10);
+			Int32 number = RandomManager.Next(10);
 			Console.WriteLine("Generate: " + number);
 		}
 
 		[Test]
 		public void GeneratTwoTest()
 		{
-			Int32 number = RandomManager.Generate(1, 10);
+			Int32 number = RandomManager.Next(1, 10);
 			Console.WriteLine("Generate: " + number);
 		}
 

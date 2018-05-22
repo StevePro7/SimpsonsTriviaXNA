@@ -28,6 +28,21 @@ namespace WindowsGame.SystemTests.Managers
 			Console.WriteLine("Number Questions: " + QuestionManager.QuestionList.Count);
 		}
 
+		[Test]
+		public void RandomizeQuestionListTest()
+		{
+			// Arrange.
+			MyGame.Manager.RandomManager.Initialize();
+			QuestionManager.LoadQuestionList(DifficultyType.Easy);
+
+			// Act.
+			QuestionManager.RandomizeQuestionList();
+
+			// Assert.
+			Console.WriteLine("Number Questions: " + QuestionManager.QuestionList.Count);
+		}
+
+
 		[TearDown]
 		public void TearDown()
 		{

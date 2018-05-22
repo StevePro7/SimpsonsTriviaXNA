@@ -20,6 +20,7 @@ namespace WindowsGame.Common.Static
 		public const String PLATFORM_CONFIG_FILENAME = "PlatformConfig{0}.xml";
 
 		public const Byte NUMBER_OPTIONS = 5;
+		public const Byte NUMBER_SELECTS = 4;
 		public const Byte NUMBER_LINES = 3;
 		public const Byte NUMBER_CHARACTERS = 16;
 		public const Byte NUMBER_SPRITES = 8;
@@ -29,11 +30,18 @@ namespace WindowsGame.Common.Static
 		public const UInt32 FramesPerSecond = 100;
 
 		// Global sizes.
-		public const UInt16 SpriteSize = 80;
+		public const Byte SpriteSize = 80;
 		public const Byte TextsSize = 20;
 		public const SByte FontOffsetX = -1;
 		public const SByte FontOffsetY = -4;
 		public const Byte OffsetArrowY = 16;
+
+		// Local sizes.
+		public const Byte SpriteTile = 20;
+		public const Byte OffsetSelect = 10;
+		public const UInt16 CheatModeOffsetX = 430;
+		public const UInt16 CheatModeOffsetY = 260;
+
 
 #if WINDOWS && !MOBILE && DEBUG
 		public const Boolean IsFullScreen = false;

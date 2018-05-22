@@ -38,17 +38,32 @@ namespace WindowsGame.Common.Screens
 				flag = !flag;
 			}
 
-			Boolean volume = MyGame.Manager.InputManager.VolumeIcon();
-			if (volume)
+			Boolean escape = MyGame.Manager.InputManager.Escape();
+			if (escape)
+			{
+				return ScreenType.Exit;
+			}
+
+			Boolean fullScreen = false;
+			Boolean volumeIcon = MyGame.Manager.InputManager.VolumeIcon();
+			if (volumeIcon)
 			{
 				MyGame.Manager.SoundManager.AlternateSound();
 			}
+			else
+			{
+				Boolean cheatMode = MyGame.Manager.InputManager.CheatMode();
+				if (cheatMode)
+				{
+					MyGame.Manager.SoundManager.PlayCheatSoundEffect();
+				}
+				else
+				{
+					fullScreen = MyGame.Manager.InputManager.FullScreen();
+				}
+			}
 
-			Boolean left = MyGame.Manager.InputManager.LeftArrow();
-			Boolean rght = MyGame.Manager.InputManager.RghtArrow();
-
-			// TODO tidy up
-			if (left || rght)
+			if (fullScreen)
 			{
 				MyGame.Manager.SoundManager.StopMusic();
 				return ScreenType.Level;
@@ -80,7 +95,7 @@ namespace WindowsGame.Common.Screens
 			MyGame.Manager.SpriteManager.DrawWhite(whitePositions[1]);
 		}
 
-		private IList<Vector2> GetTextPositions()
+		private static IList<Vector2> GetTextPositions()
 		{
 			IList<Vector2> positions = new List<Vector2>();
 			positions.Add(MyGame.Manager.TextManager.GetTextPosition(2, 13));
@@ -89,9 +104,10 @@ namespace WindowsGame.Common.Screens
 			return positions;
 		}
 
-		private IList<Vector2> GetWhitePositions()
+		private static IList<Vector2> GetWhitePositions()
 		{
 			IList<Vector2> positions = new List<Vector2>();
+
 			// START
 			positions.Add(MyGame.Manager.TextManager.GetWhitePosition(2, 13));
 			positions.Add(MyGame.Manager.TextManager.GetWhitePosition(4, 13));
@@ -100,11 +116,6 @@ namespace WindowsGame.Common.Screens
 			positions.Add(MyGame.Manager.TextManager.GetWhitePosition(25, 9));
 			positions.Add(MyGame.Manager.TextManager.GetWhitePosition(27, 9));
 
-			// TODO remove
-			//positions[0] = new Vector2(2 * Constants.TextsSize, 13 * Constants.TextsSize);
-			//positions[1] = new Vector2(4 * Constants.TextsSize, 13 * Constants.TextsSize);
-			//positions[2] = new Vector2(25 * Constants.TextsSize, 10 * Constants.TextsSize);
-			//positions[3] = new Vector2(27 * Constants.TextsSize, 10 * Constants.TextsSize);
 			return positions;
 		}
 

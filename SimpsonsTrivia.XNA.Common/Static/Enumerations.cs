@@ -12,16 +12,16 @@
 		Play,
 		Quiz,
 		Score,
-		Over
+		Over,
+		Exit
 	}
 
 	public enum DifficultyType
 	{
-		None,
 		Easy,
 		Norm,
 		Hard,
-		Argh
+		Argh,
 	}
 
 	public enum SoundEffectType
@@ -46,11 +46,11 @@
 
 	public enum OptionType
 	{
-		None,
 		A,
 		B,
 		C,
-		D
+		D,
+		None
 	}
 
 	public enum ActorType

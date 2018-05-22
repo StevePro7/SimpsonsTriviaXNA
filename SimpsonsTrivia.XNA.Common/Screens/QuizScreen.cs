@@ -36,6 +36,8 @@ namespace WindowsGame.Common.Screens
 
 		public override void Draw()
 		{
+			MyGame.Manager.TextManager.Draw(TextDataList);
+
 			MyGame.Manager.ImageManager.DrawHeader();
 			MyGame.Manager.ImageManager.DrawCurrActor();
 
@@ -47,7 +49,6 @@ namespace WindowsGame.Common.Screens
 			MyGame.Manager.DeviceManager.DrawBackButton();
 			MyGame.Manager.DeviceManager.DrawPlayButton();
 
-			MyGame.Manager.TextManager.Draw(TextDataList);
 			Engine.Game.Window.Title = "Quiz";
 		}
 

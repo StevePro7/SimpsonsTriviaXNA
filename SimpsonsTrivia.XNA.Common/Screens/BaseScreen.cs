@@ -30,6 +30,15 @@ namespace WindowsGame.Common.Screens
 		{
 		}
 
+		protected void UpdateVolumeIcon()
+		{
+			Boolean volume = MyGame.Manager.InputManager.VolumeIcon();
+			if (volume)
+			{
+				MyGame.Manager.SoundManager.AlternateSound();
+			}
+		}
+
 		protected void LoadTextData()
 		{
 			LoadTextData(GetType().Name);

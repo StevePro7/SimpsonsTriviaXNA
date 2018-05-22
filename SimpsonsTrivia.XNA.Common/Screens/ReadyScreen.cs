@@ -17,7 +17,16 @@ namespace WindowsGame.Common.Screens
 
 		public ScreenType Update(GameTime gameTime)
 		{
-			return ScreenType.Ready;
+			// Reset question manager + load quiz.
+			MyGame.Manager.QuestionManager.Reset();
+			MyGame.Manager.QuestionManager.LoadQuestionList(DifficultyType.Easy);
+
+			if (MyGame.Manager.ConfigManager.GlobalConfigData.RandomQuestions)
+			{
+				MyGame.Manager.QuestionManager.RandomizeQuestionList();
+			}
+
+			return ScreenType.Level;
 		}
 
 		public override void Draw()

@@ -86,7 +86,7 @@ namespace WindowsGame.Common.Managers
 				{ScreenType.Quiz, new QuizScreen()},
 				{ScreenType.Score, new ScoreScreen()},
 				{ScreenType.Over, new OverScreen()},
-
+				{ScreenType.Exit, new ExitScreen()},
 			};
 		}
 

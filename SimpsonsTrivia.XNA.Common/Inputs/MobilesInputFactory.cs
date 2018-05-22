@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Input.Touch;
 using System;
 using WindowsGame.Common.Inputs.Types;
 using WindowsGame.Common.Interfaces;
+using WindowsGame.Common.Static;
 
 namespace WindowsGame.Common.Inputs
 {
@@ -35,6 +36,26 @@ namespace WindowsGame.Common.Inputs
 			return TouchScreenInput.Tap;
 		}
 
+		public Boolean FullScreen()
+		{
+			if (TouchLocationState.Pressed != TouchScreenInput.TouchState)
+			{
+				return false;
+			}
+
+			return MyGame.Manager.CollisionManager.FullScreen(TouchScreenInput.CurrTouchX, TouchScreenInput.CurrTouchY);
+		}
+
+		public OptionType GetOptionType()
+		{
+			if (TouchLocationState.Pressed != TouchScreenInput.TouchState)
+			{
+				return OptionType.None;
+			}
+
+			return MyGame.Manager.CollisionManager.GetOptionType(TouchScreenInput.CurrTouchX, TouchScreenInput.CurrTouchY);
+		}
+
 		public Boolean LeftArrow()
 		{
 			if (TouchLocationState.Pressed != TouchScreenInput.TouchState)
@@ -63,6 +84,16 @@ namespace WindowsGame.Common.Inputs
 			}
 
 			return MyGame.Manager.CollisionManager.VolumeIcon(TouchScreenInput.CurrTouchX, TouchScreenInput.CurrTouchY);
+		}
+
+		public Boolean CheatMode()
+		{
+			if (TouchLocationState.Pressed != TouchScreenInput.TouchState)
+			{
+				return false;
+			}
+
+			return MyGame.Manager.CollisionManager.CheatMode(TouchScreenInput.CurrTouchX, TouchScreenInput.CurrTouchY);
 		}
 
 	}

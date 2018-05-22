@@ -34,6 +34,7 @@ namespace WindowsGame.Common
 			Manager.ScreenManager.Initialize();
 			Manager.SoundManager.Initialize();
 			Manager.SpriteManager.Initialize();
+			Manager.StorageManager.Initialize();
 			Manager.ThreadManager.Initialize();
 		}
 
@@ -59,6 +60,7 @@ namespace WindowsGame.Common
 			Manager.ScoreManager.LoadContent();
 			//Manager.TextManager.LoadContent();		// TODO remove
 			Manager.ScreenManager.LoadContent();
+			Manager.StorageManager.LoadContent();
 
 			GC.Collect();
 		}
@@ -94,9 +96,11 @@ namespace WindowsGame.Common
 
 		public static void OnActivated()
 		{
+			Manager.StorageManager.LoadContent();
 		}
 		public static void OnDeactivated()
 		{
+			Manager.StorageManager.SaveContent();
 		}
 
 		public static IGameManager Manager { get; private set; }

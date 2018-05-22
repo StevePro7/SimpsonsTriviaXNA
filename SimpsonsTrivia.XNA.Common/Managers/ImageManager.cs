@@ -68,7 +68,7 @@ namespace WindowsGame.Common.Managers
 		{
 			while (true)
 			{
-				nextActor = (Byte)MyGame.Manager.RandomManager.Generate(Constants.NUMBER_CHARACTERS);
+				nextActor = (Byte)MyGame.Manager.RandomManager.Next(Constants.NUMBER_CHARACTERS);
 				if (currActor != nextActor)
 				{
 					break;

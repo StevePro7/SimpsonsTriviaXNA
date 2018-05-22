@@ -45,16 +45,17 @@ namespace WindowsGame.Common.Screens
 				return nextScreen;
 			}
 
-			Boolean rght = MyGame.Manager.InputManager.RghtArrow();
-			if (rght)
+			Boolean fullScreen = MyGame.Manager.InputManager.FullScreen();
+			if (fullScreen)
 			{
-				//MyGame.Manager.SoundManager.PlayRightSoundEffect();
-				return nextScreen;
+				MyGame.Manager.Logger.Info("test");
 			}
-			// TODO implement!
-			Boolean next = false;
-			//Boolean next = MyGame.Manager.InputManager.Next();
-			return next ? nextScreen : ScreenType.Init;
+			Boolean advance = false;
+#if WINDOWS
+			advance = MyGame.Manager.InputManager.Advance();
+#endif
+			
+			return fullScreen || advance ? nextScreen : ScreenType.Init;
 		}
 
 		public override void Draw()

@@ -23,15 +23,16 @@ namespace WindowsGame.Common.Managers
 
 		void AlternateSound();
 		void DrawVolumeIcon();
+
+		void SetPlaySound(Boolean playSound);
+		Boolean PlaySound { get; }
 	}
 
 	public class SoundManager : ISoundManager
 	{
-		private Boolean playSound;
-
 		public void Initialize()
 		{
-			playSound = MyGame.Manager.ConfigManager.GlobalConfigData.PlaySound;
+			PlaySound = MyGame.Manager.ConfigManager.GlobalConfigData.PlaySound;
 		}
 
 		public void PlayTitleMusic()
@@ -87,13 +88,13 @@ namespace WindowsGame.Common.Managers
 
 		public void AlternateSound()
 		{
-			playSound = !playSound;
+			PlaySound = !PlaySound;
 			SetVolume();
 		}
 
 		public void DrawVolumeIcon()
 		{
-			if (playSound)
+			if (PlaySound)
 			{
 				MyGame.Manager.SpriteManager.DrawVolumeOn();
 			}
@@ -103,13 +104,15 @@ namespace WindowsGame.Common.Managers
 			}
 		}
 
+		public void SetPlaySound(Boolean playSound)
+		{
+			PlaySound = playSound;
+		}
+
+		public Boolean PlaySound { get; private set; }
+
 		private void PlaySong(Song song, Boolean isRepeating)
 		{
-			//if (!playSound)
-			//{
-			//	return;
-			//}
-
 			if (MediaState.Playing == MediaPlayerX.State)
 			{
 				return;
@@ -121,7 +124,7 @@ namespace WindowsGame.Common.Managers
 		}
 		private void PlaySoundEffect(SoundEffectType key)
 		{
-			if (!playSound)
+			if (!PlaySound)
 			{
 				return;
 			}
@@ -131,8 +134,9 @@ namespace WindowsGame.Common.Managers
 		}
 		private void SetVolume()
 		{
-			MediaPlayerX.Volume = playSound ? 100 : 0;
+			MediaPlayerX.Volume = PlaySound ? 100 : 0;
 		}
+
 
 	}
 }

@@ -20,16 +20,12 @@ namespace WindowsGame.Common.Screens
 
 		public ScreenType Update(GameTime gameTime)
 		{
-			Boolean volume = MyGame.Manager.InputManager.VolumeIcon();
-			if (volume)
-			{
-				MyGame.Manager.SoundManager.AlternateSound();
-			}
-
+			UpdateVolumeIcon();
+			Boolean escape = MyGame.Manager.InputManager.Escape();
 			Boolean left = MyGame.Manager.InputManager.LeftArrow();
-			if (left)
+			if (escape || left)
 			{
-				Engine.Game.Exit();
+				return ScreenType.Exit;
 			}
 			Boolean rght = MyGame.Manager.InputManager.RghtArrow();
 			if (rght)
@@ -64,7 +60,7 @@ namespace WindowsGame.Common.Screens
 
 			MyGame.Manager.SoundManager.DrawVolumeIcon();
 
-			MyGame.Manager.DeviceManager.DrawOverButton();
+			MyGame.Manager.DeviceManager.DrawQuitButton();
 			MyGame.Manager.DeviceManager.DrawPlayButton();
 
 			Engine.Game.Window.Title = "Over";

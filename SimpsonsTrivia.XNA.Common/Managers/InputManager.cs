@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using WindowsGame.Common.Interfaces;
+using WindowsGame.Common.Static;
 
 namespace WindowsGame.Common.Managers
 {
@@ -11,9 +12,12 @@ namespace WindowsGame.Common.Managers
 
 		Boolean Escape();
 		Boolean Advance();
+		Boolean FullScreen();
+		OptionType GetOptionType();
 		Boolean LeftArrow();
 		Boolean RghtArrow();
 		Boolean VolumeIcon();
+		Boolean CheatMode();
 	}
 
 	public class InputManager : IInputManager
@@ -45,6 +49,16 @@ namespace WindowsGame.Common.Managers
 			return inputFactory.Advance();
 		}
 
+		public Boolean FullScreen()
+		{
+			return inputFactory.FullScreen();
+		}
+
+		public OptionType GetOptionType()
+		{
+			return inputFactory.GetOptionType();
+		}
+
 		public Boolean LeftArrow()
 		{
 			return inputFactory.LeftArrow();
@@ -57,6 +71,11 @@ namespace WindowsGame.Common.Managers
 		public Boolean VolumeIcon()
 		{
 			return inputFactory.VolumeIcon();
+		}
+
+		public Boolean CheatMode()
+		{
+			return inputFactory.CheatMode();
 		}
 
 		//public Boolean Pause()
