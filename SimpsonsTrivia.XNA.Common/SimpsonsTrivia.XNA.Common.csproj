@@ -131,6 +131,7 @@
     <Compile Include="Screens\ReadyScreen.cs" />
     <Compile Include="Screens\ScoreScreen.cs" />
     <Compile Include="Screens\SplashScreen.cs" />
+    <Compile Include="Screens\TestScreen.cs" />
     <Compile Include="Screens\TitleScreen.cs" />
     <Compile Include="Static\Assets.cs" />
     <Compile Include="Static\Constants.cs" />
