@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using WindowsGame.Common.Data;
 using WindowsGame.Common.Objects;
 using WindowsGame.Common.Static;
 
@@ -20,15 +21,24 @@ namespace WindowsGame.Common.Managers
 		void DrawQuestion(Byte index);
 		void DrawQuestionNumber();
 		void DrawQuestionTotal();
+		void DrawQuizDiffText();
+		void SetDifficulty(OptionType optionType);
+		void SetQuizLength(OptionType optionType);
 		void Increment();
 		void Reset();
+
+		Boolean GetCheatMode();
+		void SetCheatMode(Boolean theCheatMode);
 
 		// Properties.
 		IList<Question> QuestionList { get; }
 		Byte QuestionNumber { get; }
-		Byte NumberQuestions { get; }
+		Byte NumberQuestion { get; }
 		DifficultyType DifficultyType { get; }
 		OptionType CorrectOptionType { get; }
+		String DifficultyText { get; }
+		String QuizLengthText { get; }
+		String QuizLengthText2 { get; }
 	}
 
 	public class QuestionManager : IQuestionManager
@@ -37,9 +47,10 @@ namespace WindowsGame.Common.Managers
 		private Vector2[] questionPosn;
 		private Vector2[] answerAPosn, answerBPosn, answerCPosn, answerDPosn;
 		private Vector2[] originAPosn, originBPosn, originCPosn, originDPosn;
-		private Vector2 numberPos, totalPos;
-		private String numberTxt, totalTxt;
+		private Vector2 numberPos, totalPos, diffPos;
+		private String numberTxt;
 		private Byte[] answerList;
+		private Boolean cheatMode;
 
 		private static readonly char[] semicolon = { ';' };
 		private static readonly char[] pipe = { '|' };
@@ -54,6 +65,7 @@ namespace WindowsGame.Common.Managers
 			answerList = new Byte[Constants.NUMBER_SELECTS];
 
 			QuestionList = new List<Question>();
+			cheatMode = false;
 		}
 
 		public void LoadContent()
@@ -71,9 +83,7 @@ namespace WindowsGame.Common.Managers
 
 			numberPos = MyGame.Manager.TextManager.GetTextPosition(12, 3);
 			totalPos = MyGame.Manager.TextManager.GetTextPosition(16, 3);
-			// TODO get from LongSceen
-			NumberQuestions = 50;
-			totalTxt = GetNumber(NumberQuestions);
+			diffPos = MyGame.Manager.TextManager.GetTextPosition(2, 1);
 
 			Reset();
 		}
@@ -162,13 +172,6 @@ namespace WindowsGame.Common.Managers
 					if (0 == answerList[rnd])
 					{
 						answerList[rnd] = idx;
-						//if (answerCode == idx)
-						//{
-						//    //Byte correct = (Byte)(idx + 1);
-						//    Byte correct = (Byte)(rnd);
-						//    CorrectOptionType = (OptionType)correct;
-						//}
-
 						break;
 					}
 				}
@@ -189,8 +192,12 @@ namespace WindowsGame.Common.Managers
 
 		public void DrawQuestion(Byte index)
 		{
-			Question question = QuestionList[index];
+			if (index >= NumberQuestion)
+			{
+				return;
+			}
 
+			Question question = QuestionList[index];
 			for (Byte line = 0; line < Constants.NUMBER_LINES; line++)
 			{
 				if (line < question.QuestionText.Length)
@@ -224,34 +231,81 @@ namespace WindowsGame.Common.Managers
 
 		public void DrawQuestionTotal()
 		{
-			MyGame.Manager.TextManager.DrawText(totalTxt, totalPos);
+			MyGame.Manager.TextManager.DrawText(QuizLengthText, totalPos);
+		}
+
+		public void DrawQuizDiffText()
+		{
+			MyGame.Manager.TextManager.DrawText(DifficultyText, diffPos);
+		}
+
+		public void SetDifficulty(OptionType optionType)
+		{
+			if (OptionType.B == optionType)
+			{
+				DifficultyType = DifficultyType.Norm;
+			}
+			else if (OptionType.C == optionType)
+			{
+				DifficultyType = DifficultyType.Hard;
+			}
+			else if (OptionType.D == optionType)
+			{
+				DifficultyType = DifficultyType.Argh;
+			}
+			else
+			{
+				DifficultyType = DifficultyType.Easy;
+			}
+
+			Byte index = (Byte) optionType;
+			DifficultyText = Globalize.DIFF_TEXT[index];
+		}
+
+		public void SetQuizLength(OptionType optionType)
+		{
+			Byte index = (Byte) optionType;
+			NumberQuestion = Constants.QUIZ_LONG[index];
+			QuizLengthText = BaseData.GetNumberZO(NumberQuestion);
+			QuizLengthText2 = BaseData.GetNumberSP(NumberQuestion);
 		}
 
 		public void Increment()
 		{
 			Byte qNo = (Byte) (QuestionNumber + 1);
-			if (qNo >= NumberQuestions)
+			if (qNo > NumberQuestion)
 			{
 				return;
 			}
 
 			QuestionNumber++;
-			numberTxt = GetNumber((Byte)(QuestionNumber+1));
+			numberTxt = BaseData.GetNumberZO((Byte)(QuestionNumber + 1));
 		}
 
 		public void Reset()
 		{
 			QuestionNumber = 0;
-			numberTxt = GetNumber((Byte)(QuestionNumber + 1));
+			numberTxt = BaseData.GetNumberZO((Byte)(QuestionNumber + 1));
 		}
 
+		public Boolean GetCheatMode()
+		{
+			return cheatMode;
+		}
+		public void SetCheatMode(Boolean theCheatMode)
+		{
+			cheatMode = theCheatMode;
+		}
 
 		// Properties.
 		public IList<Question> QuestionList { get; private set; }
 		public Byte QuestionNumber { get; private set; }
-		public Byte NumberQuestions { get; private set; }
+		public Byte NumberQuestion { get; private set; }
 		public DifficultyType DifficultyType { get; private set; }
 		public OptionType CorrectOptionType { get; private set; }
+		public String DifficultyText { get; private set; }
+		public String QuizLengthText { get; private set; }
+		public String QuizLengthText2 { get; private set; }
 
 		private static void DrawLine(String line, Vector2 posn)
 		{
@@ -261,11 +315,6 @@ namespace WindowsGame.Common.Managers
 			}
 
 			MyGame.Manager.TextManager.DrawText(line, posn);
-		}
-
-		private static String GetNumber(Byte number)
-		{
-			return number.ToString().PadLeft(3, '0');
 		}
 
 		private static Vector2[] GetQuestionPosn()

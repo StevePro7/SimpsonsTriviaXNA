@@ -46,6 +46,7 @@ namespace WindowsGame.Common.Managers
 			BaseData.Initialize(root);
 		}
 
+		// TODO clean up
 //        public void InitializeBuild()
 //        {
 //#if !WINDOWS_PHONE

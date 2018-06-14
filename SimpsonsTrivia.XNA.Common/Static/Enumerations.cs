@@ -8,12 +8,12 @@
 		Diff,
 		Long,
 		Ready,
-		Level,
 		Play,
 		Quiz,
 		Score,
 		Over,
-		Exit
+		Exit,
+		Test,
 	}
 
 	public enum DifficultyType

@@ -30,6 +30,11 @@ namespace WindowsGame.Common.Inputs
 
 		public Boolean Advance()
 		{
+			if (MouseScreenInput.CurrButtonState == ButtonState.Pressed)
+			{
+				return true;
+			}
+
 			return KeyboardInput.KeyHold(Keys.Space);
 		}
 

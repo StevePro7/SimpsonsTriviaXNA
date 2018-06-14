@@ -24,6 +24,7 @@ namespace WindowsGame.Common.Static
 		public const Byte NUMBER_LINES = 3;
 		public const Byte NUMBER_CHARACTERS = 16;
 		public const Byte NUMBER_SPRITES = 8;
+		public const Byte NUMBER_CHEATS = 5;
 
 		// Global data.
 		public const Boolean IsFixedTimeStep = true;
@@ -42,6 +43,7 @@ namespace WindowsGame.Common.Static
 		public const UInt16 CheatModeOffsetX = 430;
 		public const UInt16 CheatModeOffsetY = 260;
 
+		public static readonly Byte[] QUIZ_LONG = new Byte[] { 5, 10, 25, 50 };
 
 #if WINDOWS && !MOBILE && DEBUG
 		public const Boolean IsFullScreen = false;

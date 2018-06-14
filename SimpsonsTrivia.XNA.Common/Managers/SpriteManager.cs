@@ -34,14 +34,8 @@ namespace WindowsGame.Common.Managers
 			positionsSelect = BaseData.GetPositionsSelect();
 			positionsAnswer = GetPositionsAnswer();
 
-			//UInt16 arrowHigh = Constants.ScreenHigh - Constants.SpriteSize + Constants.OffsetArrowY;
-			//leftArrowPos = new Vector2(0, arrowHigh);
-			//rightArrowPos = new Vector2(Constants.ScreenWide - Constants.SpriteSize, arrowHigh);
-
 			leftArrowPos = BaseData.GetLeftArrowPos();
 			rghtArrowPos = BaseData.GetRghtArrowPos();
-
-			//volumePos = new Vector2(Constants.ScreenWide - Constants.SpriteSize - Constants.GameOffsetX, -Constants.TextsSize / 2.0f);
 			volumePos = BaseData.GetVolumeIconPos();
 		}
 
@@ -61,12 +55,14 @@ namespace WindowsGame.Common.Managers
 		public void DrawRight(OptionType optionType)
 		{
 			Vector2 position = positionsAnswer[(Byte) optionType];
+			DrawSprite(SpriteType.White, position);
 			DrawSprite(SpriteType.Right, position);
 		}
 
 		public void DrawWrong(OptionType optionType)
 		{
 			Vector2 position = positionsAnswer[(Byte) optionType];
+			DrawSprite(SpriteType.White, position);
 			DrawSprite(SpriteType.Wrong, position);
 		}
 
@@ -129,7 +125,7 @@ namespace WindowsGame.Common.Managers
 		}
 		private static Vector2 GetPositionAnswer(Byte x, Byte y)
 		{
-			return new Vector2(Constants.GameOffsetX + x * Constants.SpriteTile, y * Constants.SpriteTile + offsetAnswerY);
+			return new Vector2(2 + Constants.GameOffsetX + x * Constants.SpriteTile, y * Constants.SpriteTile + offsetAnswerY);
 		}
 
 	}

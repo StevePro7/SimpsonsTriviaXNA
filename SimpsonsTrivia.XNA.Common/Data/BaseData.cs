@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Globalization;
+using Microsoft.Xna.Framework;
 using System;
 using WindowsGame.Common.Static;
 
@@ -22,6 +23,19 @@ namespace WindowsGame.Common.Data
 		}
 
 		public static String BaseRoot { get; private set; }
+
+		public static String GetNumberZO(Byte number)
+		{
+			return GetNumber(number, '0');
+		}
+		public static String GetNumberSP(Byte number)
+		{
+			return GetNumber(number, ' ');
+		}
+		private static String GetNumber(Byte number, Char paddingChar)
+		{
+			return number.ToString(CultureInfo.InvariantCulture).PadLeft(3, paddingChar);
+		}
 
 		public static Vector2[] GetPositionsSelect()
 		{

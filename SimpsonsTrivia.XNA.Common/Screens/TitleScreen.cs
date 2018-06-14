@@ -1,6 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using WindowsGame.Common.Interfaces;
 using WindowsGame.Common.Static;
 
@@ -11,14 +11,20 @@ namespace WindowsGame.Common.Screens
 		private IList<Vector2> whitePositions;
 		private UInt16 titleDelay;
 		private Boolean flash, flag;
+		private Boolean globalCheat, localCheat;
+		private Byte cheatCount;
 
 		public override void Initialize()
 		{
+			base.Initialize();
 			TextPositions = GetTextPositions();
 			whitePositions = GetWhitePositions();
+			
 			titleDelay = MyGame.Manager.ConfigManager.GlobalConfigData.TitleDelay;
 			flash = MyGame.Manager.ConfigManager.GlobalConfigData.FlashTitle;
-			flag = false;
+			globalCheat = MyGame.Manager.ConfigManager.GlobalConfigData.CheatMode;
+			localCheat = globalCheat;
+			MyGame.Manager.QuestionManager.SetCheatMode(localCheat);
 
 			LoadTextData();
 		}
@@ -26,7 +32,17 @@ namespace WindowsGame.Common.Screens
 		public override void LoadContent()
 		{
 			base.LoadContent();
-			MyGame.Manager.SoundManager.PlayTitleMusic();
+			globalCheat = MyGame.Manager.ConfigManager.GlobalConfigData.CheatMode;
+			localCheat = globalCheat;
+			MyGame.Manager.QuestionManager.SetCheatMode(localCheat);
+
+			if (MyGame.Manager.ConfigManager.GlobalConfigData.PlayMusic)
+			{
+				MyGame.Manager.SoundManager.PlayTitleMusic();
+			}
+
+			cheatCount = 0;
+			flag = false;
 		}
 
 		public ScreenType Update(GameTime gameTime)
@@ -52,10 +68,26 @@ namespace WindowsGame.Common.Screens
 			}
 			else
 			{
+				// Check if hit Lisa head first then check cheat mode...
 				Boolean cheatMode = MyGame.Manager.InputManager.CheatMode();
 				if (cheatMode)
 				{
-					MyGame.Manager.SoundManager.PlayCheatSoundEffect();
+					// Not cheat but tap Lisa head then increment count.
+					if (!localCheat)
+					{
+						cheatCount++;
+						if (cheatCount >= Constants.NUMBER_CHEATS)
+						{
+							// Tap Lisa head enough times to enable cheat!
+							localCheat = true;
+							MyGame.Manager.QuestionManager.SetCheatMode(localCheat);
+							MyGame.Manager.SoundManager.PlayCheatSoundEffect();
+						}
+					}
+					else
+					{
+						fullScreen = MyGame.Manager.InputManager.FullScreen();
+					}
 				}
 				else
 				{
@@ -65,8 +97,8 @@ namespace WindowsGame.Common.Screens
 
 			if (fullScreen)
 			{
-				MyGame.Manager.SoundManager.StopMusic();
-				return ScreenType.Level;
+				MyGame.Manager.SoundManager.PlayRightSoundEffect();
+				return ScreenType.Diff;
 			}
 
 			return ScreenType.Title;
@@ -74,17 +106,21 @@ namespace WindowsGame.Common.Screens
 
 		public override void Draw()
 		{
+			// Draw all text first.
 			MyGame.Manager.TextManager.Draw(TextDataList);
+			MyGame.Manager.TextManager.DrawText(Constants.BUILD_VERSION, BuildPosition);
 			MyGame.Manager.TextManager.DrawText(Globalize.TITLE_LINE1, TextPositions[0]);
 			MyGame.Manager.TextManager.DrawText(Globalize.TITLE_LINE2, TextPositions[1]);
-			MyGame.Manager.TextManager.DrawText(Constants.BUILD_VERSION, TextPositions[2]);
 
+			// Draw all images next.
 			MyGame.Manager.ImageManager.DrawTitle();
 			MyGame.Manager.SoundManager.DrawVolumeIcon();
 
 			// Show / hide cheat mode text.
-			MyGame.Manager.SpriteManager.DrawWhite(whitePositions[2]);
-			MyGame.Manager.SpriteManager.DrawWhite(whitePositions[3]);
+			if (!localCheat)
+			{
+				HideCheatMode();
+			}
 
 			// Flash Press Start
 			if (!flash || !flag)
@@ -100,22 +136,15 @@ namespace WindowsGame.Common.Screens
 			IList<Vector2> positions = new List<Vector2>();
 			positions.Add(MyGame.Manager.TextManager.GetTextPosition(2, 13));
 			positions.Add(MyGame.Manager.TextManager.GetTextPosition(2, 14));
-			positions.Add(MyGame.Manager.TextManager.GetTextPosition(25, 23));
 			return positions;
 		}
 
 		private static IList<Vector2> GetWhitePositions()
 		{
-			IList<Vector2> positions = new List<Vector2>();
-
 			// START
+			IList<Vector2> positions = new List<Vector2>();
 			positions.Add(MyGame.Manager.TextManager.GetWhitePosition(2, 13));
 			positions.Add(MyGame.Manager.TextManager.GetWhitePosition(4, 13));
-
-			// CHEAT
-			positions.Add(MyGame.Manager.TextManager.GetWhitePosition(25, 9));
-			positions.Add(MyGame.Manager.TextManager.GetWhitePosition(27, 9));
-
 			return positions;
 		}
 

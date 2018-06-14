@@ -1,6 +1,6 @@
 ﻿using System;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using WindowsGame.Common.Objects;
 
 namespace WindowsGame.Common.Screens
@@ -11,9 +11,13 @@ namespace WindowsGame.Common.Screens
 		protected Vector2 BannerPosition { get; set; }
 		protected IList<TextData> TextDataList { get; private set; }
 		protected IList<Vector2> TextPositions { get; set; }
+		protected Vector2 BuildPosition { get; private set; }
+		private IList<Vector2> CheatPositions { get; set; }
 
 		public virtual void Initialize()
 		{
+			BuildPosition = GetBuildPosition();
+			CheatPositions = GetCheatPositions();
 		}
 
 		public virtual void LoadContent()
@@ -48,10 +52,27 @@ namespace WindowsGame.Common.Screens
 			String name = String.Format("{0}{1}", GetType().Name, suffix);
 			LoadTextData(name);
 		}
+		protected void HideCheatMode()
+		{
+			MyGame.Manager.SpriteManager.DrawWhite(CheatPositions[0]);
+			MyGame.Manager.SpriteManager.DrawWhite(CheatPositions[1]);
+		}
 
 		private void LoadTextData(String screen)
 		{
 			TextDataList = MyGame.Manager.TextManager.LoadTextData(screen);
+		}
+
+		private static Vector2 GetBuildPosition()
+		{
+			return MyGame.Manager.TextManager.GetTextPosition(25, 23);
+		}
+		private static IList<Vector2> GetCheatPositions()
+		{
+			IList<Vector2> positions = new List<Vector2>();
+			positions.Add(MyGame.Manager.TextManager.GetWhitePosition(25, 9));
+			positions.Add(MyGame.Manager.TextManager.GetWhitePosition(27, 9));
+			return positions;
 		}
 
 	}

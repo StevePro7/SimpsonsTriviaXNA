@@ -7,6 +7,8 @@ namespace WindowsGame.Common.Static
 		public const String TITLE_LINE1 = "TAP TO";
 		public const String TITLE_LINE2 = "BEGIN!";
 
+		public static readonly String[] DIFF_TEXT = new String[] { "EASY", "NORM", "HARD", "PRO!" };
+
 		// Left arrow.
 		public const String BUTTON_BACK = "BACK";
 		public const String BUTTON_OVER = "OVER";

@@ -7,15 +7,19 @@ namespace WindowsGame.Common.Data
 	{
 		public ScreenType ScreenType;
 		public UInt16 SplashDelay;
-		public Boolean BlankSplash;
 		public UInt16 TitleDelay;
-		public Byte ActorIndex;
+		public UInt16 OptionDelay;
+		public UInt16 ReadyDelay;
+		public UInt16 OverDelay;
+		public UInt16 PlayDelay;
+		public Boolean BlankSplash;
 		public Boolean FlashTitle;
+		public Boolean PlayMusic;
 		public Boolean PlaySound;
 		public Boolean CheatMode;
-		public Byte Question;
 		public Boolean RandomQuestions;
 		public Boolean RandomAnswers;
+		public Boolean TestData;
 		public Boolean QuitsToExit;
 	}
 }

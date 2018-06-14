@@ -1,8 +1,6 @@
-﻿using WindowsGame.Common.Objects;
+﻿using System;
 using Microsoft.Xna.Framework;
-using System;
 using WindowsGame.Common.Interfaces;
-using WindowsGame.Common.Library;
 using WindowsGame.Common.Static;
 
 namespace WindowsGame.Common.Screens
@@ -20,55 +18,47 @@ namespace WindowsGame.Common.Screens
 
 		public override void LoadContent()
 		{
-			// TODO implement logic from TitleScreen
-			cheatMode = MyGame.Manager.ConfigManager.GlobalConfigData.CheatMode;
+			MyGame.Manager.ImageManager.GenerateNextActor();
+			cheatMode = MyGame.Manager.QuestionManager.GetCheatMode();
 
 			questionNo = MyGame.Manager.QuestionManager.QuestionNumber;
+			MyGame.Manager.QuestionManager.LoadQuestion(questionNo);
+			if (MyGame.Manager.ConfigManager.GlobalConfigData.RandomAnswers)
+			{
+				MyGame.Manager.QuestionManager.RandomizeAnswerList(questionNo);
+			}
+
+			// Correct option is now set!
 			optionType = GetOptionType();
 		}
 
 		public ScreenType Update(GameTime gameTime)
 		{
 			UpdateVolumeIcon();
-
 			Boolean escape = MyGame.Manager.InputManager.Escape();
 			if (escape)
 			{
 				return ScreenType.Exit;
 			}
-			Boolean left = MyGame.Manager.InputManager.LeftArrow();
-			if (left)
-			{
-				return ScreenType.Score;
-			}
-			Boolean rght = MyGame.Manager.InputManager.RghtArrow();
-			if (rght)
-			{
-				// TODO
-				//return ScreenType.Score;
-				MyGame.Manager.QuestionManager.Increment();
-				return ScreenType.Level;
-			}
 
-			//OptionType optionType = MyGame.Manager.InputManager.GetOptionType();
-			//if (OptionType.None != optionType)
-			//{
-			//    MyGame.Manager.Logger.Info("option : " + optionType);
-			//}
-
-			return ScreenType.Play;
+			return ScreenType.Quiz;
 		}
 
 		public override void Draw()
 		{
 			// Draw all text first.
 			MyGame.Manager.QuestionManager.DrawQuestion(questionNo);
+			MyGame.Manager.QuestionManager.DrawQuizDiffText();
 			MyGame.Manager.QuestionManager.DrawQuestionNumber();
 			MyGame.Manager.QuestionManager.DrawQuestionTotal();
+			MyGame.Manager.ScoreManager.DrawScore();
 			MyGame.Manager.TextManager.Draw(TextDataList);
 
+			// Draw all images next.
 			MyGame.Manager.ImageManager.DrawHeader();
 			MyGame.Manager.ImageManager.DrawCurrActor();
+			MyGame.Manager.SoundManager.DrawVolumeIcon();
+			MyGame.Manager.DeviceManager.DrawViewButton();
 
 			if (cheatMode)
 			{
@@ -78,22 +68,11 @@ namespace WindowsGame.Common.Screens
 			{
 				MyGame.Manager.SpriteManager.DrawSelectAll();
 			}
-
-			MyGame.Manager.SoundManager.DrawVolumeIcon();
-
-			//MyGame.Manager.DeviceManager.DrawBackButton();
-			MyGame.Manager.DeviceManager.DrawViewButton();
-
-			MyGame.Manager.SoundManager.DrawVolumeIcon();
-
-			Engine.Game.Window.Title = "Play";
 		}
 
 		private static OptionType GetOptionType()
 		{
 			return MyGame.Manager.QuestionManager.CorrectOptionType;
-			//Question q = MyGame.Manager.QuestionManager.QuestionList[questNo];
-			//return (OptionType)(q.AnswerCode - 1);
 		}
 
 	}

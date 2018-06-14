@@ -45,6 +45,7 @@ namespace WindowsGame.Common.Screens
 				return nextScreen;
 			}
 
+			// TODO - check out advance on mobile device - not working??
 			Boolean fullScreen = MyGame.Manager.InputManager.FullScreen();
 			if (fullScreen)
 			{
