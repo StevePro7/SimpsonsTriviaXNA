@@ -35,6 +35,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <Compile Include="Fonts\Emulogic.spritefont">
       <Name>Emulogic</Name>
@@ -179,6 +180,12 @@
     </None>
     <None Include="Data\Levels\Norm.txt">
       <Name>Norm</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Texts\TestScreen.txt">
+      <Name>TestScreen</Name>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
