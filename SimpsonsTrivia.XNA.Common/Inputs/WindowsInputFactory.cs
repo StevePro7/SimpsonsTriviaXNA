@@ -126,5 +126,20 @@ namespace WindowsGame.Common.Inputs
 			return MyGame.Manager.CollisionManager.CheatMode(MouseScreenInput.CurrMouseX, MouseScreenInput.CurrMouseY);
 		}
 
+		public Boolean Character()
+		{
+			if (MouseScreenInput.ButtonHold())
+			{
+				return MyGame.Manager.CollisionManager.Character(MouseScreenInput.CurrMouseX, MouseScreenInput.CurrMouseY);
+			}
+
+			if (KeyboardInput.KeyHold(Keys.Right))
+			{
+				return true;
+			}
+
+			return false;
+		}
+
 	}
 }

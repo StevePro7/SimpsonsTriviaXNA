@@ -17,5 +17,6 @@ namespace WindowsGame.Common.Interfaces
 		Boolean RghtArrow();
 		Boolean VolumeIcon();
 		Boolean CheatMode();
+		Boolean Character();
 	}
 }

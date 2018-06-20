@@ -15,6 +15,7 @@ namespace WindowsGame.Common.Managers
 		Boolean RghtArrow(Int32 x, Int32 y);
 		Boolean VolumeIcon(Int32 x, Int32 y);
 		Boolean CheatMode(Int32 x, Int32 y);
+		Boolean Character(Int32 x, Int32 y);
 	}
 
 	public class CollisionManager : ICollisionManager
@@ -22,6 +23,7 @@ namespace WindowsGame.Common.Managers
 		private Rectangle fullScreenRect;
 		private Rectangle leftArrowRect, rghtArrowRect;
 		private Rectangle volumeIconRect, cheatModeRect;
+		private Rectangle characterRect;
 		private Rectangle[] optionRect;
 		private Vector2[] optionPos;
 		const Byte spriteSize = Constants.SpriteSize;
@@ -41,6 +43,9 @@ namespace WindowsGame.Common.Managers
 
 			Vector2 cheatModePos = BaseData.GetCheatModePos();
 			cheatModeRect = new Rectangle((Int16)cheatModePos.X, (Int16)cheatModePos.Y, spriteSize, spriteSize);
+
+			Vector2 characterPos = BaseData.GetCharacterPos();
+			characterRect = new Rectangle((Int16)characterPos.X, (Int16)characterPos.Y, 12 * Constants.TextsSize, 16 * Constants.TextsSize);
 
 			optionPos = BaseData.GetPositionsSelect();
 			optionRect = new Rectangle[Constants.NUMBER_OPTIONS];
@@ -98,6 +103,11 @@ namespace WindowsGame.Common.Managers
 		public Boolean CheatMode(Int32 x, Int32 y)
 		{
 			return cheatModeRect.Contains(x, y);
+		}
+
+		public Boolean Character(Int32 x, Int32 y)
+		{
+			return characterRect.Contains(x, y);
 		}
 
 		private Rectangle GetOptionRect(OptionType type)

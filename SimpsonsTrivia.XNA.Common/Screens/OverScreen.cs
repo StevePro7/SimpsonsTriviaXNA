@@ -53,7 +53,8 @@ namespace WindowsGame.Common.Screens
 				return ScreenType.Exit;
 			}
 			Boolean rght = MyGame.Manager.InputManager.RghtArrow();
-			if (rght)
+			Boolean next = MyGame.Manager.InputManager.Character();
+			if (rght || next)
 			{
 				MyGame.Manager.SoundManager.StopMusic();
 				return ScreenType.Title;

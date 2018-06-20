@@ -18,6 +18,7 @@ namespace WindowsGame.Common.Managers
 		Boolean RghtArrow();
 		Boolean VolumeIcon();
 		Boolean CheatMode();
+		Boolean Character();
 	}
 
 	public class InputManager : IInputManager
@@ -76,6 +77,11 @@ namespace WindowsGame.Common.Managers
 		public Boolean CheatMode()
 		{
 			return inputFactory.CheatMode();
+		}
+
+		public Boolean Character()
+		{
+			return inputFactory.Character();
 		}
 
 		//public Boolean Pause()

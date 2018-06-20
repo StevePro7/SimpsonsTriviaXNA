@@ -73,5 +73,10 @@ namespace WindowsGame.Common.Data
 			return new Vector2(Constants.CheatModeOffsetX + Constants.GameOffsetX, Constants.CheatModeOffsetY);
 		}
 
+		public static Vector2 GetCharacterPos()
+		{
+			return new Vector2(Constants.GameOffsetX + 20 * Constants.TextsSize, 8 * Constants.TextsSize);
+		}
+
 	}
 }

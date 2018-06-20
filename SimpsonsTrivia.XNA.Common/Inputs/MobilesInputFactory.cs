@@ -96,5 +96,15 @@ namespace WindowsGame.Common.Inputs
 			return MyGame.Manager.CollisionManager.CheatMode(TouchScreenInput.CurrTouchX, TouchScreenInput.CurrTouchY);
 		}
 
+		public Boolean Character()
+		{
+			if (TouchLocationState.Pressed != TouchScreenInput.TouchState)
+			{
+				return false;
+			}
+
+			return MyGame.Manager.CollisionManager.Character(TouchScreenInput.CurrTouchX, TouchScreenInput.CurrTouchY);
+		}
+
 	}
 }

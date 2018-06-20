@@ -44,8 +44,8 @@ namespace WindowsGame.Common.Screens
 
 			if (!flag)
 			{
-				Boolean rght = MyGame.Manager.InputManager.RghtArrow();
-				if (rght)
+				Boolean actor = MyGame.Manager.InputManager.Character();
+				if (actor)
 				{
 					return ScreenType.Score;
 				}
@@ -103,7 +103,6 @@ namespace WindowsGame.Common.Screens
 			MyGame.Manager.ImageManager.DrawHeader();
 			MyGame.Manager.ImageManager.DrawCurrActor();
 			MyGame.Manager.SoundManager.DrawVolumeIcon();
-			MyGame.Manager.DeviceManager.DrawViewButton();
 
 			// Draw select unconditionally.
 			if (cheatMode)
