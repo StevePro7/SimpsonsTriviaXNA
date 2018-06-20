@@ -84,39 +84,5 @@ namespace WindowsGame.Common.Managers
 			return inputFactory.Character();
 		}
 
-		//public Boolean Pause()
-		//{
-		//	return inputFactory.Pause();
-		//}
-		//public Boolean Next()
-		//{
-		//	return inputFactory.Next();
-		//}
-		//public Boolean Board()
-		//{
-		//	return inputFactory.Board();
-		//}
-		//public Boolean Sides()
-		//{
-		//	return inputFactory.Sides();
-		//}
-		//public Boolean Released()
-		//{
-		//	return inputFactory.Released();
-		//}
-		//public Boolean Space()
-		//{
-		//	return inputFactory.Space();
-		//}
-
-		//public void SetMotors(Single leftMotor, Single rightMotor)
-		//{
-		//	inputFactory.SetMotors(leftMotor, rightMotor);
-		//}
-		//public void ResetMotors()
-		//{
-		//	inputFactory.ResetMotors();
-		//}
-
 	}
 }

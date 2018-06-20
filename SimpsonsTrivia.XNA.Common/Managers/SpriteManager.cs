@@ -25,8 +25,6 @@ namespace WindowsGame.Common.Managers
 		private Vector2[] positionsSelect;
 		private Vector2[] positionsAnswer;
 		private Vector2 leftArrowPos, rghtArrowPos, volumePos;
-		//private const Byte spriteTile = 20;
-		//private const Byte offsetSelect = 10;
 		private const Byte offsetAnswerY = 18;
 
 		public void Initialize()
@@ -95,24 +93,6 @@ namespace WindowsGame.Common.Managers
 		{
 			MyGame.Manager.ImageManager.DrawSprite(spriteType, position);
 		}
-		//private void DrawSprite(SpriteType spriteType, Vector2 position, Single rotation, Vector2 origin)
-		//{
-		//    MyGame.Manager.ImageManager.DrawSprite(spriteType, position, rotation, origin);
-		//}
-
-		//private Vector2[] GetPositionsSelect()
-		//{
-		//	positionsSelect = new Vector2[Constants.NUMBER_OPTIONS];
-		//	positionsSelect[(Byte)OptionType.A] = BaseData.GetPositionSelect(0, 7);
-		//	positionsSelect[(Byte)OptionType.B] = BaseData.GetPositionSelect(0, 11);
-		//	positionsSelect[(Byte)OptionType.C] = BaseData.GetPositionSelect(0, 15);
-		//	positionsSelect[(Byte)OptionType.D] = BaseData.GetPositionSelect(0, 19);
-		//	return positionsSelect;
-		//}
-		//private static Vector2 GetPositionSelect(Byte x, Byte y)
-		//{
-		//	return new Vector2(Constants.GameOffsetX + x * Constants.SpriteTile + Constants.OffsetSelect, y * Constants.SpriteTile + Constants.OffsetSelect);
-		//}
 
 		private Vector2[] GetPositionsAnswer()
 		{

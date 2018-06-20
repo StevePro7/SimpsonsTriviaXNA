@@ -70,7 +70,6 @@ namespace WindowsGame.Common.Managers
 
 		private void CalculatePositions()
 		{
-			//totalPosn, solvePosn, rightPosn, visorPosn;
 			totalPosn = MyGame.Manager.TextManager.GetTextPosition(17, 6);
 			solvePosn = MyGame.Manager.TextManager.GetTextPosition(17, 10);
 			rightPosn = MyGame.Manager.TextManager.GetTextPosition(17, 14);

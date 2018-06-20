@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace WindowsGame.Common.Interfaces
 {
 	public interface IDeviceFactory

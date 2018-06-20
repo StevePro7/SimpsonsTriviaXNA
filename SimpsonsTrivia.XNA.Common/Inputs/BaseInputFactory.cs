@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework.Input;
-using System;
+﻿using System;
+using Microsoft.Xna.Framework.Input;
 using WindowsGame.Common.Inputs.Types;
 
 namespace WindowsGame.Common.Inputs
@@ -41,15 +41,6 @@ namespace WindowsGame.Common.Inputs
 		{
 			return JoystickInput.JoyHold(Buttons.B) || JoystickInput.JoyHold(Buttons.Back);
 		}
-
-		//public virtual void SetMotors(Single leftMotor, Single rightMotor)
-		//{
-		//	JoystickInput.SetMotors(leftMotor, rightMotor);
-		//}
-		//public virtual void ResetMotors()
-		//{
-		//	JoystickInput.ResetMotors();
-		//}
 
 		protected Boolean JoyMoveUp()
 		{

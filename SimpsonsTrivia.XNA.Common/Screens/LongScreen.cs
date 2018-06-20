@@ -89,14 +89,6 @@ namespace WindowsGame.Common.Screens
 			{
 				MyGame.Manager.SpriteManager.DrawRight(optionType);
 			}
-			//if (!flag)
-			//{
-			//	MyGame.Manager.SpriteManager.DrawSelectAll();
-			//}
-			//else
-			//{
-			//	MyGame.Manager.SpriteManager.DrawRight(optionType);
-			//}
 		}
 
 	}
