@@ -10,6 +10,7 @@ namespace WindowsGame.Common.Data
 		public UInt16 TitleDelay;
 		public UInt16 OptionDelay;
 		public UInt16 ReadyDelay;
+		public UInt16 DotsDelay;
 		public UInt16 OverDelay;
 		public UInt16 PlayDelay;
 		public Boolean BlankSplash;

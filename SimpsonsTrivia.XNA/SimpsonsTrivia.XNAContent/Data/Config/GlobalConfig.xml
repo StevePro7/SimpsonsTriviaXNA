@@ -5,6 +5,7 @@
 	<TitleDelay>800</TitleDelay>
 	<OptionDelay>2000</OptionDelay>
 	<ReadyDelay>7500</ReadyDelay>
+	<DotsDelay>1000</DotsDelay>
 	<OverDelay>3000</OverDelay>
 	<PlayDelay>15000</PlayDelay>
 	<BlankSplash>false</BlankSplash>
