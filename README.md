@@ -196,8 +196,11 @@ Right click project
 Archive
 Distribute...
 Ad Hoc
-Selete signing identity	steveproxna	password
+Selete signing identity	steveproxna	password	S****P**4
 Save As
+Check the signed-apks folder
+C:\Users\<user>\AppData\Local\Xamarin\Mono for Android\Archives\<date>\SimpsonsTrivia.AND.apkarchive\signed-apks
+
 Copy the APK to mount drive
 Can install from primary PC
 https://www.dropbox.com/sh/lgsgjyahshaogj9/AACpkGp9Ksp27Ze4VIQd82yia?dl=0
