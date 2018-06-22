@@ -55,7 +55,6 @@ namespace WindowsGame.Common.Screens
 
 		public ScreenType Update(GameTime gameTime)
 		{
-			UpdateVolumeIcon();
 			Boolean escape = MyGame.Manager.InputManager.Escape();
 			if (escape)
 			{
@@ -89,12 +88,20 @@ namespace WindowsGame.Common.Screens
 				}
 			}
 
-			// Check if advance or timer complete
-			Boolean advance = MyGame.Manager.InputManager.Advance();
-			Boolean rghtArrow = MyGame.Manager.InputManager.RghtArrow();
-			if (advance || rghtArrow)
+			// Check if advance or timer complete.
+			Boolean volumeIcon = MyGame.Manager.InputManager.VolumeIcon();
+			if (volumeIcon)
 			{
-				flag = true;
+				MyGame.Manager.SoundManager.AlternateSound();
+			}
+			else
+			{
+				Boolean fullScreen = MyGame.Manager.InputManager.FullScreen();
+				Boolean rghtArrow = MyGame.Manager.InputManager.RghtArrow();
+				if (fullScreen || rghtArrow)
+				{
+					flag = true;
+				}
 			}
 
 			if (flag)
