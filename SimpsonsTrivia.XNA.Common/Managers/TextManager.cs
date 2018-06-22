@@ -13,9 +13,6 @@ namespace WindowsGame.Common.Managers
 	{
 		void Initialize();
 		void Initialize(String root);
-		//void InitializeBuild();						// TODO remove	
-		//void InitializeBuild(String assemblyName);	// TODO remove
-		//void LoadContent();
 		IList<TextData> LoadTextData(String screen);
 		IList<TextData> LoadTextData(String screen, Byte textsSize, Byte offsetX, Single fontX, Single fontY);
 		Vector2 GetTextPosition(Byte x, Byte y);
@@ -25,7 +22,6 @@ namespace WindowsGame.Common.Managers
 		void Draw(IEnumerable<TextData> textDataList);
 		void DrawText(String text, Vector2 position);
 		void DrawText(String text, Vector2 position, Color color);
-		//String BuildVersion { get; }					// TODO remove
 	}
 
 	public class TextManager : ITextManager
@@ -45,30 +41,6 @@ namespace WindowsGame.Common.Managers
 
 			BaseData.Initialize(root);
 		}
-
-		// TODO clean up
-//        public void InitializeBuild()
-//        {
-//#if !WINDOWS_PHONE
-//            Assembly assembly = Assembly.GetEntryAssembly() ?? Assembly.GetCallingAssembly();
-//#else
-//            Assembly assembly = Assembly.GetCallingAssembly();
-//#endif
-//            // Get AssemblyVersion from calling AssemblyInfo.cs
-//            InitializeBuild(assembly.FullName);
-//        }
-//        public void InitializeBuild(String assemblyName)
-//        {
-//            BuildVersion = assemblyName.Split('=')[1].Split(',')[0];
-//            if (BuildVersion.EndsWith(".0"))
-//            {
-//                BuildVersion = BuildVersion.Substring(0, BuildVersion.Length - 2);
-//            }
-//        }
-
-		//public void LoadContent()
-		//{
-		//}
 
 		public IList<TextData> LoadTextData(String screen)
 		{
@@ -135,8 +107,6 @@ namespace WindowsGame.Common.Managers
 		{
 			Engine.SpriteBatch.DrawString(Assets.EmulogicFont, text, position, color);
 		}
-
-		//public String BuildVersion { get; private set; }		// TODO remove
 
 		private static String GetTextFile(String textFile)
 		{

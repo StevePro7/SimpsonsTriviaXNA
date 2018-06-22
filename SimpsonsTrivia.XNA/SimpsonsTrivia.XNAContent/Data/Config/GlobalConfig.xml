@@ -15,6 +15,5 @@
 	<CheatMode>false</CheatMode>
 	<RandomQuestions>true</RandomQuestions>
 	<RandomAnswers>true</RandomAnswers>
-	<TestData>false</TestData>
 	<QuitsToExit>true</QuitsToExit>
 </GlobalConfigData>

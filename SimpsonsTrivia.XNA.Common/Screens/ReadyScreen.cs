@@ -32,15 +32,6 @@ namespace WindowsGame.Common.Screens
 			base.LoadContent();
 			cheatMode = MyGame.Manager.QuestionManager.GetCheatMode();
 
-			// TODO REMOVE
-			Boolean testData = MyGame.Manager.ConfigManager.GlobalConfigData.TestData;
-			if (testData)
-			{
-				MyGame.Manager.QuestionManager.SetDifficulty(OptionType.A);
-				MyGame.Manager.QuestionManager.SetQuizLength(OptionType.A);
-			}
-			// TODO REMOVE
-
 			difficultyType = MyGame.Manager.QuestionManager.DifficultyType;
 			numberQuestion = MyGame.Manager.QuestionManager.NumberQuestion;
 			

@@ -49,16 +49,13 @@ namespace WindowsGame.Common
 		public static void LoadContentAsync()
 		{
 			Manager.TextManager.Initialize();
-			//Manager.TextManager.InitializeBuild();	// TODO remove
 
-			//Manager.ConfigManager.LoadContent();		// TODO remove	
 			Manager.CollisionManager.LoadContent();
 			Manager.ContentManager.LoadContent();
 			Manager.ImageManager.LoadContent();
 
 			Manager.QuestionManager.LoadContent();
 			Manager.ScoreManager.LoadContent();
-			//Manager.TextManager.LoadContent();		// TODO remove
 			Manager.ScreenManager.LoadContent();
 			Manager.StorageManager.LoadContent();
 

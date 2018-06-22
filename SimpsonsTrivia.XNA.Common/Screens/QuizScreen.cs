@@ -78,7 +78,6 @@ namespace WindowsGame.Common.Screens
 					Byte qNo = (Byte)(questionNo + 1);
 					if (qNo > noQuestion)
 					{
-						// TODO send event end-of-game [naturally]
 						return ScreenType.Over;
 					}
 

@@ -104,8 +104,6 @@ namespace WindowsGame.Common.Managers
 
 		public void DrawSprite(SpriteType spriteType, Vector2 position)
 		{
-			// TODO revert color white!
-			//Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, spriteRects[(Byte)spriteType], Color.CornflowerBlue);
 			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, position, spriteRects[(Byte)spriteType], Color.White);
 		}
 

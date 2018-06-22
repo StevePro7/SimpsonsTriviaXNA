@@ -20,7 +20,6 @@ namespace WindowsGame.Common.Data
 		public Boolean CheatMode;
 		public Boolean RandomQuestions;
 		public Boolean RandomAnswers;
-		public Boolean TestData;
 		public Boolean QuitsToExit;
 	}
 }
