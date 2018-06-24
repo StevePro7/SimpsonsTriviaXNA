@@ -65,7 +65,7 @@ namespace WindowsGame.Common.Screens
 
 		private static Vector2 GetBuildPosition()
 		{
-			return MyGame.Manager.TextManager.GetTextPosition(25, 23);
+			return MyGame.Manager.TextManager.GetTextPosition(26, 23);
 		}
 		private static IList<Vector2> GetCheatPositions()
 		{
