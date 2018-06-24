@@ -99,7 +99,17 @@ namespace WindowsGame.Common.Managers
 		}
 		public void DrawActor(Byte index)
 		{
-			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, actorVect, actorRects[index], Color.White);
+			Vector2 actorPosn = actorVect;
+			float scale = 1.0f;
+
+			// Scale for Lisa
+			if ((Byte) ActorType.Lisa1 == index || (Byte) ActorType.Lisa2==index)
+			{
+				scale = 0.85f;
+				actorPosn.Y += 2 * Constants.TextsSize;
+			}
+
+			Engine.SpriteBatch.Draw(Assets.SpritesheetTexture, actorPosn, actorRects[index], Color.White, 0.0f, Vector2.Zero, scale, SpriteEffects.None,1.0f);
 		}
 
 		public void DrawSprite(SpriteType spriteType, Vector2 position)
